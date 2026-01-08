@@ -70,6 +70,6 @@ footer {
     padding: 1rem;
 }
 
-#navigation {
-    background-color: #003366;
+#navigation a {
+    color: #ffffff;
 }

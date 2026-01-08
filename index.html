@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="WDD 231 Course Home Page for Nsikak Eyo">
+    <title>WDD 231 | Home</title>
+
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/larger.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <img src="images/logo.svg" alt="Site logo" class="logo">
+        <span class="site-name">Nsikak Eyo</span>
+        <button id="menuBtn" aria-label="Toggle Menu">☰</button>
+    </header>
+
+    <nav id="navigation">
+        <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="#">Chamber Project</a></li>
+            <li><a href="#">Final Project</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h1>Home</h1>
+
+        <section class="intro-grid">
+            <div class="about">
+                <h2>About Me</h2>
+                <p>
+                    My name is Nsikak Eyo. I am a web development student focused on
+                    building accessible, responsive, and user-friendly websites
+                    using HTML, CSS, and JavaScript.
+                </p>
+            </div>
+
+            <div class="photo">
+                <h2>Student Photo</h2>
+                <img src="images/profile.webp" alt="Photo of Nsikak Eyo">
+            </div>
+        </section>
+
+        <section class="courses">
+            <h2>Web Certificate Courses</h2>
+
+            <div class="filters">
+                <button data-filter="All">All</button>
+                <button data-filter="CSE">CSE</button>
+                <button data-filter="WDD">WDD</button>
+            </div>
+
+            <div id="courseList" class="course-list"></div>
+
+            <p class="credits">
+                The total credits for courses listed above is
+                <span id="totalCredits">0</span>
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="socials">
+            <a href="https://github.com/nsikakeyo01">GitHub</a>
+            <a href="#">LinkedIn</a>
+            <a href="#">X</a>
+        </div>
+
+        <p>© <span id="year"></span> Nsikak Eyo • Nigeria</p>
+        <p id="lastModified"></p>
+    </footer>
+
+    <script src="scripts/courses.js" defer></script>
+    <script src="scripts/date.js" defer></script>
+</body>
+
+</html>

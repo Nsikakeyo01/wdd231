@@ -1,0 +1,15 @@
+@media (min-width: 768px) {
+    nav {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    main {
+        max-width: 1100px;
+        margin: auto;
+    }
+
+    section {
+        padding: 1rem;
+    }
+}

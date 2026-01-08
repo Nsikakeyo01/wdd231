@@ -1,40 +1,43 @@
 const courses = [
-    { code: "WDD 130", credits: 3, completed: true },
-    { code: "WDD 131", credits: 3, completed: true },
-    { code: "WDD 231", credits: 3, completed: false },
-    { code: "CSE 121", credits: 3, completed: true },
-    { code: "CSE 212", credits: 4, completed: false }
+    { code: "WDD 130", name: "Web Fundamentals", credits: 3, completed: true },
+    { code: "WDD 131", name: "Dynamic Web Fundamentals", credits: 3, completed: true },
+    { code: "WDD 231", name: "Frontend Development I", credits: 3, completed: false },
+    { code: "CSE 110", name: "Programming Building Blocks", credits: 3, completed: true },
+    { code: "CSE 111", name: "Programming with Functions", credits: 3, completed: false }
 ];
 
-const courseList = document.getElementById("courseList");
-const totalCredits = document.getElementById("totalCredits");
-const filterButtons = document.querySelectorAll(".filters button");
+const courseContainer = document.getElementById("courses");
+const totalCreditsEl = document.getElementById("totalCredits");
+const buttons = document.querySelectorAll(".filters button");
 
-function displayCourses(filter = "All") {
-    courseList.innerHTML = "";
+function displayCourses(list) {
+    courseContainer.innerHTML = "";
 
-    const filteredCourses =
-        filter === "All"
-            ? courses
-            : courses.filter(course => course.code.startsWith(filter));
-
-    filteredCourses.forEach(course => {
+    list.forEach(course => {
         const div = document.createElement("div");
-        div.textContent = course.code;
-        div.className = course.completed ? "course completed" : "course";
-        courseList.appendChild(div);
+        div.classList.add("course");
+        if (course.completed) div.classList.add("completed");
+
+        div.textContent = `${course.code} - ${course.name} (${course.credits} credits)`;
+        courseContainer.appendChild(div);
     });
 
-    totalCredits.textContent = filteredCourses.reduce(
-        (sum, course) => sum + course.credits,
-        0
-    );
+    const total = list.reduce((sum, c) => sum + c.credits, 0);
+    totalCreditsEl.textContent = total;
 }
 
-filterButtons.forEach(button => {
-    button.addEventListener("click", () => {
-        displayCourses(button.dataset.filter);
+buttons.forEach(btn => {
+    btn.addEventListener("click", () => {
+        const filter = btn.dataset.filter;
+
+        if (filter === "wdd") {
+            displayCourses(courses.filter(c => c.code.startsWith("WDD")));
+        } else if (filter === "cse") {
+            displayCourses(courses.filter(c => c.code.startsWith("CSE")));
+        } else {
+            displayCourses(courses);
+        }
     });
 });
 
-displayCourses();
+displayCourses(courses);

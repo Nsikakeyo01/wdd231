@@ -28,8 +28,12 @@ nav {
     flex-direction: column;
 }
 
-nav a {
-    color: white;
+/* ✅ FIX: enforce color on ALL link states */
+#navigation a,
+#navigation a:visited,
+#navigation a:hover,
+#navigation a:active {
+    color: #ffffff;
     padding: 0.75rem;
     text-decoration: none;
 }
@@ -68,8 +72,4 @@ footer {
     color: white;
     text-align: center;
     padding: 1rem;
-}
-
-#navigation a {
-    color: #ffffff;
 }

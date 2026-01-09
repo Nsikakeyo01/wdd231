@@ -1,43 +1,28 @@
 const courses = [
     { code: "WDD 130", name: "Web Fundamentals", credits: 3, completed: true },
     { code: "WDD 131", name: "Dynamic Web Fundamentals", credits: 3, completed: true },
-    { code: "WDD 231", name: "Frontend Development I", credits: 3, completed: false },
-    { code: "CSE 110", name: "Programming Building Blocks", credits: 3, completed: true },
-    { code: "CSE 111", name: "Programming with Functions", credits: 3, completed: false }
+    { code: "WDD 231", name: "Web Frontend Development I", credits: 3, completed: false }
 ];
 
-const courseContainer = document.getElementById("courses");
-const totalCreditsEl = document.getElementById("totalCredits");
-const buttons = document.querySelectorAll(".filters button");
+const courseList = document.querySelector("#course-list");
+const totalCredits = document.querySelector("#total-credits");
 
-function displayCourses(list) {
-    courseContainer.innerHTML = "";
+function displayCourses(courseArray) {
+    courseList.innerHTML = "";
 
-    list.forEach(course => {
+    courseArray.forEach(course => {
         const div = document.createElement("div");
-        div.classList.add("course");
-        if (course.completed) div.classList.add("completed");
+        div.textContent = `${course.code} – ${course.name} (${course.credits} credits)`;
 
-        div.textContent = `${course.code} - ${course.name} (${course.credits} credits)`;
-        courseContainer.appendChild(div);
-    });
-
-    const total = list.reduce((sum, c) => sum + c.credits, 0);
-    totalCreditsEl.textContent = total;
-}
-
-buttons.forEach(btn => {
-    btn.addEventListener("click", () => {
-        const filter = btn.dataset.filter;
-
-        if (filter === "wdd") {
-            displayCourses(courses.filter(c => c.code.startsWith("WDD")));
-        } else if (filter === "cse") {
-            displayCourses(courses.filter(c => c.code.startsWith("CSE")));
-        } else {
-            displayCourses(courses);
+        if (course.completed) {
+            div.style.fontWeight = "600";
         }
+
+        courseList.appendChild(div);
     });
-});
+
+    const credits = courseArray.reduce((sum, course) => sum + course.credits, 0);
+    totalCredits.textContent = `Total Credits: ${credits}`;
+}
 
 displayCourses(courses);

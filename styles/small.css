@@ -1,63 +1,73 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+/* ================================
+   Base Styles
+================================ */
+:root {
+    --primary-color: #003366;
+    --secondary-color: #444444;
+    --accent-color: #2e7d32;
+    --light-color: #ffffff;
 }
 
 body {
     font-family: "Poppins", sans-serif;
-    line-height: 1.6;
+    margin: 0;
     color: #000;
+    background-color: #fff;
 }
 
-/* Header & Navigation */
+/* ================================
+   Header & Navigation
+================================ */
 .site-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #003366;
+    background-color: var(--primary-color);
     padding: 1rem;
+}
+
+/* FORCE readable contrast */
+.site-header,
+.site-header span,
+.site-header a,
+.site-header button {
+    color: var(--light-color);
 }
 
 .site-header img {
-    max-width: 60px;
+    width: 48px;
+    height: auto;
 }
 
+/* Navigation */
 #navigation {
-    display: flex;
-    gap: 1rem;
+    background-color: var(--primary-color);
+}
+
+#navigation ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 #navigation a {
-    color: #ffffff;
-    /* ✅ FIXED CONTRAST */
+    display: block;
+    padding: 0.75rem 1rem;
+    color: var(--light-color);
     text-decoration: none;
-    font-weight: 600;
 }
 
+/* Hover + Wayfinding */
 #navigation a:hover,
-#navigation a:focus {
-    text-decoration: underline;
+#navigation a.active {
+    background-color: var(--secondary-color);
 }
 
-/* Main */
-main {
-    padding: 1rem;
-}
-
-section {
-    margin-bottom: 2rem;
-}
-
-section img {
-    max-width: 150px;
-    margin-top: 1rem;
-}
-
-/* Footer */
-footer {
-    background-color: #444;
-    color: #ffffff;
-    text-align: center;
-    padding: 1rem;
+/* Hamburger button */
+#menu {
+    background: none;
+    border: none;
+    color: var(--light-color);
+    font-size: 1.5rem;
+    cursor: pointer;
 }

@@ -26,6 +26,10 @@ nav {
     background-color: #003366;
     display: flex;
     flex-direction: column;
+    color: #ffffff;
+    /* ✅ REQUIRED FIX */
+
+
 }
 
 /* ✅ FIX: enforce color on ALL link states */

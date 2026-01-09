@@ -1,5 +1,5 @@
-const yearSpan = document.querySelector("#currentyear");
-const modifiedSpan = document.querySelector("#lastModified");
+document.getElementById("year").textContent =
+    new Date().getFullYear();
 
-yearSpan.textContent = new Date().getFullYear();
-modifiedSpan.textContent = document.lastModified;
+document.getElementById("lastModified").textContent =
+    `Last Modified: ${document.lastModified}`;

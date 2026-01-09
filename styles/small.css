@@ -1,73 +1,75 @@
-/* ================================
-   Base Styles
-================================ */
-:root {
-    --primary-color: #003366;
-    --secondary-color: #444444;
-    --accent-color: #2e7d32;
-    --light-color: #ffffff;
+* {
+    box-sizing: border-box;
 }
 
 body {
-    font-family: "Poppins", sans-serif;
     margin: 0;
-    color: #000;
-    background-color: #fff;
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
 }
 
-/* ================================
-   Header & Navigation
-================================ */
 .site-header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    background-color: var(--primary-color);
+    gap: 1rem;
+    background-color: #003366;
+    color: white;
     padding: 1rem;
 }
 
-/* FORCE readable contrast */
-.site-header,
-.site-header span,
-.site-header a,
-.site-header button {
-    color: var(--light-color);
-}
-
-.site-header img {
-    width: 48px;
+.logo {
+    width: 50px;
     height: auto;
 }
 
-/* Navigation */
-#navigation {
-    background-color: var(--primary-color);
+nav {
+    background-color: #003366;
+    display: flex;
+    flex-direction: column;
 }
 
-#navigation ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-#navigation a {
-    display: block;
-    padding: 0.75rem 1rem;
-    color: var(--light-color);
+nav a {
+    color: white;
+    padding: 0.75rem;
     text-decoration: none;
 }
 
-/* Hover + Wayfinding */
-#navigation a:hover,
-#navigation a.active {
-    background-color: var(--secondary-color);
+nav a:hover,
+nav a.active {
+    background-color: #2e7d32;
 }
 
-/* Hamburger button */
-#menu {
-    background: none;
-    border: none;
-    color: var(--light-color);
-    font-size: 1.5rem;
-    cursor: pointer;
+main {
+    padding: 1rem;
+}
+
+section {
+    margin-bottom: 2rem;
+}
+
+.filters button {
+    margin-right: 0.5rem;
+    padding: 0.5rem 1rem;
+}
+
+.course {
+    padding: 0.75rem;
+    margin: 0.5rem 0;
+    background-color: #ccc;
+}
+
+.course.completed {
+    background-color: #2e7d32;
+    color: white;
+}
+
+footer {
+    background-color: #444;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+#navigation a {
+    color: #ffffff;
 }

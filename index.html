@@ -4,11 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>WDD 231 | Home</title>
+
     <meta name="description"
         content="Course home page for WDD 231 Web Frontend Development I by Nsikak Eyo, featuring coursework, projects, and responsive web design principles.">
     <meta name="author" content="Nsikak Eyo">
-
-    <title>WDD 231 | Home</title>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,57 +20,61 @@
     <link rel="stylesheet" href="styles/small.css">
     <link rel="stylesheet" href="styles/larger.css">
 
-    <!-- JS -->
+    <!-- JavaScript -->
     <script src="scripts/date.js" defer></script>
     <script src="scripts/courses.js" defer></script>
 </head>
 
 <body>
     <header class="site-header">
-        <img src="images/logo.svg" alt="Site logo">
-
-        <nav id="navigation">
-            <a href="index.html" aria-current="page">Home</a>
-            <a href="#">Chamber Project</a>
-            <a href="#">Final Project</a>
-            <a href="https://github.com/nsikakeyo01" target="_blank" rel="noopener">GitHub</a>
-            <a href="#">LinkedIn</a>
-            <a href="#">X</a>
-        </nav>
+        <img src="images/logo.svg" alt="Site logo" class="logo">
+        <span class="site-name">Nsikak Eyo</span>
     </header>
+
+    <nav id="navigation">
+        <a href="index.html" class="active">Home</a>
+        <a href="#">Chamber Project</a>
+        <a href="#">Final Project</a>
+        <a href="https://github.com/nsikakeyo01" target="_blank">GitHub</a>
+        <a href="#">LinkedIn</a>
+        <a href="#">X</a>
+    </nav>
 
     <main>
         <h1>Home</h1>
 
         <section>
-            <h2>About Me</h2>
-            <img src="images/profile.webp" alt="Portrait photo of Nsikak Eyo">
-            <p>
-                My name is Nsikak Eyo. I am studying Web Frontend Development and building modern,
-                accessible, and responsive websites.
-            </p>
-        </section>
-
-        <section>
-            <h2>WDD 231 Overview</h2>
-            <p>
-                This course focuses on responsive layout techniques, accessibility, JavaScript,
-                and best practices for front-end web development.
-            </p>
+            <h2>Profile</h2>
+            <img src="images/profile.webp" alt="Portrait photo of Nsikak Eyo" width="400" height="400" loading="lazy">
         </section>
 
         <section>
             <h2>Courses</h2>
-            <div id="course-list"></div>
-            <p id="total-credits"></p>
+            <div class="filters">
+                <button data-filter="all">All</button>
+                <button data-filter="wdd">WDD</button>
+                <button data-filter="cse">CSE</button>
+            </div>
+
+            <div id="courses"></div>
+            <p>Total Credits: <span id="totalCredits">0</span></p>
+        </section>
+
+        <section>
+            <h2>About Me</h2>
+            <p>
+                I am a Web Frontend Development student learning to build responsive,
+                accessible, and performance-optimized websites using HTML, CSS,
+                and JavaScript.
+            </p>
         </section>
     </main>
 
     <footer>
         <p>
-            © <span id="currentyear"></span> Brigham Young University-Idaho |
-            Last Modified: <span id="lastModified"></span>
+            &copy; <span id="year"></span> Nsikak Eyo | Nigeria
         </p>
+        <p id="lastModified"></p>
     </footer>
 </body>
 

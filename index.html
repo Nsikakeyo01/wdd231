@@ -39,17 +39,26 @@
         <a href="#">LinkedIn</a>
         <a href="#">X</a>
     </nav>
-
     <main>
         <h1>Home</h1>
 
-        <section>
-            <h2>Profile</h2>
+        <section class="about">
+            <h2>About Me</h2>
+            <p>
+                I am a Web Frontend Development student learning to build responsive,
+                accessible, and performance-optimized websites using HTML, CSS,
+                and JavaScript.
+            </p>
+        </section>
+
+        <section class="profile">
+            <h2>Student Photo</h2>
             <img src="images/profile.webp" alt="Portrait photo of Nsikak Eyo" width="400" height="400" loading="lazy">
         </section>
 
-        <section>
-            <h2>Courses</h2>
+        <section class="courses-section">
+            <h2>Web Certificate Courses</h2>
+
             <div class="filters">
                 <button data-filter="all">All</button>
                 <button data-filter="wdd">WDD</button>
@@ -59,17 +68,7 @@
             <div id="courses"></div>
             <p>Total Credits: <span id="totalCredits">0</span></p>
         </section>
-
-        <section>
-            <h2>About Me</h2>
-            <p>
-                I am a Web Frontend Development student learning to build responsive,
-                accessible, and performance-optimized websites using HTML, CSS,
-                and JavaScript.
-            </p>
-        </section>
     </main>
-
     <footer>
         <p>
             &copy; <span id="year"></span> Nsikak Eyo | Nigeria

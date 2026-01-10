@@ -27,16 +27,13 @@ nav {
     display: flex;
     flex-direction: column;
     color: #ffffff;
-    /* ✅ REQUIRED FIX */
-
-
 }
 
-/* ✅ FIX: enforce color on ALL link states */
 #navigation a,
 #navigation a:visited,
 #navigation a:hover,
-#navigation a:active {
+#navigation a:active,
+#navigation a:focus-visible {
     color: #ffffff;
     padding: 0.75rem;
     text-decoration: none;

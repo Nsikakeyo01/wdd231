@@ -3,12 +3,18 @@
         flex-direction: row;
         justify-content: center;
         color: #ffffff;
-        /* ✅ FIX: prevents black text on dark background */
     }
 
     main {
         max-width: 1100px;
         margin: auto;
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 2rem;
+    }
+
+    main section:first-of-type {
+        grid-row: span 2;
     }
 
     section {

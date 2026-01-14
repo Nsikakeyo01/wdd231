@@ -1,0 +1,20 @@
+#members-container.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+#members-container.list {
+    display: block;
+}
+
+.member-card {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    text-align: center;
+}
+
+.member-card img {
+    max-width: 100%;
+    height: auto;
+}

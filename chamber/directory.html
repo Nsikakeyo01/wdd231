@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chamber Directory</title>
+    <meta name="description" content="Directory page of local chamber members.">
+    <meta name="author" content="Nsikak Eyo">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+    <!-- Facebook Open Graph -->
+    <meta property="og:title" content="Chamber Directory">
+    <meta property="og:description" content="Directory of local chamber members.">
+    <meta property="og:image" content="images/member1.jpg">
+    <meta property="og:url" content="https://your-github-username.github.io/wdd231/chamber/directory.html">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Local Chamber Directory</h1>
+        <nav>
+            <ul>
+                <li><a href="directory.html">Directory</a></li>
+                <!-- add other pages when ready -->
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="view-toggle">
+            <button id="grid-view">Grid View</button>
+            <button id="list-view">List View</button>
+        </div>
+        <div id="members-container" class="grid"></div>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="year"></span> Nsikak Eyo | WDD 231 | Last Modified: <span id="lastModified"></span></p>
+    </footer>
+
+    <script src="script/script.js"></script>
+</body>
+
+</html>

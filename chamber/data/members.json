@@ -1,0 +1,58 @@
+[
+    {
+        "name": "Pumpkin Co.",
+        "address": "123 Pumpkin St, Cityville",
+        "phone": "555-1010",
+        "website": "https://pumpkinco.com",
+        "image": "member1.jpg",
+        "membership": 3
+    },
+    {
+        "name": "Tomato Farms",
+        "address": "456 Tomato Rd, Townsville",
+        "phone": "555-2020",
+        "website": "https://tomatofarms.com",
+        "image": "member2.jpg",
+        "membership": 2
+    },
+    {
+        "name": "Pea Growers",
+        "address": "789 Pea Lane, Village",
+        "phone": "555-3030",
+        "website": "https://peagrowers.com",
+        "image": "member3.jpg",
+        "membership": 1
+    },
+    {
+        "name": "Carrot Corp.",
+        "address": "101 Carrot Blvd, Cityville",
+        "phone": "555-4040",
+        "website": "https://carrotcorp.com",
+        "image": "member4.jpg",
+        "membership": 2
+    },
+    {
+        "name": "Lettuce Ltd.",
+        "address": "202 Lettuce Ave, Townsville",
+        "phone": "555-5050",
+        "website": "https://lettuceltd.com",
+        "image": "member5.jpg",
+        "membership": 3
+    },
+    {
+        "name": "Corn Co-op",
+        "address": "303 Corn St, Village",
+        "phone": "555-6060",
+        "website": "https://corncoop.com",
+        "image": "member6.jpg",
+        "membership": 1
+    },
+    {
+        "name": "Berry Farms",
+        "address": "404 Berry Lane, Cityville",
+        "phone": "555-7070",
+        "website": "https://berryfarms.com",
+        "image": "member7.jpg",
+        "membership": 3
+    }
+]

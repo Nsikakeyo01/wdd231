@@ -1,38 +1,41 @@
-// Fetch and display members
-async function loadMembers() {
+// Script for fetching members and toggling view
+
+document.addEventListener('DOMContentLoaded', async () => {
+    const membersContainer = document.getElementById('members-container');
+    const gridBtn = document.getElementById('grid-view');
+    const listBtn = document.getElementById('list-view');
+
+    // Fetch JSON data
     const response = await fetch('data/members.json');
     const members = await response.json();
-    const container = document.getElementById('members-container');
 
+    // Display members
     members.forEach(member => {
         const card = document.createElement('div');
         card.className = 'member-card';
         card.innerHTML = `
             <img src="images/${member.image}" alt="${member.name}">
             <h2>${member.name}</h2>
-            <p><strong>Address:</strong> ${member.address}</p>
-            <p><strong>Phone:</strong> ${member.phone}</p>
-            <p><strong>Website:</strong> <a href="${member.website}" target="_blank">${member.website}</a></p>
-            <p><strong>Membership:</strong> ${member.level}</p>
+            <p>${member.address}</p>
+            <p>${member.phone}</p>
+            <p><a href="${member.website}" target="_blank">${member.website}</a></p>
+            <p>Membership Level: ${member.membership}</p>
         `;
-        container.appendChild(card);
+        membersContainer.appendChild(card);
     });
-}
 
-// Toggle views
-document.getElementById('grid-view').addEventListener('click', () => {
-    document.getElementById('members-container').classList.add('grid');
-    document.getElementById('members-container').classList.remove('list');
+    // Grid/List toggle
+    gridBtn.addEventListener('click', () => {
+        membersContainer.classList.add('grid');
+        membersContainer.classList.remove('list');
+    });
+
+    listBtn.addEventListener('click', () => {
+        membersContainer.classList.add('list');
+        membersContainer.classList.remove('grid');
+    });
+
+    // Footer copyright & last modified
+    document.getElementById('copyright-year').textContent = new Date().getFullYear();
+    document.getElementById('last-modified').textContent = document.lastModified;
 });
-
-document.getElementById('list-view').addEventListener('click', () => {
-    document.getElementById('members-container').classList.add('list');
-    document.getElementById('members-container').classList.remove('grid');
-});
-
-// Dynamic footer dates
-document.getElementById('year').textContent = new Date().getFullYear();
-document.getElementById('lastModified').textContent = document.lastModified;
-
-// Load members on page load
-loadMembers();

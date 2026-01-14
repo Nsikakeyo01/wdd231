@@ -1,58 +1,58 @@
 [
     {
-        "name": "Sunshine Bakery",
-        "address": "123 Main St, Springfield",
-        "phone": "(555) 123-4567",
-        "website": "https://sunshinebakery.com",
+        "name": "Alpha Bakery",
+        "address": "123 Main St, Your City",
+        "phone": "555-1234",
+        "website": "https://alphabakery.example.com",
         "image": "member1.jpg",
-        "level": "Gold"
+        "membership": 3
     },
     {
-        "name": "Green Leaf Landscaping",
-        "address": "456 Oak Ave, Springfield",
-        "phone": "(555) 234-5678",
-        "website": "https://greenleaf.com",
+        "name": "Beta Books",
+        "address": "456 Oak Ave, Your City",
+        "phone": "555-5678",
+        "website": "https://betabooks.example.com",
         "image": "member2.jpg",
-        "level": "Silver"
+        "membership": 2
     },
     {
-        "name": "Techie Solutions",
-        "address": "789 Pine Rd, Springfield",
-        "phone": "(555) 345-6789",
-        "website": "https://techiesolutions.com",
+        "name": "Gamma Groceries",
+        "address": "789 Pine Rd, Your City",
+        "phone": "555-9012",
+        "website": "https://gammagroceries.example.com",
         "image": "member3.jpg",
-        "level": "Member"
+        "membership": 1
     },
     {
-        "name": "Happy Pets",
-        "address": "101 Maple St, Springfield",
-        "phone": "(555) 456-7890",
-        "website": "https://happypets.com",
+        "name": "Delta Designs",
+        "address": "321 Elm St, Your City",
+        "phone": "555-3456",
+        "website": "https://deltadesigns.example.com",
         "image": "member4.jpg",
-        "level": "Gold"
+        "membership": 2
     },
     {
-        "name": "Fitness World",
-        "address": "202 Elm St, Springfield",
-        "phone": "(555) 567-8901",
-        "website": "https://fitnessworld.com",
+        "name": "Epsilon Electronics",
+        "address": "654 Maple Blvd, Your City",
+        "phone": "555-7890",
+        "website": "https://epsilonelectronics.example.com",
         "image": "member5.jpg",
-        "level": "Silver"
+        "membership": 3
     },
     {
-        "name": "Book Haven",
-        "address": "303 Birch Rd, Springfield",
-        "phone": "(555) 678-9012",
-        "website": "https://bookhaven.com",
+        "name": "Zeta Zoo Supplies",
+        "address": "987 Cedar Ln, Your City",
+        "phone": "555-2345",
+        "website": "https://zetazoosupplies.example.com",
         "image": "member6.jpg",
-        "level": "Member"
+        "membership": 1
     },
     {
-        "name": "Cafe Delight",
-        "address": "404 Cedar Ave, Springfield",
-        "phone": "(555) 789-0123",
-        "website": "https://cafedelight.com",
+        "name": "Eta Electronics",
+        "address": "159 Spruce St, Your City",
+        "phone": "555-6789",
+        "website": "https://etaelectronics.example.com",
         "image": "member7.jpg",
-        "level": "Gold"
+        "membership": 3
     }
 ]

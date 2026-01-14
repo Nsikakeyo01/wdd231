@@ -1,20 +1,76 @@
+/* Reset/normalize */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f9f9f9;
+    color: #000;
+    line-height: 1.5;
+}
+
+header {
+    background-color: #0044cc;
+    color: #fff;
+    padding: 1rem;
+}
+
+header h1 {
+    font-size: 1.8rem;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 1rem;
+}
+
+.view-toggle {
+    margin: 1rem;
+}
+
+.view-toggle button {
+    padding: 0.5rem 1rem;
+    margin-right: 0.5rem;
+    cursor: pointer;
+}
+
+/* Grid/List styles */
 #members-container.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
     gap: 1rem;
 }
 
-#members-container.list {
-    display: block;
+#members-container.grid .member-card {
+    flex: 1 1 calc(33.333% - 1rem);
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 8px;
 }
 
-.member-card {
-    border: 1px solid #ccc;
+#members-container.list .member-card {
+    display: block;
+    width: 100%;
+    background-color: #fff;
+    margin-bottom: 1rem;
     padding: 1rem;
-    text-align: center;
+    border-radius: 8px;
 }
 
 .member-card img {
     max-width: 100%;
     height: auto;
+    border-radius: 4px;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #222;
+    color: #fff;
+    margin-top: 2rem;
 }

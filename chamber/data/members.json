@@ -1,58 +1,60 @@
-[
-    {
-        "name": "Alpha Bakery",
-        "address": "123 Main St, Your City",
-        "phone": "555-1234",
-        "website": "https://alphabakery.example.com",
-        "image": "member1.jpg",
-        "membership": 3
-    },
-    {
-        "name": "Beta Books",
-        "address": "456 Oak Ave, Your City",
-        "phone": "555-5678",
-        "website": "https://betabooks.example.com",
-        "image": "member2.jpg",
-        "membership": 2
-    },
-    {
-        "name": "Gamma Groceries",
-        "address": "789 Pine Rd, Your City",
-        "phone": "555-9012",
-        "website": "https://gammagroceries.example.com",
-        "image": "member3.jpg",
-        "membership": 1
-    },
-    {
-        "name": "Delta Designs",
-        "address": "321 Elm St, Your City",
-        "phone": "555-3456",
-        "website": "https://deltadesigns.example.com",
-        "image": "member4.jpg",
-        "membership": 2
-    },
-    {
-        "name": "Epsilon Electronics",
-        "address": "654 Maple Blvd, Your City",
-        "phone": "555-7890",
-        "website": "https://epsilonelectronics.example.com",
-        "image": "member5.jpg",
-        "membership": 3
-    },
-    {
-        "name": "Zeta Zoo Supplies",
-        "address": "987 Cedar Ln, Your City",
-        "phone": "555-2345",
-        "website": "https://zetazoosupplies.example.com",
-        "image": "member6.jpg",
-        "membership": 1
-    },
-    {
-        "name": "Eta Electronics",
-        "address": "159 Spruce St, Your City",
-        "phone": "555-6789",
-        "website": "https://etaelectronics.example.com",
-        "image": "member7.jpg",
-        "membership": 3
-    }
-]
+{
+    "members": [
+        {
+            "name": "Alpha Tech",
+            "address": "12 Market Road",
+            "phone": "555-1234",
+            "website": "https://example.com",
+            "image": "member1.jpg",
+            "level": 3
+        },
+        {
+            "name": "Bright Foods",
+            "address": "45 Main Street",
+            "phone": "555-5678",
+            "website": "https://example.com",
+            "image": "member2.jpg",
+            "level": 2
+        },
+        {
+            "name": "City Builders",
+            "address": "78 Construction Ave",
+            "phone": "555-8765",
+            "website": "https://example.com",
+            "image": "member3.jpg",
+            "level": 1
+        },
+        {
+            "name": "Digital Wave",
+            "address": "22 Tech Park",
+            "phone": "555-3456",
+            "website": "https://example.com",
+            "image": "member4.jpg",
+            "level": 3
+        },
+        {
+            "name": "Eco Farms",
+            "address": "Farm Road 9",
+            "phone": "555-6543",
+            "website": "https://example.com",
+            "image": "member5.jpg",
+            "level": 2
+        },
+        {
+            "name": "Fast Logistics",
+            "address": "Airport Road",
+            "phone": "555-1122",
+            "website": "https://example.com",
+            "image": "member6.jpg",
+            "level": 1
+        },
+        {
+            "name": "Golden Stores",
+            "address": "Downtown Plaza",
+            "phone": "555-9988",
+            "website": "https://example.com",
+            "image": "member7.jpg",
+            "level": 3
+        }
+    ]
+}

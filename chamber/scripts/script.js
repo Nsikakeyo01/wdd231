@@ -1,41 +1,43 @@
-// Script for fetching members and toggling view
+const container = document.querySelector('#members-container');
+const gridBtn = document.querySelector('#grid');
+const listBtn = document.querySelector('#list');
 
-document.addEventListener('DOMContentLoaded', async () => {
-    const membersContainer = document.getElementById('members-container');
-    const gridBtn = document.getElementById('grid-view');
-    const listBtn = document.getElementById('list-view');
-
-    // Fetch JSON data
+async function getMembers() {
     const response = await fetch('data/members.json');
-    const members = await response.json();
+    const data = await response.json();
+    displayMembers(data.members);
+}
 
-    // Display members
+function displayMembers(members) {
+    container.innerHTML = '';
+
     members.forEach(member => {
         const card = document.createElement('div');
-        card.className = 'member-card';
+        card.classList.add('member-card');
+
         card.innerHTML = `
-            <img src="images/${member.image}" alt="${member.name}">
-            <h2>${member.name}</h2>
-            <p>${member.address}</p>
-            <p>${member.phone}</p>
-            <p><a href="${member.website}" target="_blank">${member.website}</a></p>
-            <p>Membership Level: ${member.membership}</p>
-        `;
-        membersContainer.appendChild(card);
-    });
+      <img src="images/${member.image}" alt="${member.name} logo">
+      <h2>${member.name}</h2>
+      <p>${member.address}</p>
+      <p>${member.phone}</p>
+      <a href="${member.website}" target="_blank">Visit Website</a>
+    `;
 
-    // Grid/List toggle
-    gridBtn.addEventListener('click', () => {
-        membersContainer.classList.add('grid');
-        membersContainer.classList.remove('list');
+        container.appendChild(card);
     });
+}
 
-    listBtn.addEventListener('click', () => {
-        membersContainer.classList.add('list');
-        membersContainer.classList.remove('grid');
-    });
-
-    // Footer copyright & last modified
-    document.getElementById('copyright-year').textContent = new Date().getFullYear();
-    document.getElementById('last-modified').textContent = document.lastModified;
+gridBtn.addEventListener('click', () => {
+    container.classList.add('grid');
+    container.classList.remove('list');
 });
+
+listBtn.addEventListener('click', () => {
+    container.classList.add('list');
+    container.classList.remove('grid');
+});
+
+document.querySelector('#year').textContent = new Date().getFullYear();
+document.querySelector('#lastModified').textContent = document.lastModified;
+
+getMembers();

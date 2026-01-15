@@ -11,16 +11,16 @@ async function getMembers() {
 function displayMembers(members) {
     membersContainer.innerHTML = '';
     members.forEach(member => {
-        const card = document.createElement('section');
+        const card = document.createElement('div');
         card.classList.add('member-card');
 
         card.innerHTML = `
-      <h2>${member.name}</h2>
       <img src="images/${member.image}" alt="${member.name}">
+      <h2>${member.name}</h2>
       <p>${member.address}</p>
       <p>${member.phone}</p>
       <a href="${member.website}" target="_blank">Visit Website</a>
-      <p><strong>Membership:</strong> ${member.level}</p>
+      <p class="level">${member.membership}</p>
     `;
 
         membersContainer.appendChild(card);

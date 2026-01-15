@@ -4,11 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Explore local chamber members, their addresses, phone numbers, websites, and membership levels.">
-    <meta name="author" content="Nsikak Eyo">
 
-    <title>Directory | Chamber of Commerce</title>
+    <title>Chamber Directory - Local Business Members</title>
+
+    <meta name="description"
+        content="Explore local chamber members, their addresses, phone numbers, websites, and membership levels in our business community.">
+    <meta name="author" content="Nsikak Eyo">
 
     <!-- Open Graph -->
     <meta property="og:title" content="Chamber Directory - Local Business Members">
@@ -17,6 +18,7 @@
     <meta property="og:image" content="https://nsikakeyo01.github.io/wdd231/chamber/images/member1.jpg">
     <meta property="og:url" content="https://nsikakeyo01.github.io/wdd231/chamber/directory.html">
 
+    <!-- Favicon -->
     <link rel="icon" href="images/favicon.ico">
 
     <!-- Google Fonts -->
@@ -24,15 +26,17 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
+    <!-- CSS -->
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/styles.css">
 
-    <!-- ✅ JS correctly placed in head with defer -->
+    <!-- ✅ JS FIX: moved to head + defer -->
     <script src="scripts/script.js" defer></script>
 </head>
 
 <body>
     <header>
+        <h1>Local Chamber Directory</h1>
         <nav>
             <ul>
                 <li><a href="#">Home</a></li>
@@ -44,11 +48,9 @@
     </header>
 
     <main>
-        <h1>Local Chamber Directory</h1>
-
-        <section class="view-buttons">
-            <button id="grid">Grid View</button>
-            <button id="list">List View</button>
+        <section class="controls">
+            <button id="grid">Grid</button>
+            <button id="list">List</button>
         </section>
 
         <section id="members-container" class="grid"></section>
@@ -59,7 +61,7 @@
             <img src="images/vcss.png" alt="Valid CSS!">
             <img src="images/vcss-blue.png" alt="Valid CSS!">
         </div>
-        <p>© Brigham Young University-Idaho | All rights reserved</p>
+        <p>Copyright © Brigham Young University-Idaho | All rights reserved</p>
     </footer>
 </body>
 

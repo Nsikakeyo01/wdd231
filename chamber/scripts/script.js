@@ -2,10 +2,15 @@ const membersContainer = document.getElementById('members-container');
 const gridBtn = document.getElementById('grid');
 const listBtn = document.getElementById('list');
 
-// Load members from JSON
-fetch('data/members.json')
-    .then(response => response.json())
-    .then(data => displayMembers(data.members));
+async function fetchMembers() {
+    try {
+        const response = await fetch('data/members.json');
+        const data = await response.json();
+        displayMembers(data.members);
+    } catch (error) {
+        console.error('Error loading members:', error);
+    }
+}
 
 function displayMembers(members) {
     membersContainer.innerHTML = '';
@@ -14,17 +19,15 @@ function displayMembers(members) {
         card.className = 'member-card';
         card.innerHTML = `
             <img src="images/${member.image}" alt="${member.name}">
-            <h2>${member.name}</h2>
-            <p>Address: ${member.address}</p>
-            <p>Phone: ${member.phone}</p>
-            <p>Website: <a href="${member.website}" target="_blank">${member.website}</a></p>
-            <p>Membership Level: ${member.level}</p>
+            <h3>${member.name}</h3>
+            <p>${member.address}</p>
+            <p>${member.phone}</p>
+            <a href="${member.website}" target="_blank">${member.website}</a>
         `;
         membersContainer.appendChild(card);
     });
 }
 
-// Toggle Grid/List
 gridBtn.addEventListener('click', () => {
     membersContainer.classList.add('grid');
     membersContainer.classList.remove('list');
@@ -35,6 +38,8 @@ listBtn.addEventListener('click', () => {
     membersContainer.classList.remove('grid');
 });
 
-// Footer dynamic info
+// Dynamic year and last modified
 document.getElementById('year').textContent = new Date().getFullYear();
 document.getElementById('lastModified').textContent = document.lastModified;
+
+fetchMembers();

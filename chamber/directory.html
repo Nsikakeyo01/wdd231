@@ -21,22 +21,23 @@
     <!-- Favicon -->
     <link rel="icon" href="images/favicon.ico">
 
+    <!-- Normalize CSS -->
+    <link rel="stylesheet" href="styles/normalize.css">
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="styles/normalize.css">
+    <!-- Main Styles -->
     <link rel="stylesheet" href="styles/styles.css">
 
-    <!-- ✅ JS FIX: moved to head + defer -->
+    <!-- ✅ JavaScript MUST be here with defer -->
     <script src="scripts/script.js" defer></script>
 </head>
 
 <body>
     <header>
-        <h1>Local Chamber Directory</h1>
         <nav>
             <ul>
                 <li><a href="#">Home</a></li>
@@ -48,20 +49,25 @@
     </header>
 
     <main>
+        <h1>Local Chamber Directory</h1>
+
         <section class="controls">
             <button id="grid">Grid</button>
             <button id="list">List</button>
         </section>
 
-        <section id="members-container" class="grid"></section>
+        <section id="members-container" class="grid">
+            <!-- Members populated by JavaScript -->
+        </section>
     </main>
 
     <footer>
+        <p>Copyright © Brigham Young University-Idaho | All rights reserved</p>
+
         <div class="validator-badges">
             <img src="images/vcss.png" alt="Valid CSS!">
             <img src="images/vcss-blue.png" alt="Valid CSS!">
         </div>
-        <p>Copyright © Brigham Young University-Idaho | All rights reserved</p>
     </footer>
 </body>
 

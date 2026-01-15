@@ -1,44 +1,40 @@
-// Get references
-const membersContainer = document.getElementById("members-container");
-const gridBtn = document.getElementById("grid");
-const listBtn = document.getElementById("list");
+const membersContainer = document.getElementById('members-container');
+const gridBtn = document.getElementById('grid');
+const listBtn = document.getElementById('list');
 
-// Set current year and last modified
-document.getElementById("year").textContent = new Date().getFullYear();
-document.getElementById("lastModified").textContent = document.lastModified;
+// Load members from JSON
+fetch('data/members.json')
+    .then(response => response.json())
+    .then(data => displayMembers(data.members));
 
-// Fetch members
-async function displayMembers() {
-    const response = await fetch("data/members.json");
-    const data = await response.json();
-    membersContainer.innerHTML = "";
-
-    data.members.forEach(member => {
-        const memberCard = document.createElement("div");
-        memberCard.classList.add("member-card");
-
-        memberCard.innerHTML = `
-            <img src="images/${member.image}" alt="${member.name} Logo">
+function displayMembers(members) {
+    membersContainer.innerHTML = '';
+    members.forEach(member => {
+        const card = document.createElement('div');
+        card.className = 'member-card';
+        card.innerHTML = `
+            <img src="images/${member.image}" alt="${member.name}">
             <h2>${member.name}</h2>
-            <p>${member.address}</p>
-            <p>${member.phone}</p>
-            <p><a href="${member.website}" target="_blank">${member.website}</a></p>
+            <p>Address: ${member.address}</p>
+            <p>Phone: ${member.phone}</p>
+            <p>Website: <a href="${member.website}" target="_blank">${member.website}</a></p>
             <p>Membership Level: ${member.level}</p>
         `;
-        membersContainer.appendChild(memberCard);
+        membersContainer.appendChild(card);
     });
 }
 
-// Toggle grid/list view
-gridBtn.addEventListener("click", () => {
-    membersContainer.classList.add("grid");
-    membersContainer.classList.remove("list");
+// Toggle Grid/List
+gridBtn.addEventListener('click', () => {
+    membersContainer.classList.add('grid');
+    membersContainer.classList.remove('list');
 });
 
-listBtn.addEventListener("click", () => {
-    membersContainer.classList.add("list");
-    membersContainer.classList.remove("grid");
+listBtn.addEventListener('click', () => {
+    membersContainer.classList.add('list');
+    membersContainer.classList.remove('grid');
 });
 
-// Initialize
-displayMembers();
+// Footer dynamic info
+document.getElementById('year').textContent = new Date().getFullYear();
+document.getElementById('lastModified').textContent = document.lastModified;

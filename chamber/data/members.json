@@ -1,60 +1,60 @@
 {
     "members": [
         {
-            "name": "Alpha Tech",
-            "address": "12 Market Road",
+            "name": "Alpha Solutions",
+            "address": "123 Main Street",
             "phone": "555-1234",
-            "website": "https://example.com",
+            "website": "https://alphasolutions.com",
             "image": "member1.jpg",
-            "level": 3
+            "level": "Gold"
         },
         {
-            "name": "Bright Foods",
-            "address": "45 Main Street",
-            "phone": "555-5678",
-            "website": "https://example.com",
+            "name": "Beta Industries",
+            "address": "45 Market Road",
+            "phone": "555-2345",
+            "website": "https://betaindustries.com",
             "image": "member2.jpg",
-            "level": 2
+            "level": "Silver"
         },
         {
-            "name": "City Builders",
-            "address": "78 Construction Ave",
-            "phone": "555-8765",
-            "website": "https://example.com",
-            "image": "member3.jpg",
-            "level": 1
-        },
-        {
-            "name": "Digital Wave",
-            "address": "22 Tech Park",
+            "name": "Gamma Tech",
+            "address": "78 Innovation Way",
             "phone": "555-3456",
-            "website": "https://example.com",
+            "website": "https://gammatech.com",
+            "image": "member3.jpg",
+            "level": "Bronze"
+        },
+        {
+            "name": "Delta Services",
+            "address": "90 Service Lane",
+            "phone": "555-4567",
+            "website": "https://deltaservices.com",
             "image": "member4.jpg",
-            "level": 3
+            "level": "Gold"
         },
         {
-            "name": "Eco Farms",
-            "address": "Farm Road 9",
-            "phone": "555-6543",
-            "website": "https://example.com",
+            "name": "Epsilon Group",
+            "address": "12 Business Ave",
+            "phone": "555-5678",
+            "website": "https://epsilongroup.com",
             "image": "member5.jpg",
-            "level": 2
+            "level": "Silver"
         },
         {
-            "name": "Fast Logistics",
-            "address": "Airport Road",
-            "phone": "555-1122",
-            "website": "https://example.com",
+            "name": "Zeta Holdings",
+            "address": "34 Commerce Blvd",
+            "phone": "555-6789",
+            "website": "https://zetaholdings.com",
             "image": "member6.jpg",
-            "level": 1
+            "level": "Bronze"
         },
         {
-            "name": "Golden Stores",
-            "address": "Downtown Plaza",
-            "phone": "555-9988",
-            "website": "https://example.com",
+            "name": "Omega Corp",
+            "address": "56 Enterprise St",
+            "phone": "555-7890",
+            "website": "https://omegacorp.com",
             "image": "member7.jpg",
-            "level": 3
+            "level": "Gold"
         }
     ]
 }

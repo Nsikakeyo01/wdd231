@@ -1,77 +1,96 @@
+/* General Styles */
 body {
     font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
     background-color: #f9f9f9;
     color: #000;
 }
 
-header {
+header,
+footer {
     background-color: #0044cc;
     color: #fff;
     padding: 1rem;
-}
-
-header h1 {
-    margin: 0;
+    text-align: center;
 }
 
 nav ul {
     display: flex;
+    justify-content: center;
     list-style: none;
     padding: 0;
-    margin-top: 0.5rem;
+    margin: 0;
 }
 
-nav a {
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
     color: #fff;
     text-decoration: none;
-    margin-right: 1rem;
 }
 
-.controls {
-    text-align: center;
-    margin: 1rem;
-}
-
-.controls button {
-    margin: 0 0.5rem;
-    padding: 0.5rem 1rem;
-}
-
-#members-container.grid {
-    display: flex;
-    flex-wrap: wrap;
+/* Member container */
+#members-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1rem;
-    justify-content: center;
-}
-
-#members-container.list {
-    display: block;
+    padding: 1rem;
 }
 
 .member-card {
     background-color: #fff;
     padding: 1rem;
     border: 1px solid #ddd;
-    width: 250px;
+    border-radius: 8px;
     text-align: center;
 }
 
 .member-card img {
-    max-width: 100%;
-    height: auto;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+/* List view */
+.list {
+    display: block;
 }
 
 .list .member-card {
-    width: 100%;
     display: flex;
-    gap: 1rem;
     align-items: center;
+    text-align: left;
 }
 
-footer {
-    background-color: #222;
-    color: #fff;
+.list .member-card img {
+    margin-right: 1rem;
+}
+
+/* Controls */
+.controls {
     text-align: center;
-    padding: 1rem;
-    margin-top: 2rem;
+    margin: 1rem 0;
+}
+
+.controls button {
+    margin: 0 0.5rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+
+/* Validator badges */
+.validator-badges {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.validator-img {
+    width: 88px;
+    height: 31px;
+    border: 0;
+    margin: 0 0.5rem;
 }

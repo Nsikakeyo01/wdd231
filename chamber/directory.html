@@ -14,7 +14,7 @@
     <meta property="og:title" content="Chamber Directory - Local Business Members">
     <meta property="og:description"
         content="Explore local chamber members including addresses, phone numbers, websites, and membership levels.">
-    <meta property="og:image" content="https://nsikakeyo01.github.io/wdd231/chamber/images/member1.jpg">
+    <meta property="og:image" content="images/member1.jpg">
     <meta property="og:url" content="https://nsikakeyo01.github.io/wdd231/chamber/directory.html">
 
     <!-- Favicon -->
@@ -49,9 +49,7 @@
             <button id="list">List View</button>
         </section>
 
-        <section id="members-container" class="grid">
-            <!-- Members will be loaded dynamically from JSON -->
-        </section>
+        <section id="members-container" class="grid"></section>
     </main>
 
     <footer>
@@ -59,18 +57,14 @@
             © <span id="year"></span> Nsikak Eyo | WDD 231 |
             Last Modified: <span id="lastModified"></span>
         </p>
-
-        <!-- Optional CSS Validation Badges -->
-        <p>
-            <a href="https://jigsaw.w3.org/css-validator/check/referer" target="_blank" rel="noopener">
-                <img src="https://jigsaw.w3.org/css-validator/images/vcss" alt="Valid CSS!"
-                    style="border:0;width:88px;height:31px;">
+        <div class="validator-badges">
+            <a href="https://jigsaw.w3.org/css-validator/check/referer">
+                <img src="images/vcss.png" alt="Valid CSS!" class="validator-img">
             </a>
-            <a href="https://jigsaw.w3.org/css-validator/check/referer" target="_blank" rel="noopener">
-                <img src="https://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS!"
-                    style="border:0;width:88px;height:31px;">
+            <a href="https://jigsaw.w3.org/css-validator/check/referer">
+                <img src="images/vcss-blue.png" alt="Valid CSS!" class="validator-img">
             </a>
-        </p>
+        </div>
     </footer>
 
     <script src="scripts/script.js" defer></script>

@@ -1,43 +1,44 @@
-const container = document.querySelector('#members-container');
-const gridBtn = document.querySelector('#grid');
-const listBtn = document.querySelector('#list');
+// Get references
+const membersContainer = document.getElementById("members-container");
+const gridBtn = document.getElementById("grid");
+const listBtn = document.getElementById("list");
 
-async function getMembers() {
-    const response = await fetch('data/members.json');
+// Set current year and last modified
+document.getElementById("year").textContent = new Date().getFullYear();
+document.getElementById("lastModified").textContent = document.lastModified;
+
+// Fetch members
+async function displayMembers() {
+    const response = await fetch("data/members.json");
     const data = await response.json();
-    displayMembers(data.members);
-}
+    membersContainer.innerHTML = "";
 
-function displayMembers(members) {
-    container.innerHTML = '';
+    data.members.forEach(member => {
+        const memberCard = document.createElement("div");
+        memberCard.classList.add("member-card");
 
-    members.forEach(member => {
-        const card = document.createElement('div');
-        card.classList.add('member-card');
-
-        card.innerHTML = `
-      <img src="images/${member.image}" alt="${member.name} logo">
-      <h2>${member.name}</h2>
-      <p>${member.address}</p>
-      <p>${member.phone}</p>
-      <a href="${member.website}" target="_blank">Visit Website</a>
-    `;
-
-        container.appendChild(card);
+        memberCard.innerHTML = `
+            <img src="images/${member.image}" alt="${member.name} Logo">
+            <h2>${member.name}</h2>
+            <p>${member.address}</p>
+            <p>${member.phone}</p>
+            <p><a href="${member.website}" target="_blank">${member.website}</a></p>
+            <p>Membership Level: ${member.level}</p>
+        `;
+        membersContainer.appendChild(memberCard);
     });
 }
 
-gridBtn.addEventListener('click', () => {
-    container.classList.add('grid');
-    container.classList.remove('list');
+// Toggle grid/list view
+gridBtn.addEventListener("click", () => {
+    membersContainer.classList.add("grid");
+    membersContainer.classList.remove("list");
 });
 
-listBtn.addEventListener('click', () => {
-    container.classList.add('list');
-    container.classList.remove('grid');
+listBtn.addEventListener("click", () => {
+    membersContainer.classList.add("list");
+    membersContainer.classList.remove("grid");
 });
 
-document.querySelector('#year').textContent = new Date().getFullYear();
-document.querySelector('#lastModified').textContent = document.lastModified;
-
-getMembers();
+// Initialize
+displayMembers();

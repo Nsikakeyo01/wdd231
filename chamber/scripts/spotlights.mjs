@@ -1,35 +1,24 @@
-async function loadSpotlights() {
-  try {
-    const response = await fetch('data/members.json');
-    if (!response.ok) throw new Error('Failed to load members');
-    const members = await response.json();
+// spotlights.mjs
+import members from '../data/members.json' assert { type: 'json' };
 
-    // Filter gold and silver members
-    const premiumMembers = members.filter(m => m.membership === 'gold' || m.membership === 'silver');
+const spotlightsSection = document.getElementById('spotlights');
 
-    // Randomly pick 2–3 members
-    const shuffled = premiumMembers.sort(() => 0.5 - Math.random());
-    const selected = shuffled.slice(0, 3);
+// Filter for members with "Gold" or "Silver" membership (example)
+const spotlightMembers = members.filter(member =>
+    member.membership.toLowerCase() === 'gold' || member.membership.toLowerCase() === 'silver'
+);
 
-    const container = document.getElementById('spotlight-cards');
-    container.innerHTML = '';
+// Display up to 3 spotlights
+spotlightMembers.slice(0, 3).forEach(member => {
+    const spotlight = document.createElement('div');
+    spotlight.classList.add('spotlight');
 
-    selected.forEach(member => {
-      const card = document.createElement('div');
-      card.classList.add('spotlight-card');
-      card.innerHTML = `
+    spotlight.innerHTML = `
+        <img src="images/${member.image}" alt="${member.name}">
         <h3>${member.name}</h3>
-        <img src="images/${member.logo}" alt="${member.name} logo">
-        <p>Phone: ${member.phone}</p>
-        <p>Address: ${member.address}</p>
-        <p>Website: <a href="${member.website}" target="_blank">${member.website}</a></p>
-        <p>Membership: ${member.membership}</p>
-      `;
-      container.appendChild(card);
-    });
-  } catch (error) {
-    console.error(error);
-  }
-}
+        <p>${member.business}</p>
+        <p>${member.membership} Member</p>
+    `;
 
-loadSpotlights();
+    spotlightsSection.appendChild(spotlight);
+});

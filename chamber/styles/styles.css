@@ -171,32 +171,34 @@ footer {
     }
 }
 
-/* Weather Section */
-#weather-section {
-    padding: 1rem;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    margin: 1rem 0;
-    text-align: center;
-    font-family: 'Roboto', sans-serif;
-}
-
-#weather-section img {
-    width: 80px;
-    height: 80px;
-}
-
-#forecast {
+.weather {
     display: flex;
-    justify-content: center;
-    margin-top: 1rem;
+    align-items: center;
     gap: 10px;
 }
 
-#forecast div {
-    background-color: #0044cc;
-    color: #fff;
-    padding: 0.5rem;
-    border-radius: 5px;
-    width: 100px;
+.weather img {
+    width: 50px;
+    height: 50px;
+}
+
+
+#spotlights {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.spotlight {
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 200px;
+    text-align: center;
+}
+
+.spotlight img {
+    width: 100%;
+    height: auto;
+    max-height: 150px;
+    object-fit: cover;
 }

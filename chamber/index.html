@@ -4,12 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>San Miguel Chamber of Commerce</title>
+    <title>San Miguel Chamber of Commerce | Local Businesses & Events</title>
     <meta name="description"
         content="San Miguel Chamber of Commerce home page. Find local businesses, events, and member spotlights.">
     <meta name="author" content="Nsikak Eyo">
-
-    <!-- Favicon -->
     <link rel="icon" href="images/favicon.ico">
 
     <!-- Google Fonts -->
@@ -21,7 +19,7 @@
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/styles.css">
 
-    <!-- Open Graph meta -->
+    <!-- Open Graph -->
     <meta property="og:title" content="San Miguel Chamber of Commerce | Local Businesses & Events">
     <meta property="og:description"
         content="Welcome to the San Miguel Chamber of Commerce. Explore member businesses, upcoming events, and weather updates.">
@@ -31,7 +29,7 @@
 
 <body>
     <header>
-        <img src="images/company-logo.jpg" alt="BYU-I logo" id="logo">
+        <img src="images/company-logo.jpg" alt="BYU-I logo">
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -43,41 +41,36 @@
     </header>
 
     <main>
-        <!-- Hero Section -->
-        <section id="hero">
-            <img src="images/company-logo.jpg" alt="San Miguel Chamber of Commerce" id="hero-img">
-            <a href="#" class="cta-button">Join Now!</a>
-        </section>
+        <h1>San Miguel Chamber of Commerce</h1>
 
-        <!-- Current Events Section -->
-        <section id="current-events">
-            <h2>Current Events</h2>
-            <p>Placeholder content for upcoming events.</p>
+        <!-- Hero Image -->
+        <section>
+            <img src="images/hero-image.jpg" alt="San Miguel Chamber of Commerce">
         </section>
 
         <!-- Weather Section -->
-        <section id="weather-section">
+        <section>
             <h2>Current Weather</h2>
-            <img id="weather-icon" src="" alt="Weather icon">
-            <span id="current-temp">--</span>°F
-            <p id="weather-desc">Weather unavailable</p>
-
-            <h3>3-Day Forecast</h3>
-            <div id="forecast"></div>
+            <div class="weather">
+                <!-- Upload your static weather image here -->
+                <img id="weather-icon" src="images/weather-icon.png" alt="Weather icon">
+                <span id="current-temp">--</span>°F
+                <p id="weather-desc">Weather unavailable</p>
+            </div>
         </section>
 
-        <!-- Member Spotlights Section -->
+        <!-- Member Spotlights -->
         <section id="spotlights">
             <h2>Member Spotlights</h2>
-            <div id="spotlight-cards"></div>
+            <!-- Spotlights will be populated via spotlights.mjs -->
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 San Miguel Chamber of Commerce. All rights reserved.</p>
+        <p>&copy; 2026 San Miguel Chamber of Commerce | All rights reserved</p>
     </footer>
 
-    <!-- Scripts -->
+    <!-- JavaScript -->
     <script type="module" src="scripts/weather.mjs"></script>
     <script type="module" src="scripts/spotlights.mjs"></script>
 </body>

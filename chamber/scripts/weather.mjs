@@ -1,33 +1,42 @@
+// scripts/weather.mjs
+
 const apiKey = "beff9c8a958221e992923378bf3f5f39";
+const lat = 13.48;   // San Miguel (example)
+const lon = -88.18;
+const units = "imperial";
 
-// San Miguel coordinates (adjusted)
-const lat = 13.4833;
-const lon = -88.1833;
+const currentTemp = document.querySelector("#current-temp");
+const weatherDesc = document.querySelector("#weather-desc");
+const weatherIcon = document.querySelector("#weather-icon");
 
-const tempSpan = document.querySelector("#current-temp");
-const descPara = document.querySelector("#weather-desc");
-const iconImg = document.querySelector("#weather-icon");
-
-const weatherURL = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=imperial&appid=${apiKey}`;
-const forecastURL = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=imperial&appid=${apiKey}`;
+const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=${units}&appid=${apiKey}`;
 
 async function getWeather() {
     try {
-        const response = await fetch(weatherURL);
-        if (!response.ok) throw new Error("Weather fetch failed");
+        const response = await fetch(url);
+
+        if (!response.ok) {
+            throw new Error("Weather fetch failed");
+        }
+
         const data = await response.json();
-
-        tempSpan.textContent = Math.round(data.main.temp);
-        descPara.textContent = data.weather[0].description;
-
-        const icon = data.weather[0].icon;
-        iconImg.src = `https://openweathermap.org/img/wn/${icon}@2x.png`;
-        iconImg.alt = data.weather[0].description;
+        displayWeather(data);
     } catch (error) {
-        tempSpan.textContent = "--";
-        descPara.textContent = "Weather unavailable";
-        console.error(error);
+        console.error("Weather Error:", error);
+        weatherDesc.textContent = "Weather unavailable";
     }
+}
+
+function displayWeather(data) {
+    const temp = Math.round(data.main.temp);
+    const desc = data.weather[0].description;
+    const icon = data.weather[0].icon;
+
+    currentTemp.textContent = temp;
+    weatherDesc.textContent = desc;
+
+    weatherIcon.src = `https://openweathermap.org/img/wn/${icon}@2x.png`;
+    weatherIcon.alt = desc;
 }
 
 getWeather();

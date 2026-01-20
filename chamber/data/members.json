@@ -1,32 +1,42 @@
 [
     {
-        "name": "Tech Solutions Inc.",
-        "membership": "Gold",
-        "description": "Leading provider of IT and software services in San Miguel.",
-        "website": "https://techsolutions.example.com"
-    },
-    {
         "name": "Sunrise Bakery",
-        "membership": "Silver",
-        "description": "Family-owned bakery offering fresh pastries and bread daily.",
-        "website": "https://sunrisebakery.example.com"
-    },
-    {
-        "name": "Green Energy Co.",
-        "membership": "Bronze",
-        "description": "Innovative renewable energy solutions for homes and businesses.",
-        "website": "https://greenenergy.example.com"
-    },
-    {
-        "name": "Riverbank Consulting",
+        "address": "123 Main St, San Miguel",
+        "phone": "(555) 123-4567",
+        "website": "https://sunrisebakery.example.com",
         "membership": "Gold",
-        "description": "Expert consulting services for finance and management.",
-        "website": "https://riverbankconsulting.example.com"
+        "image": "member1.jpg"
     },
     {
-        "name": "Bella Boutique",
+        "name": "Mountain Gear Co.",
+        "address": "456 Elm St, San Miguel",
+        "phone": "(555) 234-5678",
+        "website": "https://mountaingear.example.com",
         "membership": "Silver",
-        "description": "Fashion boutique specializing in women's apparel and accessories.",
-        "website": "https://bellaboutique.example.com"
+        "image": "member2.jpg"
+    },
+    {
+        "name": "River Tech Solutions",
+        "address": "789 Oak St, San Miguel",
+        "phone": "(555) 345-6789",
+        "website": "https://rivertech.example.com",
+        "membership": "Gold",
+        "image": "member3.jpg"
+    },
+    {
+        "name": "Garden Fresh Market",
+        "address": "101 Pine St, San Miguel",
+        "phone": "(555) 456-7890",
+        "website": "https://gardenfresh.example.com",
+        "membership": "Bronze",
+        "image": "member4.jpg"
+    },
+    {
+        "name": "Sunset Fitness Gym",
+        "address": "202 Maple St, San Miguel",
+        "phone": "(555) 567-8901",
+        "website": "https://sunsetfitness.example.com",
+        "membership": "Silver",
+        "image": "member5.jpg"
     }
 ]

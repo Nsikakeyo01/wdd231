@@ -1,26 +1,38 @@
-import members from '../data/members.json' assert { type: 'json' };
+const spotlightsContainer = document.getElementById("spotlights-container");
 
-const container = document.getElementById("spotlight-container");
+async function fetchSpotlights() {
+    try {
+        const response = await fetch("scripts/members.json"); // your JSON file with members
+        const members = await response.json();
 
-// Filter only gold/silver members
-const eligible = members.filter(m => m.membership === "Gold" || m.membership === "Silver");
+        // Filter gold or silver members
+        const goldSilver = members.filter(member => member.membership.toLowerCase() === "gold" || member.membership.toLowerCase() === "silver");
 
-// Shuffle and pick 2–3
-function getRandomMembers(arr, n) {
-    return arr.sort(() => 0.5 - Math.random()).slice(0, n);
+        // Randomly select 2-3 members
+        const selected = [];
+        while (selected.length < 3 && goldSilver.length > 0) {
+            const randomIndex = Math.floor(Math.random() * goldSilver.length);
+            selected.push(goldSilver.splice(randomIndex, 1)[0]);
+        }
+
+        // Render spotlight cards
+        selected.forEach(member => {
+            const card = document.createElement("div");
+            card.classList.add("spotlight-card");
+            card.innerHTML = `
+                <img src="images/${member.image}" alt="${member.name}">
+                <h3>${member.name}</h3>
+                <p>${member.address}</p>
+                <p>${member.phone}</p>
+                <p><a href="${member.website}" target="_blank">${member.website}</a></p>
+                <p>Membership: ${member.membership}</p>
+            `;
+            spotlightsContainer.appendChild(card);
+        });
+
+    } catch (error) {
+        console.error("Spotlights fetch failed:", error);
+    }
 }
 
-const selected = getRandomMembers(eligible, 3);
-
-container.innerHTML = "";
-
-selected.forEach(member => {
-    const div = document.createElement("div");
-    div.className = "spotlight";
-    div.innerHTML = `
-        <h3>${member.name}</h3>
-        <p>${member.description}</p>
-        <a href="${member.website}" target="_blank">Visit Website</a>
-    `;
-    container.appendChild(div);
-});
+fetchSpotlights();

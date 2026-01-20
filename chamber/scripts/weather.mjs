@@ -1,41 +1,40 @@
-// File: scripts/weather.mjs
+const apiKey = "beff9c8a958221e992923378bf3f5f39";
+const city = "San Miguel";
 
-const apiKey = 'beff9c8a958221e992923378bf3f5f39';
-const city = 'San Miguel'; // Change if needed
-const units = 'imperial'; // Fahrenheit
-const weatherIcon = document.getElementById('weather-icon');
-const currentTemp = document.getElementById('current-temp');
-const weatherDesc = document.getElementById('weather-desc');
+const weatherIcon = document.getElementById("weather-icon");
+const currentTemp = document.getElementById("current-temp");
+const weatherDesc = document.getElementById("weather-desc");
+const forecastContainer = document.getElementById("forecast-container");
 
-// OpenWeatherMap API URL
-const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${units}&appid=${apiKey}`;
-
-// Fetch weather data
-async function getWeather() {
+async function fetchWeather() {
     try {
-        const response = await fetch(url);
-        if (!response.ok) throw new Error('Network response was not ok');
-
+        const response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=imperial&appid=${apiKey}`);
         const data = await response.json();
 
-        // Update HTML elements
-        currentTemp.textContent = Math.round(data.main.temp);
-        weatherDesc.textContent = data.weather[0].description
-            .split(' ')
-            .map(word => word[0].toUpperCase() + word.slice(1))
-            .join(' '); // Capitalize each word
+        // Current Weather
+        currentTemp.textContent = Math.round(data.list[0].main.temp);
+        weatherDesc.textContent = data.list[0].weather[0].description;
+        weatherIcon.src = `https://openweathermap.org/img/wn/${data.list[0].weather[0].icon}@2x.png`;
 
-        const iconCode = data.weather[0].icon;
-        weatherIcon.src = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
-        weatherIcon.alt = data.weather[0].description;
+        // 3-day forecast
+        forecastContainer.innerHTML = "";
+        const days = [0, 8, 16]; // roughly next 3 days
+        days.forEach(i => {
+            const dayData = data.list[i];
+            const card = document.createElement("div");
+            card.classList.add("forecast-card");
+            card.innerHTML = `
+                <p>${new Date(dayData.dt_txt).toLocaleDateString(undefined, { weekday: 'short' })}</p>
+                <img src="https://openweathermap.org/img/wn/${dayData.weather[0].icon}@2x.png" alt="${dayData.weather[0].description}">
+                <p>${Math.round(dayData.main.temp)}°F</p>
+            `;
+            forecastContainer.appendChild(card);
+        });
+
     } catch (error) {
-        console.error('Weather API error:', error);
-        currentTemp.textContent = '--';
-        weatherDesc.textContent = 'Weather unavailable';
-        weatherIcon.src = '';
-        weatherIcon.alt = 'Weather icon';
+        console.error("Weather fetch failed:", error);
+        weatherDesc.textContent = "Weather unavailable";
     }
 }
 
-// Run function when page loads
-getWeather();
+fetchWeather();

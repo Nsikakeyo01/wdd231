@@ -1,51 +1,29 @@
-// scripts/weather.mjs
+// Default weather if API fails
+const weatherIcon = document.getElementById("weather-icon");
+const currentTemp = document.getElementById("current-temp");
+const weatherDesc = document.getElementById("weather-desc");
+const forecastContainer = document.getElementById("forecast");
 
-const weatherIcon = document.getElementById('weather-icon');
-const weatherTemp = document.getElementById('current-temp');
-const weatherDesc = document.getElementById('weather-desc');
-
-const defaultWeather = {
-    temp: "75°F",
-    desc: "Sunny",
-    icon: "images/weather-icon.png"
+// Example default weather
+const weatherData = {
+    temp: 75,
+    description: "Sunny",
+    icon: "images/weather-icon.png",
+    forecast: [
+        { day: "Tue", temp: 78, desc: "Partly Cloudy" },
+        { day: "Wed", temp: 80, desc: "Sunny" },
+        { day: "Thu", temp: 77, desc: "Cloudy" }
+    ]
 };
 
-function showDefaultWeather() {
-    weatherTemp.textContent = defaultWeather.temp;
-    weatherDesc.textContent = defaultWeather.desc;
-    weatherIcon.src = defaultWeather.icon;
-    weatherIcon.alt = defaultWeather.desc;
-}
+// Update DOM
+currentTemp.textContent = `${weatherData.temp}°F`;
+weatherDesc.textContent = weatherData.description;
+weatherIcon.src = weatherData.icon;
 
-async function fetchWeather() {
-    const apiKey = "YOUR_API_KEY_HERE"; // Replace with OpenWeatherMap API key
-    const cityId = "3580718"; // San Miguel
-    const units = "imperial";
-
-    const url = `https://api.openweathermap.org/data/2.5/weather?id=${cityId}&units=${units}&appid=${apiKey}`;
-
-    try {
-        const response = await fetch(url);
-        if (!response.ok) throw new Error("Network response not ok");
-
-        const data = await response.json();
-
-        const temp = Math.round(data.main.temp) + "°F";
-        const desc = data.weather[0].description;
-        const iconCode = data.weather[0].icon;
-        const iconUrl = `https://openweathermap.org/img/wn/${iconCode}.png`;
-
-        weatherTemp.textContent = temp;
-        weatherDesc.textContent = desc.charAt(0).toUpperCase() + desc.slice(1);
-        weatherIcon.src = iconUrl;
-        weatherIcon.alt = desc;
-    } catch (error) {
-        console.error("Weather API error:", error);
-        showDefaultWeather();
-    }
-}
-
-window.addEventListener("DOMContentLoaded", () => {
-    showDefaultWeather();
-    fetchWeather();
+forecastContainer.innerHTML = "";
+weatherData.forecast.forEach(day => {
+    const div = document.createElement("div");
+    div.textContent = `${day.day}: ${day.temp}°F - ${day.desc}`;
+    forecastContainer.appendChild(div);
 });

@@ -1,60 +1,32 @@
-{
-    "members": [
-        {
-            "name": "Alpha Solutions",
-            "address": "123 Main Street",
-            "phone": "555-1234",
-            "website": "https://alphasolutions.com",
-            "image": "member1.jpg",
-            "level": "Gold"
-        },
-        {
-            "name": "Beta Industries",
-            "address": "45 Market Road",
-            "phone": "555-2345",
-            "website": "https://betaindustries.com",
-            "image": "member2.jpg",
-            "level": "Silver"
-        },
-        {
-            "name": "Gamma Tech",
-            "address": "78 Innovation Way",
-            "phone": "555-3456",
-            "website": "https://gammatech.com",
-            "image": "member3.jpg",
-            "level": "Bronze"
-        },
-        {
-            "name": "Delta Services",
-            "address": "90 Service Lane",
-            "phone": "555-4567",
-            "website": "https://deltaservices.com",
-            "image": "member4.jpg",
-            "level": "Gold"
-        },
-        {
-            "name": "Epsilon Group",
-            "address": "12 Business Ave",
-            "phone": "555-5678",
-            "website": "https://epsilongroup.com",
-            "image": "member5.jpg",
-            "level": "Silver"
-        },
-        {
-            "name": "Zeta Holdings",
-            "address": "34 Commerce Blvd",
-            "phone": "555-6789",
-            "website": "https://zetaholdings.com",
-            "image": "member6.jpg",
-            "level": "Bronze"
-        },
-        {
-            "name": "Omega Corp",
-            "address": "56 Enterprise St",
-            "phone": "555-7890",
-            "website": "https://omegacorp.com",
-            "image": "member7.jpg",
-            "level": "Gold"
-        }
-    ]
-}
+[
+    {
+        "name": "Tech Solutions Inc.",
+        "membership": "Gold",
+        "description": "Leading provider of IT and software services in San Miguel.",
+        "website": "https://techsolutions.example.com"
+    },
+    {
+        "name": "Sunrise Bakery",
+        "membership": "Silver",
+        "description": "Family-owned bakery offering fresh pastries and bread daily.",
+        "website": "https://sunrisebakery.example.com"
+    },
+    {
+        "name": "Green Energy Co.",
+        "membership": "Bronze",
+        "description": "Innovative renewable energy solutions for homes and businesses.",
+        "website": "https://greenenergy.example.com"
+    },
+    {
+        "name": "Riverbank Consulting",
+        "membership": "Gold",
+        "description": "Expert consulting services for finance and management.",
+        "website": "https://riverbankconsulting.example.com"
+    },
+    {
+        "name": "Bella Boutique",
+        "membership": "Silver",
+        "description": "Fashion boutique specializing in women's apparel and accessories.",
+        "website": "https://bellaboutique.example.com"
+    }
+]

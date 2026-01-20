@@ -4,10 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>San Miguel Chamber of Commerce | Local Businesses & Events</title>
+    <meta name="author" content="Nsikak Eyo">
     <meta name="description"
         content="San Miguel Chamber of Commerce home page. Find local businesses, events, and member spotlights.">
-    <meta name="author" content="Nsikak Eyo">
+
+    <!-- Open Graph for social sharing -->
+    <meta property="og:title" content="San Miguel Chamber of Commerce | Local Businesses & Events">
+    <meta property="og:description"
+        content="Welcome to the San Miguel Chamber of Commerce. Explore member businesses, upcoming events, and weather updates.">
+    <meta property="og:image" content="https://NSIKAKEYO01.github.io/wdd231/chamber/images/hero-image.jpg">
+    <meta property="og:url" content="https://NSIKAKEYO01.github.io/wdd231/chamber/">
+
+    <title>San Miguel Chamber of Commerce | Local Businesses & Events</title>
+
     <link rel="icon" href="images/favicon.ico">
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/styles.css">
@@ -15,7 +24,7 @@
 
 <body>
     <header>
-        <img src="images/company-logo.jpg" alt="BYU-I logo">
+        <img src="images/company-logo.jpg" alt="BYU-I logo" class="logo">
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -27,25 +36,27 @@
     </header>
 
     <main>
-        <h1>San Miguel Chamber of Commerce</h1>
-
-        <!-- Hero Image -->
-        <section>
-            <img src="images/hero-image.jpg" alt="San Miguel Chamber of Commerce">
+        <!-- Hero Section -->
+        <section class="hero">
+            <img src="images/hero-image.jpg" alt="San Miguel Chamber of Commerce" class="hero-image">
+            <a href="#" class="cta">Join Now!</a>
         </section>
 
         <!-- Weather Section -->
-        <section id="current-weather">
+        <section class="weather">
             <h2>Current Weather</h2>
             <img id="weather-icon" src="images/weather-icon.png" alt="Weather icon">
-            <span id="current-temp"></span>
-            <p id="weather-desc"></p>
+            <span id="current-temp">--°F</span>
+            <p id="weather-desc">Weather unavailable</p>
+
+            <h3>3-Day Forecast</h3>
+            <div id="forecast"></div>
         </section>
 
-        <!-- 3-Day Forecast Section -->
-        <section id="forecast">
-            <h2>3-Day Forecast</h2>
-            <!-- Future forecast content -->
+        <!-- Company Spotlights -->
+        <section class="spotlights">
+            <h2>Company Spotlights</h2>
+            <div id="spotlight-container"></div>
         </section>
     </main>
 

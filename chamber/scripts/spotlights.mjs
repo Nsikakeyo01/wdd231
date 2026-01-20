@@ -1,24 +1,26 @@
-// spotlights.mjs
 import members from '../data/members.json' assert { type: 'json' };
 
-const spotlightsSection = document.getElementById('spotlights');
+const container = document.getElementById("spotlight-container");
 
-// Filter for members with "Gold" or "Silver" membership (example)
-const spotlightMembers = members.filter(member =>
-    member.membership.toLowerCase() === 'gold' || member.membership.toLowerCase() === 'silver'
-);
+// Filter only gold/silver members
+const eligible = members.filter(m => m.membership === "Gold" || m.membership === "Silver");
 
-// Display up to 3 spotlights
-spotlightMembers.slice(0, 3).forEach(member => {
-    const spotlight = document.createElement('div');
-    spotlight.classList.add('spotlight');
+// Shuffle and pick 2–3
+function getRandomMembers(arr, n) {
+    return arr.sort(() => 0.5 - Math.random()).slice(0, n);
+}
 
-    spotlight.innerHTML = `
-        <img src="images/${member.image}" alt="${member.name}">
+const selected = getRandomMembers(eligible, 3);
+
+container.innerHTML = "";
+
+selected.forEach(member => {
+    const div = document.createElement("div");
+    div.className = "spotlight";
+    div.innerHTML = `
         <h3>${member.name}</h3>
-        <p>${member.business}</p>
-        <p>${member.membership} Member</p>
+        <p>${member.description}</p>
+        <a href="${member.website}" target="_blank">Visit Website</a>
     `;
-
-    spotlightsSection.appendChild(spotlight);
+    container.appendChild(div);
 });

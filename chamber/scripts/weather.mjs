@@ -1,38 +1,41 @@
-const apiKey = "beff9c8a958221e992923378bf3f5f39";
+// File: scripts/weather.mjs
 
-// ✅ USE COORDINATES (MORE RELIABLE THAN CITY NAME)
-const lat = 29.8833;   // San Miguel de Allende latitude
-const lon = -100.5167; // longitude
+const apiKey = 'beff9c8a958221e992923378bf3f5f39';
+const city = 'San Miguel'; // Change if needed
+const units = 'imperial'; // Fahrenheit
+const weatherIcon = document.getElementById('weather-icon');
+const currentTemp = document.getElementById('current-temp');
+const weatherDesc = document.getElementById('weather-desc');
 
-const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=imperial&appid=${apiKey}`;
+// OpenWeatherMap API URL
+const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${units}&appid=${apiKey}`;
 
+// Fetch weather data
 async function getWeather() {
     try {
         const response = await fetch(url);
-
-        if (!response.ok) {
-            throw new Error("Weather API error");
-        }
+        if (!response.ok) throw new Error('Network response was not ok');
 
         const data = await response.json();
 
-        // DOM elements
-        const temp = document.querySelector("#current-temp");
-        const desc = document.querySelector("#weather-desc");
-        const icon = document.querySelector("#weather-icon");
-
-        // Set values
-        temp.textContent = Math.round(data.main.temp);
-        desc.textContent = data.weather[0].description;
+        // Update HTML elements
+        currentTemp.textContent = Math.round(data.main.temp);
+        weatherDesc.textContent = data.weather[0].description
+            .split(' ')
+            .map(word => word[0].toUpperCase() + word.slice(1))
+            .join(' '); // Capitalize each word
 
         const iconCode = data.weather[0].icon;
-        icon.src = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
-        icon.alt = data.weather[0].description;
-
+        weatherIcon.src = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
+        weatherIcon.alt = data.weather[0].description;
     } catch (error) {
-        console.error("Weather fetch failed:", error);
+        console.error('Weather API error:', error);
+        currentTemp.textContent = '--';
+        weatherDesc.textContent = 'Weather unavailable';
+        weatherIcon.src = '';
+        weatherIcon.alt = 'Weather icon';
     }
 }
 
-// 🔥 RUN IMMEDIATELY
+// Run function when page loads
 getWeather();

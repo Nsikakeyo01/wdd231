@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>San Miguel Chamber of Commerce | Local Businesses & Events</title>
+
     <meta name="description"
         content="San Miguel Chamber of Commerce home page. Find local businesses, events, member spotlights, and weather updates.">
     <meta name="author" content="Nsikak Eyo">
@@ -40,22 +41,24 @@
                 <li><a href="directory.html">Directory</a></li>
                 <li><a href="#">Events</a></li>
                 <li><a href="#">Join Now!</a></li>
+                <li><a href="#">Join Now!</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <!-- Added h1 as required -->
         <h1>San Miguel Chamber of Commerce</h1>
 
-        <!-- Hero Section with heading -->
         <section class="hero">
-            <h2>Welcome to the San Miguel Chamber</h2>
             <img src="images/hero-image.jpg" alt="San Miguel Chamber of Commerce">
-            <a href="#" class="cta-button">Join the Chamber</a>
+            <a href="#" class="cta-button">Join Now!</a>
         </section>
 
-        <!-- Current Weather Section -->
+        <section class="current-events">
+            <h2>Current Events</h2>
+            <p>Stay up to date with the latest events happening in our community.</p>
+        </section>
+
         <section class="weather">
             <h2>Current Weather</h2>
             <img id="weather-icon" src="images/weather-icon.png" alt="Weather icon">
@@ -63,28 +66,18 @@
             <p id="weather-desc">Weather unavailable</p>
         </section>
 
-        <!-- Company Spotlights -->
         <section class="spotlights">
-            <h2>Member Spotlights</h2>
-            <div id="spotlights-container"></div>
-        </section>
-
-        <!-- Current Events (placeholder) -->
-        <section class="events">
-            <h2>Current Events</h2>
-            <p>Event information coming soon.</p>
+            <h2>Company Spotlights</h2>
+            <div id="spotlights-container">
+                <!-- Spotlight cards populated via JavaScript -->
+            </div>
         </section>
     </main>
 
     <footer>
         <p>Copyright © Brigham Young University-Idaho | All rights reserved</p>
-        <div class="validator-badges">
-            <img src="images/vcss.png" alt="Valid CSS!">
-            <img src="images/vcss-blue.png" alt="Valid CSS!">
-        </div>
     </footer>
 
-    <!-- Scripts at the end of body with type="module" -->
     <script type="module" src="scripts/weather.mjs"></script>
     <script type="module" src="scripts/spotlights.mjs"></script>
 </body>

@@ -9,22 +9,8 @@
         content="San Miguel Chamber of Commerce home page. Find local businesses, events, and member spotlights.">
     <meta name="author" content="Nsikak Eyo">
     <link rel="icon" href="images/favicon.ico">
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-
-    <!-- CSS -->
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/styles.css">
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="San Miguel Chamber of Commerce | Local Businesses & Events">
-    <meta property="og:description"
-        content="Welcome to the San Miguel Chamber of Commerce. Explore member businesses, upcoming events, and weather updates.">
-    <meta property="og:image" content="https://NSIKAKEYO01.github.io/wdd231/chamber/images/hero-image.jpg">
-    <meta property="og:url" content="https://NSIKAKEYO01.github.io/wdd231/chamber/">
 </head>
 
 <body>
@@ -49,28 +35,24 @@
         </section>
 
         <!-- Weather Section -->
-        <section>
+        <section id="current-weather">
             <h2>Current Weather</h2>
-            <div class="weather">
-                <!-- Upload your static weather image here -->
-                <img id="weather-icon" src="images/weather-icon.png" alt="Weather icon">
-                <span id="current-temp">--</span>°F
-                <p id="weather-desc">Weather unavailable</p>
-            </div>
+            <img id="weather-icon" src="images/weather-icon.png" alt="Weather icon">
+            <span id="current-temp"></span>
+            <p id="weather-desc"></p>
         </section>
 
-        <!-- Member Spotlights -->
-        <section id="spotlights">
-            <h2>Member Spotlights</h2>
-            <!-- Spotlights will be populated via spotlights.mjs -->
+        <!-- 3-Day Forecast Section -->
+        <section id="forecast">
+            <h2>3-Day Forecast</h2>
+            <!-- Future forecast content -->
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 San Miguel Chamber of Commerce | All rights reserved</p>
+        <p>Copyright © Brigham Young University-Idaho | All rights reserved</p>
     </footer>
 
-    <!-- JavaScript -->
     <script type="module" src="scripts/weather.mjs"></script>
     <script type="module" src="scripts/spotlights.mjs"></script>
 </body>

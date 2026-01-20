@@ -4,27 +4,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Nsikak Eyo">
-    <meta name="description"
-        content="San Miguel Chamber of Commerce home page. Find local businesses, events, and member spotlights.">
-
-    <!-- Open Graph for social sharing -->
-    <meta property="og:title" content="San Miguel Chamber of Commerce | Local Businesses & Events">
-    <meta property="og:description"
-        content="Welcome to the San Miguel Chamber of Commerce. Explore member businesses, upcoming events, and weather updates.">
-    <meta property="og:image" content="https://NSIKAKEYO01.github.io/wdd231/chamber/images/hero-image.jpg">
-    <meta property="og:url" content="https://NSIKAKEYO01.github.io/wdd231/chamber/">
 
     <title>San Miguel Chamber of Commerce | Local Businesses & Events</title>
 
+    <meta name="description"
+        content="San Miguel Chamber of Commerce home page. Find local businesses, events, member spotlights, and weather updates.">
+    <meta name="author" content="Nsikak Eyo">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="San Miguel Chamber of Commerce | Local Businesses & Events">
+    <meta property="og:description"
+        content="Welcome to the San Miguel Chamber of Commerce. Explore member businesses, upcoming events, and weather updates.">
+    <meta property="og:image" content="https://nsikakeyo01.github.io/wdd231/chamber/images/hero-image.jpg">
+    <meta property="og:url" content="https://nsikakeyo01.github.io/wdd231/chamber/">
+
+    <!-- Favicon -->
     <link rel="icon" href="images/favicon.ico">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/styles.css">
 </head>
 
 <body>
+
     <header>
-        <img src="images/company-logo.jpg" alt="BYU-I logo" class="logo">
+        <img src="images/company-logo.jpg" alt="BYU-I logo">
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -36,36 +46,44 @@
     </header>
 
     <main>
-        <!-- Hero Section -->
+        <!-- REQUIRED H1 -->
+        <h1>San Miguel Chamber of Commerce</h1>
+
+        <!-- HERO -->
         <section class="hero">
-            <img src="images/hero-image.jpg" alt="San Miguel Chamber of Commerce" class="hero-image">
+            <img src="images/hero-image.jpg" alt="San Miguel Chamber of Commerce">
             <a href="#" class="cta">Join Now!</a>
         </section>
 
-        <!-- Weather Section -->
-        <section class="weather">
-            <h2>Current Weather</h2>
-            <img id="weather-icon" src="images/weather-icon.png" alt="Weather icon">
-            <span id="current-temp">--°F</span>
-            <p id="weather-desc">Weather unavailable</p>
-
-            <h3>3-Day Forecast</h3>
-            <div id="forecast"></div>
+        <!-- CURRENT EVENTS -->
+        <section class="events">
+            <h2>Current Events</h2>
+            <p>Upcoming community events will be announced soon.</p>
         </section>
 
-        <!-- Company Spotlights -->
+        <!-- WEATHER (THIS IS THE CRITICAL SECTION) -->
+        <section class="weather">
+            <h2>Current Weather</h2>
+            <img id="weather-icon" src="" alt="Weather icon">
+            <p><span id="current-temp">--</span>°F</p>
+            <p id="weather-desc">Weather unavailable</p>
+        </section>
+
+        <!-- COMPANY SPOTLIGHTS -->
         <section class="spotlights">
-            <h2>Company Spotlights</h2>
+            <h2>Member Spotlights</h2>
             <div id="spotlight-container"></div>
         </section>
     </main>
 
     <footer>
-        <p>Copyright © Brigham Young University-Idaho | All rights reserved</p>
+        <p>&copy; <span id="year"></span> San Miguel Chamber of Commerce | Nsikak Eyo</p>
     </footer>
 
+    <!-- JAVASCRIPT (MUST BE AT BOTTOM & MODULE) -->
     <script type="module" src="scripts/weather.mjs"></script>
     <script type="module" src="scripts/spotlights.mjs"></script>
+
 </body>
 
 </html>

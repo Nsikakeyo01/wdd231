@@ -1,44 +1,29 @@
-// weather.mjs
-const apiKey = "YOUR_API_KEY_HERE"; // Replace with your OpenWeatherMap API key
-const lat = "13.48";   // San Miguel latitude
-const lon = "-88.18";  // San Miguel longitude
-const units = "metric"; // Celsius
-const url = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=minutely,hourly,alerts&units=${units}&appid=${apiKey}`;
+const apiKey = 'YOUR_OPENWEATHERMAP_API_KEY'; // Replace with your OpenWeatherMap API key
+const lat = '13.69';  // Latitude for Trier (example)
+const lon = '13.77';  // Longitude for Trier
+const units = 'imperial'; // Use 'metric' for °C
 
-const currentTempEl = document.getElementById("current-temp");
-const currentDescEl = document.getElementById("current-desc");
-const weatherIconEl = document.getElementById("weather-icon");
-const forecastEl = document.getElementById("forecast");
+const weatherIcon = document.getElementById('weather-icon');
+const currentTemp = document.getElementById('current-temp');
+const weatherDesc = document.getElementById('weather-desc');
 
-async function apiFetch() {
+async function getWeather() {
     try {
+        const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=${units}&appid=${apiKey}`;
         const response = await fetch(url);
-        if (response.ok) {
-            const data = await response.json();
-            displayWeather(data);
-        } else {
-            throw new Error(await response.text());
-        }
+        if (!response.ok) throw new Error('Weather fetch failed');
+        const data = await response.json();
+
+        currentTemp.textContent = Math.round(data.main.temp);
+        weatherDesc.textContent = data.weather[0].description;
+
+        const iconCode = data.weather[0].icon;
+        weatherIcon.src = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
+        weatherIcon.alt = data.weather[0].description;
     } catch (error) {
         console.error(error);
+        weatherDesc.textContent = 'Weather data not available';
     }
 }
 
-function displayWeather(data) {
-    // Current weather
-    currentTempEl.textContent = Math.round(data.current.temp);
-    currentDescEl.textContent = data.current.weather[0].description;
-    const iconCode = data.current.weather[0].icon;
-    weatherIconEl.src = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
-    weatherIconEl.alt = data.current.weather[0].description;
-
-    // 3-Day Forecast
-    forecastEl.innerHTML = ""; // Clear previous forecast
-    data.daily.slice(1, 4).forEach(day => {
-        const li = document.createElement("li");
-        li.textContent = `${new Date(day.dt * 1000).toLocaleDateString()}: ${Math.round(day.temp.day)}°C, ${day.weather[0].description}`;
-        forecastEl.appendChild(li);
-    });
-}
-
-apiFetch();
+getWeather();

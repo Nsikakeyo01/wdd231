@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>San Miguel Chamber of Commerce</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <h1>San Miguel Chamber of Commerce</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="directory.html">Directory</a></li>
+                <!-- Add more pages as needed -->
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <img src="images/hero image.jpg" alt="San Miguel Chamber of Commerce" />
+        <a href="#" class="cta">Join Now!</a>
+    </section>
+
+    <!-- Current Events -->
+    <section class="current-events">
+        <h2>Current Events</h2>
+        <p>Placeholder content for current events.</p>
+    </section>
+
+    <!-- Weather Section -->
+    <section class="weather">
+        <h2>Current Weather in San Miguel</h2>
+        <p>Temperature: <span id="current-temp"></span></p>
+        <p>Description: <span id="weather-desc"></span></p>
+        <figure>
+            <img id="weather-icon" src="" alt="Weather icon">
+            <figcaption>Weather forecast for next 3 days:</figcaption>
+            <ul id="forecast"></ul>
+        </figure>
+    </section>
+
+    <!-- Company Spotlights -->
+    <section class="spotlights">
+        <h2>Member Spotlights</h2>
+        <div id="spotlight-container">
+            <!-- Spotlight cards injected via JS -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        Nsikak Eyo | San Miguel Chamber of Commerce
+    </footer>
+
+    <!-- Scripts -->
+    <script type="module" src="scripts/weather.mjs"></script>
+    <script type="module" src="scripts/spotlights.mjs"></script>
+</body>
+
+</html>

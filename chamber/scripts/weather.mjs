@@ -1,42 +1,38 @@
-// scripts/weather.mjs
-
 const apiKey = "beff9c8a958221e992923378bf3f5f39";
-const lat = 13.48;   // San Miguel (example)
-const lon = -88.18;
-const units = "imperial";
 
-const currentTemp = document.querySelector("#current-temp");
-const weatherDesc = document.querySelector("#weather-desc");
-const weatherIcon = document.querySelector("#weather-icon");
+// ✅ USE COORDINATES (MORE RELIABLE THAN CITY NAME)
+const lat = 29.8833;   // San Miguel de Allende latitude
+const lon = -100.5167; // longitude
 
-const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=${units}&appid=${apiKey}`;
+const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=imperial&appid=${apiKey}`;
 
 async function getWeather() {
     try {
         const response = await fetch(url);
 
         if (!response.ok) {
-            throw new Error("Weather fetch failed");
+            throw new Error("Weather API error");
         }
 
         const data = await response.json();
-        displayWeather(data);
+
+        // DOM elements
+        const temp = document.querySelector("#current-temp");
+        const desc = document.querySelector("#weather-desc");
+        const icon = document.querySelector("#weather-icon");
+
+        // Set values
+        temp.textContent = Math.round(data.main.temp);
+        desc.textContent = data.weather[0].description;
+
+        const iconCode = data.weather[0].icon;
+        icon.src = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
+        icon.alt = data.weather[0].description;
+
     } catch (error) {
-        console.error("Weather Error:", error);
-        weatherDesc.textContent = "Weather unavailable";
+        console.error("Weather fetch failed:", error);
     }
 }
 
-function displayWeather(data) {
-    const temp = Math.round(data.main.temp);
-    const desc = data.weather[0].description;
-    const icon = data.weather[0].icon;
-
-    currentTemp.textContent = temp;
-    weatherDesc.textContent = desc;
-
-    weatherIcon.src = `https://openweathermap.org/img/wn/${icon}@2x.png`;
-    weatherIcon.alt = desc;
-}
-
+// 🔥 RUN IMMEDIATELY
 getWeather();

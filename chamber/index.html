@@ -21,18 +21,17 @@
     <!-- Favicon -->
     <link rel="icon" href="images/favicon.ico">
 
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/styles.css">
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="styles/normalize.css">
-    <link rel="stylesheet" href="styles/styles.css">
 </head>
 
 <body>
-
     <header>
         <img src="images/company-logo.jpg" alt="BYU-I logo">
         <nav>
@@ -46,22 +45,13 @@
     </header>
 
     <main>
-        <!-- REQUIRED H1 -->
         <h1>San Miguel Chamber of Commerce</h1>
 
-        <!-- HERO -->
         <section class="hero">
             <img src="images/hero-image.jpg" alt="San Miguel Chamber of Commerce">
-            <a href="#" class="cta">Join Now!</a>
         </section>
 
-        <!-- CURRENT EVENTS -->
-        <section class="events">
-            <h2>Current Events</h2>
-            <p>Upcoming community events will be announced soon.</p>
-        </section>
-
-        <!-- WEATHER (THIS IS THE CRITICAL SECTION) -->
+        <!-- ✅ WEATHER SECTION (REQUIRED IDS) -->
         <section class="weather">
             <h2>Current Weather</h2>
             <img id="weather-icon" src="" alt="Weather icon">
@@ -69,7 +59,6 @@
             <p id="weather-desc">Weather unavailable</p>
         </section>
 
-        <!-- COMPANY SPOTLIGHTS -->
         <section class="spotlights">
             <h2>Member Spotlights</h2>
             <div id="spotlight-container"></div>
@@ -77,13 +66,13 @@
     </main>
 
     <footer>
-        <p>&copy; <span id="year"></span> San Miguel Chamber of Commerce | Nsikak Eyo</p>
+        <p>© <span id="year"></span> San Miguel Chamber of Commerce</p>
+        <p>Nsikak Eyo | WDD 231</p>
     </footer>
 
-    <!-- JAVASCRIPT (MUST BE AT BOTTOM & MODULE) -->
+    <!-- ✅ JAVASCRIPT (BOTTOM OF BODY, MODULE) -->
     <script type="module" src="scripts/weather.mjs"></script>
     <script type="module" src="scripts/spotlights.mjs"></script>
-
 </body>
 
 </html>

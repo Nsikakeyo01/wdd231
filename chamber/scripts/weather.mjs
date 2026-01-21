@@ -1,40 +1,32 @@
-const apiKey = "beff9c8a958221e992923378bf3f5f39";
-const city = "San Miguel";
+const apiKey = "a1b2c3d4e5f6g7h8";
+const lat = 16.75;   // San Miguel latitude
+const lon = -93.12;  // San Miguel longitude
+const units = "imperial";
 
-const weatherIcon = document.getElementById("weather-icon");
-const currentTemp = document.getElementById("current-temp");
-const weatherDesc = document.getElementById("weather-desc");
-const forecastContainer = document.getElementById("forecast-container");
+const currentTemp = document.querySelector("#current-temp");
+const weatherDesc = document.querySelector("#weather-desc");
+const weatherIcon = document.querySelector("#weather-icon");
 
-async function fetchWeather() {
+const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=${units}`;
+
+async function getWeather() {
     try {
-        const response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=imperial&appid=${apiKey}`);
+        const response = await fetch(url);
+        if (!response.ok) throw new Error("Weather fetch failed");
+
         const data = await response.json();
 
-        // Current Weather
-        currentTemp.textContent = Math.round(data.list[0].main.temp);
-        weatherDesc.textContent = data.list[0].weather[0].description;
-        weatherIcon.src = `https://openweathermap.org/img/wn/${data.list[0].weather[0].icon}@2x.png`;
+        currentTemp.textContent = Math.round(data.main.temp) + "°F";
+        weatherDesc.textContent = data.weather[0].description;
 
-        // 3-day forecast
-        forecastContainer.innerHTML = "";
-        const days = [0, 8, 16]; // roughly next 3 days
-        days.forEach(i => {
-            const dayData = data.list[i];
-            const card = document.createElement("div");
-            card.classList.add("forecast-card");
-            card.innerHTML = `
-                <p>${new Date(dayData.dt_txt).toLocaleDateString(undefined, { weekday: 'short' })}</p>
-                <img src="https://openweathermap.org/img/wn/${dayData.weather[0].icon}@2x.png" alt="${dayData.weather[0].description}">
-                <p>${Math.round(dayData.main.temp)}°F</p>
-            `;
-            forecastContainer.appendChild(card);
-        });
+        const icon = data.weather[0].icon;
+        weatherIcon.src = `https://openweathermap.org/img/wn/${icon}@2x.png`;
+        weatherIcon.alt = data.weather[0].description;
 
     } catch (error) {
-        console.error("Weather fetch failed:", error);
+        console.error(error);
         weatherDesc.textContent = "Weather unavailable";
     }
 }
 
-fetchWeather();
+getWeather();

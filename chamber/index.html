@@ -21,7 +21,7 @@
     <!-- Favicon -->
     <link rel="icon" href="images/favicon.ico">
 
-    <!-- Normalize CSS -->
+    <!-- Normalize -->
     <link rel="stylesheet" href="styles/normalize.css">
 
     <!-- Google Fonts -->
@@ -31,6 +31,10 @@
 
     <!-- Main Styles -->
     <link rel="stylesheet" href="styles/styles.css">
+
+    <!-- ✅ REQUIRED FIX: JS in head with defer -->
+    <script type="module" src="scripts/weather.mjs" defer></script>
+    <script type="module" src="scripts/spotlights.mjs" defer></script>
 </head>
 
 <body>
@@ -46,24 +50,24 @@
     </header>
 
     <main>
-        <!-- ✅ REQUIRED h1 -->
+        <!-- ✅ REQUIRED FIX: single h1 inside main -->
         <h1>San Miguel Chamber of Commerce</h1>
 
         <section class="hero">
             <img src="images/hero-image.jpg" alt="San Miguel Chamber of Commerce">
-            <a href="#" class="cta">Join Now!</a>
+            <a class="cta" href="#">Join Now!</a>
         </section>
 
         <section class="events">
             <h2>Current Events</h2>
-            <p>Stay tuned for upcoming chamber events and community activities.</p>
+            <p>Upcoming community events and business networking opportunities.</p>
         </section>
 
         <section class="weather">
             <h2>Current Weather</h2>
-            <img id="weather-icon" src="images/weather-icon.png" alt="Weather icon">
-            <p><span id="current-temp">--</span>°F</p>
-            <p id="weather-desc">Weather unavailable</p>
+            <img src="images/weather-icon.png" alt="Weather icon" id="weather-icon">
+            <p><span id="current-temp"></span></p>
+            <p id="weather-desc"></p>
             <div id="forecast"></div>
         </section>
 
@@ -76,10 +80,6 @@
     <footer>
         <p>Copyright © Brigham Young University-Idaho | All rights reserved</p>
     </footer>
-
-    <!-- ✅ REQUIRED: scripts at END of body -->
-    <script type="module" src="scripts/weather.mjs"></script>
-    <script type="module" src="scripts/spotlights.mjs"></script>
 </body>
 
 </html>

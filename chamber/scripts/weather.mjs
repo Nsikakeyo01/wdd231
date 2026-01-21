@@ -1,4 +1,4 @@
-const apiKey = "a1b2c3d4e5f6g7h8";
+const apiKey = "6780a0dcb9c34e6648dba652803c7c37";
 const lat = 16.75;   // San Miguel latitude
 const lon = -93.12;  // San Miguel longitude
 const units = "imperial";

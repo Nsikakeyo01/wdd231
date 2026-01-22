@@ -28,24 +28,42 @@ header {
     color: #fff;
 }
 
-header .logo img {
-    height: 50px;
+#menu {
+    font-size: 1.8rem;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
 }
 
-header nav ul {
+#menu::before {
+    content: "☰";
+}
+
+#menu.open::before {
+    content: "✖";
+}
+
+.navigation {
     list-style: none;
-    display: flex;
+    display: none;
     gap: 15px;
 }
 
-header nav a {
+.navigation.open {
+    display: flex;
+}
+
+.navigation a {
     color: #fff;
     text-decoration: none;
     font-weight: bold;
 }
 
-header nav a:hover {
-    text-decoration: underline;
+.navigation a.active {
+    background-color: #002a80;
+    padding: 5px 10px;
+    border-radius: 5px;
 }
 
 /* Hero */
@@ -90,25 +108,15 @@ main h2 {
     height: 80px;
 }
 
-/* Forecast container */
-#forecast-container {
+.forecast {
     display: flex;
     justify-content: center;
     gap: 15px;
     margin-top: 20px;
 }
 
-.forecast-card {
-    background-color: #fff;
-    padding: 10px;
-    border-radius: 8px;
-    width: 100px;
-    text-align: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
 /* Spotlights */
-#spotlights-container {
+#spotlight-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -142,14 +150,9 @@ footer {
 /* Responsive */
 @media (max-width: 768px) {
 
-    #spotlights-container,
-    #forecast-container {
+    .forecast,
+    #spotlight-container {
         flex-direction: column;
         align-items: center;
-    }
-
-    .cta-btn {
-        padding: 10px 20px;
-        font-size: 0.9rem;
     }
 }

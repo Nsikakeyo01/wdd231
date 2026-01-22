@@ -18,30 +18,27 @@
     <meta property="og:image" content="https://nsikakeyo01.github.io/wdd231/chamber/images/hero-image.jpg">
     <meta property="og:url" content="https://nsikakeyo01.github.io/wdd231/chamber/">
 
-    <!-- Favicon -->
     <link rel="icon" href="images/favicon.ico">
-
-    <!-- Normalize -->
     <link rel="stylesheet" href="styles/normalize.css">
 
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
-    <!-- Main Styles -->
     <link rel="stylesheet" href="styles/styles.css">
 
-    <!-- ✅ REQUIRED FIX: JS in head with defer -->
     <script type="module" src="scripts/weather.mjs"></script>
     <script type="module" src="scripts/spotlights.mjs"></script>
+    <script defer src="scripts/menu.js"></script>
 </head>
 
 <body>
     <header>
+        <button id="menu" aria-label="Toggle Menu"></button>
+
         <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
+            <ul class="navigation">
+                <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="directory.html">Directory</a></li>
                 <li><a href="#">Events</a></li>
                 <li><a href="#">Join Now!</a></li>
@@ -50,7 +47,6 @@
     </header>
 
     <main>
-        <!-- ✅ REQUIRED FIX: single h1 inside main -->
         <h1>San Miguel Chamber of Commerce</h1>
 
         <section class="hero">
@@ -69,7 +65,12 @@
             <img src="images/weather-icon.png" alt="Weather icon" id="weather-icon">
             <p><span id="current-temp"></span></p>
             <p id="weather-desc"></p>
-            <div id="forecast"></div>
+
+            <div class="forecast">
+                <p id="day1"></p>
+                <p id="day2"></p>
+                <p id="day3"></p>
+            </div>
         </section>
 
         <section class="spotlights">

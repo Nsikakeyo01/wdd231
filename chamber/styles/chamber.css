@@ -1,36 +1,44 @@
-/* ===== Chamber CSS ===== */
+/* -----------------------------
+   Chamber CSS - Accessible & Clean
+----------------------------- */
 
-/* Global Styles */
+/* Base Styles */
 body {
     font-family: 'Roboto', sans-serif;
+    background-color: #f5f5f5;
+    /* light gray for main background */
+    color: #000000;
+    /* default text color */
+    line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f5f5f5;
-    color: #000000;
 }
 
+/* Header */
 header {
     background-color: #0a4d2e;
+    /* dark green */
     padding: 1rem 2rem;
 }
 
 header nav {
     display: flex;
-    gap: 2rem;
+    gap: 1.5rem;
 }
 
 header nav a {
     color: #ffffff;
-    /* white text for dark green background */
+    /* white text for contrast */
     text-decoration: none;
     font-weight: bold;
 }
 
 header nav a:hover {
     color: #f5f5f5;
-    /* lighter on hover */
+    /* slightly lighter on hover */
 }
 
+/* Main Content */
 main {
     max-width: 900px;
     margin: 2rem auto;
@@ -41,8 +49,9 @@ main {
 }
 
 h1 {
-    text-align: center;
     color: #0a4d2e;
+    /* dark green heading for contrast */
+    text-align: center;
 }
 
 /* Form Styles */
@@ -55,7 +64,9 @@ form {
 label {
     display: flex;
     flex-direction: column;
-    font-weight: 500;
+    font-weight: bold;
+    color: #0a4d2e;
+    /* dark green label text */
 }
 
 input[type="text"],
@@ -63,20 +74,41 @@ input[type="email"],
 input[type="tel"],
 textarea {
     padding: 0.5rem;
-    font-size: 1rem;
     border: 1px solid #0c6338;
+    /* slightly darker green */
     border-radius: 4px;
+    font-size: 1rem;
 }
 
-textarea {
-    resize: vertical;
-    min-height: 100px;
+input:focus,
+textarea:focus {
+    outline: 2px solid #0c6338;
+    outline-offset: 2px;
 }
 
+button[type="submit"] {
+    background-color: #0a4d2e;
+    /* dark green button */
+    color: #ffffff;
+    /* white text for contrast */
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #0c6338;
+    /* slightly darker on hover */
+}
+
+/* Fieldset Styles */
 fieldset {
     border: 1px solid #0c6338;
-    border-radius: 4px;
     padding: 1rem;
+    border-radius: 5px;
 }
 
 legend {
@@ -84,30 +116,20 @@ legend {
     color: #0a4d2e;
 }
 
-input[type="radio"] {
-    margin-right: 0.5rem;
-}
-
-button[type="submit"] {
-    background-color: #0a4d2e;
-    color: #ffffff;
-    border: none;
-    padding: 0.75rem;
-    font-size: 1.1rem;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-button[type="submit"]:hover {
-    background-color: #0c6338;
-}
-
-/* Footer */
+/* Footer Styles */
 footer {
+    background-color: #0a4d2e;
+    /* dark green */
+    color: #ffffff;
+    /* white text */
     text-align: center;
     padding: 1rem 0;
-    background-color: #0a4d2e;
-    color: #ffffff;
     margin-top: 2rem;
+    font-size: 0.9rem;
+}
+
+/* Misc */
+textarea {
+    min-height: 100px;
+    resize: vertical;
 }

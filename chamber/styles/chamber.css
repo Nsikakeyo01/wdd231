@@ -1,24 +1,23 @@
-/* -----------------------------
-   Chamber CSS - Accessible & Clean
------------------------------ */
+/* -----------------------------------------------------------
+   Chamber of Commerce CSS - General Site
+   Only repeated rules removed & contrast fixed
+----------------------------------------------------------- */
 
-/* Base Styles */
+/* Body & Fonts */
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #f5f5f5;
-    /* light gray for main background */
-    color: #000000;
-    /* default text color */
-    line-height: 1.6;
     margin: 0;
     padding: 0;
+    background-color: #f5f5f5;
+    color: #000000;
 }
 
 /* Header */
 header {
     background-color: #0a4d2e;
-    /* dark green */
     padding: 1rem 2rem;
+    color: #ffffff;
+    /* Contrast fix */
 }
 
 header nav {
@@ -28,108 +27,31 @@ header nav {
 
 header nav a {
     color: #ffffff;
-    /* white text for contrast */
+    /* Contrast fix: white on dark green */
     text-decoration: none;
     font-weight: bold;
 }
 
 header nav a:hover {
     color: #f5f5f5;
-    /* slightly lighter on hover */
+    /* light color on hover */
 }
 
-/* Main Content */
+/* Main Section */
 main {
-    max-width: 900px;
+    max-width: 800px;
     margin: 2rem auto;
-    padding: 1rem;
+    padding: 2rem;
     background-color: #ffffff;
-    border-radius: 8px;
+    border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-h1 {
-    color: #0a4d2e;
-    /* dark green heading for contrast */
-    text-align: center;
-}
-
-/* Form Styles */
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-label {
-    display: flex;
-    flex-direction: column;
-    font-weight: bold;
-    color: #0a4d2e;
-    /* dark green label text */
-}
-
-input[type="text"],
-input[type="email"],
-input[type="tel"],
-textarea {
-    padding: 0.5rem;
-    border: 1px solid #0c6338;
-    /* slightly darker green */
-    border-radius: 4px;
-    font-size: 1rem;
-}
-
-input:focus,
-textarea:focus {
-    outline: 2px solid #0c6338;
-    outline-offset: 2px;
-}
-
-button[type="submit"] {
-    background-color: #0a4d2e;
-    /* dark green button */
-    color: #ffffff;
-    /* white text for contrast */
-    padding: 0.75rem 1.5rem;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-button[type="submit"]:hover {
-    background-color: #0c6338;
-    /* slightly darker on hover */
-}
-
-/* Fieldset Styles */
-fieldset {
-    border: 1px solid #0c6338;
-    padding: 1rem;
-    border-radius: 5px;
-}
-
-legend {
-    font-weight: bold;
-    color: #0a4d2e;
-}
-
-/* Footer Styles */
+/* Footer */
 footer {
-    background-color: #0a4d2e;
-    /* dark green */
-    color: #ffffff;
-    /* white text */
     text-align: center;
     padding: 1rem 0;
+    background-color: #f5f5f5;
+    color: #000000;
     margin-top: 2rem;
-    font-size: 0.9rem;
-}
-
-/* Misc */
-textarea {
-    min-height: 100px;
-    resize: vertical;
 }

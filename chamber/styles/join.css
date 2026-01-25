@@ -1,35 +1,31 @@
-/* -----------------------------
-   Join Page CSS - Form Enhancements
------------------------------ */
+/* -----------------------------------------------------------
+   Join Page CSS - Form Styling
+   Only repeated rules removed
+----------------------------------------------------------- */
 
-/* Timestamp hidden field */
-#timestamp {
-    display: none;
+/* Form Layout */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
-/* Input & Textarea Styling */
+/* Labels */
+label {
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+}
+
+/* Input Fields */
 input[type="text"],
 input[type="email"],
 input[type="tel"],
 textarea {
-    width: 100%;
-    max-width: 100%;
     padding: 0.5rem;
-    margin-top: 0.25rem;
     border: 1px solid #0c6338;
-    /* consistent with chamber.css */
-    border-radius: 4px;
+    border-radius: 5px;
     font-size: 1rem;
-    font-family: 'Roboto', sans-serif;
-    background-color: #ffffff;
-    color: #000000;
-}
-
-input:focus,
-textarea:focus {
-    outline: 2px solid #0a4d2e;
-    /* accessible focus outline */
-    outline-offset: 2px;
 }
 
 /* Fieldset Styling */
@@ -37,56 +33,35 @@ fieldset {
     border: 1px solid #0c6338;
     padding: 1rem;
     border-radius: 5px;
-    margin-top: 1rem;
 }
 
 legend {
     font-weight: bold;
-    color: #0a4d2e;
-    padding: 0 0.5rem;
 }
 
 /* Radio Buttons */
 input[type="radio"] {
     margin-right: 0.5rem;
-    accent-color: #0a4d2e;
-    /* modern browser support for colored radio buttons */
 }
 
-/* Form Labels */
-label {
-    font-weight: bold;
-    color: #0a4d2e;
-    margin-bottom: 0.5rem;
-}
-
-/* Submit Button (reinforce chamber.css styles) */
+/* Submit Button */
 button[type="submit"] {
-    background-color: #0a4d2e;
-    /* dark green */
+    background-color: #0c6338;
     color: #ffffff;
-    /* white text */
+    /* ensures contrast */
     padding: 0.75rem 1.5rem;
     border: none;
     border-radius: 5px;
     font-size: 1rem;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-top: 1rem;
 }
 
 button[type="submit"]:hover {
-    background-color: #0c6338;
-    /* slightly darker green on hover */
+    background-color: #0a4d2e;
 }
 
-/* Responsive adjustments */
-@media (max-width: 600px) {
-    form {
-        padding: 1rem;
-    }
-
-    fieldset {
-        padding: 0.75rem;
-    }
+/* Organization Description */
+textarea {
+    resize: vertical;
+    min-height: 100px;
 }

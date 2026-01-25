@@ -1,40 +1,40 @@
-const membersContainer = document.querySelector('#members-container');
-const gridButton = document.querySelector('#grid');
-const listButton = document.querySelector('#list');
+// ==============================
+// Timestamp
+// ==============================
+document.addEventListener('DOMContentLoaded', () => {
+    const ts = document.getElementById('timestamp');
+    if (ts) ts.value = new Date().toISOString();
 
-async function getMembers() {
-    const response = await fetch('data/members.json');
-    const data = await response.json();
-    displayMembers(data.members);
-}
-
-function displayMembers(members) {
-    membersContainer.innerHTML = '';
-    members.forEach(member => {
-        const card = document.createElement('div');
-        card.classList.add('member-card');
-
-        card.innerHTML = `
-      <img src="images/${member.image}" alt="${member.name}">
-      <h2>${member.name}</h2>
-      <p>${member.address}</p>
-      <p>${member.phone}</p>
-      <a href="${member.website}" target="_blank">Visit Website</a>
-      <p class="level">${member.membership}</p>
-    `;
-
-        membersContainer.appendChild(card);
+    // ==============================
+    // Modals
+    // ==============================
+    document.querySelectorAll('.open-modal').forEach(link => {
+        link.addEventListener('click', e => {
+            e.preventDefault();
+            const modal = document.querySelector(link.getAttribute('href'));
+            if (modal) modal.style.display = 'block';
+        });
     });
-}
 
-gridButton.addEventListener('click', () => {
-    membersContainer.classList.add('grid');
-    membersContainer.classList.remove('list');
+    document.querySelectorAll('.close').forEach(span => {
+        span.addEventListener('click', () => {
+            span.closest('.modal').style.display = 'none';
+        });
+    });
+
+    window.addEventListener('click', e => {
+        if (e.target.classList.contains('modal')) {
+            e.target.style.display = 'none';
+        }
+    });
+
+    // ==============================
+    // Animate membership cards
+    // ==============================
+    const cards = document.querySelectorAll('.membership-cards .card');
+    cards.forEach((card, index) => {
+        setTimeout(() => {
+            card.classList.add('animate');
+        }, index * 200); // stagger animation
+    });
 });
-
-listButton.addEventListener('click', () => {
-    membersContainer.classList.add('list');
-    membersContainer.classList.remove('grid');
-});
-
-getMembers();

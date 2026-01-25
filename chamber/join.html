@@ -1,258 +1,96 @@
 <!DOCTYPE html>
-<html lang="en">
+</label>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Join | Your Town Chamber of Commerce</title>
-    <link rel="stylesheet" href="css/style.css">
-    <script src="js/scripts.js" defer></script>
-    <style>
-        /* Basic styles for form and cards */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
-            color: #333;
-            margin: 0;
-            padding: 0;
-        }
 
-        header,
-        footer {
-            background-color: #004080;
-            color: white;
-            padding: 1rem;
-            text-align: center;
-        }
+<label>Email
+    <input type="email" name="email" title="Email Address" autocomplete="email" placeholder="example@email.com"
+        required>
+</label>
 
-        main {
-            display: flex;
-            flex-wrap: wrap;
-            padding: 2rem;
-            gap: 2rem;
-            justify-content: center;
-        }
 
-        form {
-            flex: 1 1 350px;
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
+<label>Mobile Phone
+    <input type="tel" name="phone" title="Mobile Phone" autocomplete="tel" required>
+</label>
 
-        form label {
-            display: block;
-            margin-bottom: 1rem;
-        }
 
-        input,
-        textarea {
-            width: 100%;
-            padding: 0.5rem;
-            margin-top: 0.2rem;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
+<label>Business Name
+    <input type="text" name="business" title="Business Name" autocomplete="organization" required>
+</label>
 
-        input[type="submit"] {
-            background: #004080;
-            color: white;
-            border: none;
-            cursor: pointer;
-            padding: 0.8rem;
-            font-size: 1rem;
-        }
 
-        input[type="submit"]:hover {
-            background: #0066cc;
-        }
+<fieldset>
+    <legend>Membership Level</legend>
+    <label><input type="radio" name="membership" value="np" required> NP Membership</label>
+    <label><input type="radio" name="membership" value="bronze"> Bronze Membership</label>
+    <label><input type="radio" name="membership" value="silver"> Silver Membership</label>
+    <label><input type="radio" name="membership" value="gold"> Gold Membership</label>
+</fieldset>
 
-        .membership-cards {
-            flex: 1 1 300px;
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1rem;
-        }
 
-        @media(min-width:768px) {
-            .membership-cards {
-                grid-template-columns: 1fr;
-            }
-        }
+<label>Business Description
+    <textarea name="description" title="Business Description"></textarea>
+</label>
 
-        .card {
-            background: white;
-            padding: 1rem;
-            border-radius: 10px;
-            box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeIn 0.8s forwards;
-        }
 
-        .card a {
-            color: #004080;
-            text-decoration: none;
-            font-weight: bold;
-        }
+<input type="hidden" name="timestamp" id="timestamp">
 
-        @keyframes fadeIn {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
 
-        /* Modal Styles */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0, 0, 0, 0.5);
-        }
+<input type="submit" value="Apply for Membership">
+</form>
+</section>
 
-        .modal-content {
-            background: white;
-            margin: 10% auto;
-            padding: 2rem;
-            border-radius: 10px;
-            width: 80%;
-            max-width: 500px;
-            position: relative;
-        }
 
-        .close {
-            position: absolute;
-            top: 10px;
-            right: 15px;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-    </style>
-</head>
+<section class="membership-cards">
 
-<body>
-    <header>
-        <h1>Your Town Chamber of Commerce</h1>
-        <nav>
-            <a href="index.html" style="color:white; margin:0 10px;">Home</a>
-            <a href="discover.html" style="color:white; margin:0 10px;">Discover</a>
-            <a href="directory.html" style="color:white; margin:0 10px;">Directory</a>
-            <a href="join.html" style="color:white; margin:0 10px;">Join</a>
-        </nav>
-    </header>
 
-    <main>
-        <!-- Form -->
-        <form method="get" action="thankyou.html">
-            <label>First Name:
-                <input type="text" name="firstName" title="Enter your first name" autocomplete="given-name" required>
-            </label>
-            <label>Last Name:
-                <input type="text" name="lastName" title="Enter your last name" autocomplete="family-name" required>
-            </label>
-            <label>Title:
-                <input type="text" name="title" title="Enter your organizational title"
-                    autocomplete="organization-title" pattern="[A-Za-z\s\-]{7,}" required>
-            </label>
-            <label>Email:
-                <input type="email" name="email" title="Enter your email" autocomplete="email"
-                    placeholder="example@email.com" required>
-            </label>
-            <label>Mobile Phone:
-                <input type="tel" name="phone" title="Enter your mobile number" autocomplete="tel" required>
-            </label>
-            <label>Business/Organization:
-                <input type="text" name="business" title="Enter your business/organization" autocomplete="organization"
-                    required>
-            </label>
-            <fieldset>
-                <legend>Membership Level</legend>
-                <label><input type="radio" name="membership" value="np" required> NP Membership (no fee)</label>
-                <label><input type="radio" name="membership" value="bronze"> Bronze Membership</label>
-                <label><input type="radio" name="membership" value="silver"> Silver Membership</label>
-                <label><input type="radio" name="membership" value="gold"> Gold Membership</label>
-            </fieldset>
-            <label>Business Description:
-                <textarea name="description" title="Describe your organization"></textarea>
-            </label>
-            <input type="hidden" name="timestamp" id="timestamp">
-            <input type="submit" value="Submit Application">
-        </form>
+    <div class="membership-card">
+        <h3>NP Membership</h3>
+        <button onclick="npModal.showModal()">View Benefits</button>
+    </div>
 
-        <!-- Membership Cards -->
-        <div class="membership-cards">
-            <div class="card">
-                <h3>NP Membership</h3>
-                <a href="#npModal" class="open-modal">More Info</a>
-            </div>
-            <div class="card">
-                <h3>Bronze Membership</h3>
-                <a href="#bronzeModal" class="open-modal">More Info</a>
-            </div>
-            <div class="card">
-                <h3>Silver Membership</h3>
-                <a href="#silverModal" class="open-modal">More Info</a>
-            </div>
-            <div class="card">
-                <h3>Gold Membership</h3>
-                <a href="#goldModal" class="open-modal">More Info</a>
-            </div>
-        </div>
 
-        <!-- Modals -->
-        <div id="npModal" class="modal">
-            <div class="modal-content"><span class="close">&times;</span>
-                <p>No fee. Basic directory listing and events.</p>
-            </div>
-        </div>
-        <div id="bronzeModal" class="modal">
-            <div class="modal-content"><span class="close">&times;</span>
-                <p>Bronze perks: Events, newsletter, advertising.</p>
-            </div>
-        </div>
-        <div id="silverModal" class="modal">
-            <div class="modal-content"><span class="close">&times;</span>
-                <p>Silver perks: Training, directory, advertising, social media.</p>
-            </div>
-        </div>
-        <div id="goldModal" class="modal">
-            <div class="modal-content"><span class="close">&times;</span>
-                <p>Gold perks: All benefits + sponsorships, premium advertising.</p>
-            </div>
-        </div>
-    </main>
+    <div class="membership-card">
+        <h3>Bronze Membership</h3>
+        <button onclick="bronzeModal.showModal()">View Benefits</button>
+    </div>
 
-    <footer>
-        <p>&copy; 2026 Your Town Chamber of Commerce</p>
-    </footer>
 
-    <script>
-        // Timestamp
-        document.getElementById('timestamp').value = new Date().toISOString();
+    <div class="membership-card">
+        <h3>Silver Membership</h3>
+        <button onclick="silverModal.showModal()">View Benefits</button>
+    </div>
 
-        // Modals
-        document.querySelectorAll('.open-modal').forEach(link => {
-            link.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).style.display = 'block';
-            });
-        });
-        document.querySelectorAll('.close').forEach(span => {
-            span.addEventListener('click', function () {
-                this.closest('.modal').style.display = 'none';
-            });
-        });
-        window.onclick = function (e) {
-            if (e.target.classList.contains('modal')) e.target.style.display = 'none';
-        };
-    </script>
+
+    <div class="membership-card">
+        <h3>Gold Membership</h3>
+        <button onclick="goldModal.showModal()">View Benefits</button>
+    </div>
+
+
+</section>
+</main>
+
+
+<!-- MODALS -->
+<dialog id="npModal">
+    <p>No-fee membership for non-profits.</p><button onclick="npModal.close()">Close</button>
+</dialog>
+<dialog id="bronzeModal">
+    <p>Basic promotion and event access.</p><button onclick="bronzeModal.close()">Close</button>
+</dialog>
+<dialog id="silverModal">
+    <p>Training, discounts, and spotlight ads.</p><button onclick="silverModal.close()">Close</button>
+</dialog>
+<dialog id="goldModal">
+    <p>Premium advertising and sponsorships.</p><button onclick="goldModal.close()">Close</button>
+</dialog>
+
+
+<footer>
+    <p>&copy; 2026 Akwa Ibom Chamber of Commerce</p>
+</footer>
+
+
 </body>
 
 </html>

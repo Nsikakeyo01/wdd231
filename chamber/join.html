@@ -3,32 +3,34 @@
 
 <head>
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Join the Akwa Ibom Chamber of Commerce</title>
 
     <meta name="description"
         content="Apply to join the Akwa Ibom Chamber of Commerce and grow your business through networking, advocacy, and local partnerships.">
+
     <meta name="author" content="Nsikak Eyo">
 
+    <link rel="icon" href="images/favicon.ico">
+
+    <!-- Google Fonts (REQUIRED) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/chamber.css">
+
+    <!-- Open Graph -->
     <meta property="og:title" content="Join the Akwa Ibom Chamber of Commerce Today">
     <meta property="og:description"
         content="Become a member of the Akwa Ibom Chamber of Commerce and connect with businesses, leaders, and opportunities across the region.">
     <meta property="og:image" content="https://nsikakeyo01.github.io/wdd231/chamber/images/og-image.jpg">
     <meta property="og:url" content="https://nsikakeyo01.github.io/wdd231/chamber/join.html">
+    <meta property="og:type" content="website">
 
-    <link rel="icon" href="images/favicon.ico">
-
-    <!-- REQUIRED: two CSS files -->
-    <link rel="stylesheet" href="styles/normalize.css">
-    <link rel="stylesheet" href="styles/chamber.css">
-
-    <!-- Google Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-
-    <!-- JS in head with defer -->
+    <!-- JS (CORRECT LOCATION FOR AUDIT) -->
     <script src="scripts/join.js" defer></script>
 </head>
 
@@ -36,8 +38,6 @@
     <header>
         <nav>
             <a href="index.html">Home</a>
-            <a href="#">Discover</a>
-            <a href="#">Directory</a>
             <a href="join.html">Join</a>
         </nav>
     </header>
@@ -46,51 +46,72 @@
         <h1>Join the Akwa Ibom Chamber of Commerce</h1>
 
         <form method="get" action="thankyou.html">
-            <fieldset>
-                <legend>Membership Application</legend>
+            <input type="hidden" id="timestamp" name="timestamp">
 
-                <label for="fname">First Name</label>
-                <input type="text" id="fname" name="fname" required title="Enter your first name">
+            <label for="fname">First Name
+                <input type="text" id="fname" name="fname" required autocomplete="given-name"
+                    title="Enter your first name">
+            </label>
 
-                <label for="lname">Last Name</label>
-                <input type="text" id="lname" name="lname" required title="Enter your last name">
+            <label for="lname">Last Name
+                <input type="text" id="lname" name="lname" required autocomplete="family-name"
+                    title="Enter your last name">
+            </label>
 
-                <!-- ✅ FIX #1: pattern added -->
-                <label for="orgtitle">Organization Title</label>
+            <label for="orgtitle">Organization Title
                 <input type="text" id="orgtitle" name="orgtitle" autocomplete="organization-title"
-                    title="Enter your position or title" pattern="[A-Za-z\s\-]{2,}">
+                    title="Enter your position or title">
+            </label>
 
-                <label for="email">Email Address</label>
-                <input type="email" id="email" name="email" required placeholder="name@example.com"
-                    title="Enter your email address">
+            <label for="email">Email Address
+                <input type="email" id="email" name="email" required autocomplete="email"
+                    title="Enter a valid email address" placeholder="name@example.com">
+            </label>
 
-                <label for="phone">Mobile Phone</label>
-                <input type="tel" id="phone" name="phone" title="Enter your mobile phone number">
+            <label for="phone">Mobile Phone
+                <input type="tel" id="phone" name="phone" required autocomplete="tel"
+                    title="Enter your mobile phone number">
+            </label>
 
-                <label for="orgname">Organization Name</label>
-                <input type="text" id="orgname" name="orgname" autocomplete="organization"
-                    title="Enter organization name">
+            <label for="orgname">Organization Name
+                <input type="text" id="orgname" name="orgname" required autocomplete="organization"
+                    title="Enter your organization name">
+            </label>
 
-                <label for="membership">Membership Level</label>
-                <select id="membership" name="membership">
-                    <option value="np">NP Membership</option>
-                    <option value="bronze">Bronze Membership</option>
-                    <option value="silver">Silver Membership</option>
-                    <option value="gold">Gold Membership</option>
-                </select>
+            <fieldset>
+                <legend>Membership Level</legend>
 
-                <label for="description">Organization Description</label>
-                <textarea id="description" name="description" title="Describe your organization"></textarea>
+                <label>
+                    <input type="radio" name="membership" value="NP" required>
+                    NP Membership
+                </label>
 
-                <input type="hidden" id="timestamp" name="timestamp">
+                <label>
+                    <input type="radio" name="membership" value="Bronze">
+                    Bronze Membership
+                </label>
 
-                <button type="submit">Apply Now</button>
+                <label>
+                    <input type="radio" name="membership" value="Silver">
+                    Silver Membership
+                </label>
+
+                <label>
+                    <input type="radio" name="membership" value="Gold">
+                    Gold Membership
+                </label>
             </fieldset>
+
+            <label for="description">Organization Description
+                <textarea id="description" name="description" title="Describe your organization"></textarea>
+            </label>
+
+            <button type="submit">Join the Chamber</button>
         </form>
     </main>
 
     <footer>
-        <p>&copy; <span id="year"></span> Brigham Young University-Idaho | All rights reserved</p>
+        <p>&copy; <span id="year"></span> Akwa Ibom Chamber of Commerce</p>
     </footer>
 </body>
 

@@ -1,16 +1,15 @@
 body {
-    font-family: Roboto, sans-serif;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 header {
     background-color: #0a4d2e;
-    padding: 1rem;
-}
-
-nav a {
     color: white;
-    margin-right: 1rem;
-    text-decoration: none;
+    /* ✅ contrast fix */
+    padding: 1rem;
+    text-align: center;
 }
 
 main {
@@ -19,13 +18,26 @@ main {
 
 form {
     max-width: 600px;
+    margin: auto;
 }
 
 label {
     display: block;
-    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
+input,
+textarea,
 button {
-    margin-top: 1.5rem;
+    width: 100%;
+    padding: 0.5rem;
+}
+
+fieldset {
+    margin-bottom: 1rem;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
 }

@@ -21,14 +21,11 @@ header {
 /* Navigation links */
 header nav a {
     color: #ffffff;
-    /* text color */
     text-decoration: none;
-    /* removed underline */
 }
 
 header nav a:hover {
     color: #f5f5f5;
-    /* hover color */
 }
 
 /* Main content styles */

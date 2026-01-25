@@ -4,41 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thank You</title>
+    <title>Thank You | Akwa Ibom Chamber of Commerce</title>
     <link rel="stylesheet" href="styles/chamber.css">
 </head>
 
 <body>
-
-
-    <header>
-        <h1>Thank You for Joining</h1>
-    </header>
-
-
     <main>
-        <p><strong>First Name:</strong> <span id="fname"></span></p>
-        <p><strong>Last Name:</strong> <span id="lname"></span></p>
-        <p><strong>Email:</strong> <span id="email"></span></p>
-        <p><strong>Phone:</strong> <span id="phone"></span></p>
-        <p><strong>Business:</strong> <span id="business"></span></p>
-        <p><strong>Date Submitted:</strong> <span id="timestamp"></span></p>
+        <h1>Thank You for Joining!</h1>
+        <p>Your application has been received. We will contact you shortly.</p>
     </main>
 
-
-    <script>
-        const data = new URLSearchParams(window.location.search);
-        ['fname', 'lname', 'email', 'phone', 'business', 'timestamp'].forEach(id => {
-            document.getElementById(id).textContent = data.get(id);
-        });
-    </script>
-
-
     <footer>
-        <p>&copy; 2026 Akwa Ibom Chamber of Commerce</p>
+        <p>&copy; <span id="year"></span> Akwa Ibom Chamber of Commerce</p>
     </footer>
 
-
+    <script src="scripts/join.js" defer></script>
 </body>
 
 </html>

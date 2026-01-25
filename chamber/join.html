@@ -11,6 +11,8 @@
         content="Apply for membership in the Akwa Ibom Chamber of Commerce and connect with local businesses, training opportunities, and community growth initiatives.">
     <meta name="author" content="Nsikak Eyo">
 
+    <link rel="icon" href="images/favicon.ico">
+
     <!-- Open Graph -->
     <meta property="og:title" content="Join Akwa Ibom Chamber of Commerce">
     <meta property="og:description"
@@ -18,15 +20,13 @@
     <meta property="og:image" content="https://nsikakeyo01.github.io/wdd231/chamber/images/og-image.jpg">
     <meta property="og:url" content="https://nsikakeyo01.github.io/wdd231/chamber/join.html">
 
-    <!-- Favicon -->
-    <link rel="icon" href="images/favicon.ico">
-
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
 
     <!-- CSS -->
+    <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/chamber.css">
 </head>
 
@@ -45,59 +45,62 @@
     <main>
         <h1>Join the Akwa Ibom Chamber of Commerce</h1>
 
-        <form method="get" action="thankyou.html" class="join-layout">
-            <fieldset>
-                <legend>Membership Application</legend>
+        <form method="get" action="thankyou.html">
+            <input type="hidden" id="timestamp" name="timestamp">
 
-                <label for="fname">First Name
-                    <input type="text" id="fname" name="fname" required>
-                </label>
+            <label for="fname">First Name
+                <input type="text" id="fname" name="fname" required autocomplete="given-name"
+                    title="Enter your first name">
+            </label>
 
-                <label for="lname">Last Name
-                    <input type="text" id="lname" name="lname" required>
-                </label>
+            <label for="lname">Last Name
+                <input type="text" id="lname" name="lname" required autocomplete="family-name"
+                    title="Enter your last name">
+            </label>
 
-                <label for="orgtitle">Organization Title
-                    <input type="text" id="orgtitle" name="orgtitle" pattern="[A-Za-z\s\-]{7,}">
-                </label>
+            <label for="orgtitle">Organization Title
+                <input type="text" id="orgtitle" name="orgtitle" autocomplete="organization-title"
+                    title="Your role in the organization" pattern="[A-Za-z\s\-]{7,}">
+            </label>
 
-                <label for="email">Email Address
-                    <input type="email" id="email" name="email" required placeholder="example@email.com">
-                </label>
+            <label for="email">Email Address
+                <input type="email" id="email" name="email" required autocomplete="email"
+                    title="Enter a valid email address">
+            </label>
 
-                <label for="phone">Mobile Phone
-                    <input type="tel" id="phone" name="phone" required>
-                </label>
+            <label for="phone">Mobile Phone
+                <input type="tel" id="phone" name="phone" required autocomplete="tel"
+                    title="Enter your mobile phone number">
+            </label>
 
-                <label for="orgname">Organization Name
-                    <input type="text" id="orgname" name="orgname" required>
-                </label>
+            <label for="orgname">Organization Name
+                <input type="text" id="orgname" name="orgname" required autocomplete="organization"
+                    title="Enter your organization name">
+            </label>
 
-                <label for="membership">Membership Level
-                    <select id="membership" name="membership" required>
-                        <option value="">Select a level</option>
-                        <option value="nonprofit">Non-Profit</option>
-                        <option value="silver">Silver</option>
-                        <option value="gold">Gold</option>
-                    </select>
-                </label>
+            <label for="membership">Membership Level
+                <select id="membership" name="membership" required>
+                    <option value="">Select a level</option>
+                    <option value="np">Non-Profit</option>
+                    <option value="bronze">Bronze</option>
+                    <option value="silver">Silver</option>
+                    <option value="gold">Gold</option>
+                </select>
+            </label>
 
-                <label for="description">Organization Description
-                    <textarea id="description" name="description"></textarea>
-                </label>
+            <label for="description">Organization Description
+                <textarea id="description" name="description" title="Brief description of your organization"></textarea>
+            </label>
 
-                <input type="hidden" id="timestamp" name="timestamp">
-
-                <button type="submit">Apply Now</button>
-            </fieldset>
+            <button type="submit">Apply for Membership</button>
         </form>
     </main>
 
     <footer>
-        <p>&copy; <span id="year"></span> Akwa Ibom Chamber of Commerce | Nigeria</p>
+        <p>&copy; <span id="year"></span> Akwa Ibom Chamber of Commerce</p>
     </footer>
 
-    <script src="scripts/join.js"></script>
+    <script src="scripts/join.js" defer></script>
 </body>
 
 </html>

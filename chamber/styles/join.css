@@ -1,64 +1,77 @@
-/* join.css - Page-specific styles for join.html */
+/* join.css - Page-specific styles for Join Page */
 
-/* Form styling */
+/* ---------------- Form Container ---------------- */
 form {
     max-width: 600px;
     margin: 2rem auto;
-    padding: 1.5rem;
+    padding: 2rem;
     background-color: #f5f5f5;
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Labels */
+/* ---------------- Form Labels & Inputs ---------------- */
 label {
     display: block;
     margin-bottom: 1rem;
     font-weight: 500;
+    color: #0a4d2e;
 }
 
-/* Fieldsets */
-fieldset {
-    border: 1px solid #ccc;
-    padding: 1rem;
-    margin-bottom: 1rem;
-    border-radius: 6px;
-}
-
-/* Legend */
-legend {
-    font-weight: 600;
-}
-
-/* Textarea */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
 textarea {
     width: 100%;
-    min-height: 100px;
     padding: 0.5rem;
-    border-radius: 6px;
+    margin-top: 0.25rem;
     border: 1px solid #ccc;
-    resize: vertical;
+    border-radius: 6px;
+    font-size: 1rem;
 }
 
-/* Submit button */
-button[type="submit"] {
-    background-color: #0a4d2e;
-    color: #ffffff;
-    /* updated for contrast */
-    padding: 0.75rem 1.5rem;
-    border: none;
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* ---------------- Fieldset & Legend ---------------- */
+fieldset {
+    border: 1px solid #0a4d2e;
     border-radius: 6px;
-    cursor: pointer;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+legend {
+    font-weight: bold;
+    color: #0a4d2e;
+}
+
+/* ---------------- Radio Buttons ---------------- */
+input[type="radio"] {
+    margin-right: 0.5rem;
+}
+
+/* ---------------- Submit Button ---------------- */
+form button[type="submit"] {
+    background-color: #0a4d2e;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    border: none;
     font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
-button[type="submit"]:hover {
+form button[type="submit"]:hover {
     background-color: #0c6338;
 }
 
-/* Responsive adjustments */
-@media (max-width: 600px) {
+/* ---------------- Responsive Adjustments ---------------- */
+@media (max-width: 640px) {
     form {
         padding: 1rem;
         margin: 1rem;

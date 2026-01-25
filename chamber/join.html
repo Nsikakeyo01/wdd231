@@ -3,14 +3,11 @@
 
 <head>
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Join the Akwa Ibom Chamber of Commerce</title>
-
     <meta name="description"
         content="Apply to join the Akwa Ibom Chamber of Commerce and grow your business through networking, advocacy, and local partnerships.">
-
     <meta name="author" content="Nsikak Eyo">
 
     <link rel="icon" href="images/favicon.ico">
@@ -20,7 +17,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 
+    <!-- CSS Files -->
     <link rel="stylesheet" href="styles/chamber.css">
+    <link rel="stylesheet" href="styles/join.css"> <!-- Added second CSS file -->
 
     <!-- Open Graph -->
     <meta property="og:title" content="Join the Akwa Ibom Chamber of Commerce Today">
@@ -30,7 +29,7 @@
     <meta property="og:url" content="https://nsikakeyo01.github.io/wdd231/chamber/join.html">
     <meta property="og:type" content="website">
 
-    <!-- JS (CORRECT LOCATION FOR AUDIT) -->
+    <!-- JS -->
     <script src="scripts/join.js" defer></script>
 </head>
 
@@ -60,7 +59,7 @@
 
             <label for="orgtitle">Organization Title
                 <input type="text" id="orgtitle" name="orgtitle" autocomplete="organization-title"
-                    title="Enter your position or title">
+                    pattern="[A-Za-z0-9\s]{2,50}" title="Enter your position or title (2-50 characters)" required>
             </label>
 
             <label for="email">Email Address

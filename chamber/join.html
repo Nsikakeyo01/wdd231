@@ -57,10 +57,13 @@
                     title="Enter your last name">
             </label>
 
+
             <label for="orgtitle">Organization Title
                 <input type="text" id="orgtitle" name="orgtitle" autocomplete="organization-title"
-                    pattern="[A-Za-z0-9\s]{2,50}" title="Enter your position or title (2-50 characters)" required>
+                    pattern="[A-Za-z\s-]{7,50}"
+                    title="Enter your position or title (letters, hyphens, spaces, min 7 chars)" required>
             </label>
+
 
             <label for="email">Email Address
                 <input type="email" id="email" name="email" required autocomplete="email"

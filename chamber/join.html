@@ -4,62 +4,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Nsikak Eyo">
+    <title>Join the Akwa Ibom Chamber of Commerce</title>
     <meta name="description"
         content="Apply to join the Akwa Ibom Chamber of Commerce and grow your business through networking, advocacy, and partnerships.">
-    <title>Join the Akwa Ibom Chamber of Commerce</title>
+    <meta name="author" content="Nsikak Eyo">
     <link rel="icon" href="images/favicon.ico">
-
-    <!-- Google Fonts -->
+    <link rel="stylesheet" href="styles/chamber.css">
+    <link rel="stylesheet" href="styles/join.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="styles/chamber.css">
-    <link rel="stylesheet" href="styles/join.css">
 </head>
 
 <body>
     <header>
-        <div class="logo">BYU-I logo</div>
         <nav>
-            <button class="hamburger" id="hamburger">&#9776;</button>
-            <ul id="nav-links">
-                <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="join.html" class="nav-link active">Join</a></li>
-            </ul>
+            <div class="nav-container">
+                <a href="index.html" class="logo">BYU-I Logo</a>
+                <button class="hamburger" id="hamburger">&#9776;</button>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="join.html" class="active-page">Join</a></li>
+                </ul>
+            </div>
         </nav>
     </header>
 
     <main>
-        <h1>Join the Akwa Ibom Chamber of Commerce</h1>
+        <section class="membership-intro">
+            <h1>Join the Akwa Ibom Chamber of Commerce</h1>
 
-        <section class="membership-cards">
-            <div class="card">
-                <h2>NP Membership</h2>
-                <p>No fee for non-profit organizations.</p>
-                <button class="view-benefits" data-modal="np-modal">View Benefits</button>
-            </div>
-            <div class="card">
-                <h2>Bronze Membership</h2>
-                <p>Basic benefits for small businesses.</p>
-                <button class="view-benefits" data-modal="bronze-modal">View Benefits</button>
-            </div>
-            <div class="card">
-                <h2>Silver Membership</h2>
-                <p>Expanded exposure and events.</p>
-                <button class="view-benefits" data-modal="silver-modal">View Benefits</button>
-            </div>
-            <div class="card">
-                <h2>Gold Membership</h2>
-                <p>Premium visibility and perks.</p>
-                <button class="view-benefits" data-modal="gold-modal">View Benefits</button>
+            <div class="membership-levels">
+                <div class="level">
+                    <h2>NP Membership</h2>
+                    <p>No fee for non-profit organizations.</p>
+                    <button class="view-benefits" data-target="np-modal">View Benefits</button>
+                </div>
+                <div class="level">
+                    <h2>Bronze Membership</h2>
+                    <p>Basic benefits for small businesses.</p>
+                    <button class="view-benefits" data-target="bronze-modal">View Benefits</button>
+                </div>
+                <div class="level">
+                    <h2>Silver Membership</h2>
+                    <p>Expanded exposure and events.</p>
+                    <button class="view-benefits" data-target="silver-modal">View Benefits</button>
+                </div>
+                <div class="level">
+                    <h2>Gold Membership</h2>
+                    <p>Premium visibility and perks.</p>
+                    <button class="view-benefits" data-target="gold-modal">View Benefits</button>
+                </div>
             </div>
         </section>
 
+        <!-- Membership Modals -->
+        <dialog id="np-modal">
+            <h3>NP Membership Benefits</h3>
+            <p>Non-profits enjoy free membership, networking, and access to advocacy events.</p>
+            <button class="close-modal">Close</button>
+        </dialog>
+
+        <dialog id="bronze-modal">
+            <h3>Bronze Membership Benefits</h3>
+            <p>Basic benefits for small businesses including event invites and directory listing.</p>
+            <button class="close-modal">Close</button>
+        </dialog>
+
+        <dialog id="silver-modal">
+            <h3>Silver Membership Benefits</h3>
+            <p>Expanded exposure, networking events, and marketing support.</p>
+            <button class="close-modal">Close</button>
+        </dialog>
+
+        <dialog id="gold-modal">
+            <h3>Gold Membership Benefits</h3>
+            <p>Premium visibility, exclusive perks, sponsorship opportunities, and priority access to events.</p>
+            <button class="close-modal">Close</button>
+        </dialog>
+
+        <!-- Join Form -->
         <section class="join-form">
             <form method="get" action="thankyou.html">
+                <!-- Hidden timestamp -->
                 <input type="hidden" name="timestamp" id="timestamp">
 
                 <label for="first">First Name</label>
@@ -102,24 +129,9 @@
     </main>
 
     <footer>
-        © 2026 Akwa Ibom Chamber of Commerce
+        <p>© 2026 Akwa Ibom Chamber of Commerce</p>
     </footer>
 
-    <!-- Membership Modals -->
-    <dialog id="np-modal">
-        <p>NP: No fee for non-profits</p><button class="close-modal">Close</button>
-    </dialog>
-    <dialog id="bronze-modal">
-        <p>Bronze: Basic benefits for small businesses</p><button class="close-modal">Close</button>
-    </dialog>
-    <dialog id="silver-modal">
-        <p>Silver: Expanded exposure and events</p><button class="close-modal">Close</button>
-    </dialog>
-    <dialog id="gold-modal">
-        <p>Gold: Premium visibility and perks</p><button class="close-modal">Close</button>
-    </dialog>
-
-    <!-- JS -->
     <script src="scripts/join.js" defer></script>
 </body>
 

@@ -4,124 +4,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Join the Akwa Ibom Chamber of Commerce</title>
+    <meta name="author" content="Nsikak Eyo">
     <meta name="description"
         content="Apply to join the Akwa Ibom Chamber of Commerce and grow your business through networking, advocacy, and partnerships.">
-    <meta name="author" content="Nsikak Eyo">
+    <title>Join the Akwa Ibom Chamber of Commerce</title>
     <link rel="icon" href="images/favicon.ico">
-    <meta property="og:title" content="Join the Akwa Ibom Chamber of Commerce">
-    <meta property="og:description"
-        content="Become a member of the Akwa Ibom Chamber of Commerce and connect with local business opportunities.">
-    <meta property="og:image" content="https://nsikakeyo01.github.io/wdd231/chamber/images/og-image.jpg">
-    <meta property="og:url" content="https://nsikakeyo01.github.io/wdd231/chamber/join.html">
-    <link rel="stylesheet" href="styles/chamber.css">
-    <link rel="stylesheet" href="styles/join.css">
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <script defer src="scripts/join.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/chamber.css">
+    <link rel="stylesheet" href="styles/join.css">
 </head>
 
 <body>
     <header>
+        <div class="logo">BYU-I logo</div>
         <nav>
-            <button id="menu-toggle" aria-label="Toggle navigation">☰</button>
+            <button class="hamburger" id="hamburger">&#9776;</button>
             <ul id="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="join.html" class="active">Join</a></li>
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="join.html" class="nav-link active">Join</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
         <h1>Join the Akwa Ibom Chamber of Commerce</h1>
+
         <section class="membership-cards">
             <div class="card">
                 <h2>NP Membership</h2>
                 <p>No fee for non-profit organizations.</p>
-                <button class="modal-btn" data-modal="np-modal">View Benefits</button>
+                <button class="view-benefits" data-modal="np-modal">View Benefits</button>
             </div>
             <div class="card">
                 <h2>Bronze Membership</h2>
                 <p>Basic benefits for small businesses.</p>
-                <button class="modal-btn" data-modal="bronze-modal">View Benefits</button>
+                <button class="view-benefits" data-modal="bronze-modal">View Benefits</button>
             </div>
             <div class="card">
                 <h2>Silver Membership</h2>
                 <p>Expanded exposure and events.</p>
-                <button class="modal-btn" data-modal="silver-modal">View Benefits</button>
+                <button class="view-benefits" data-modal="silver-modal">View Benefits</button>
             </div>
             <div class="card">
                 <h2>Gold Membership</h2>
                 <p>Premium visibility and perks.</p>
-                <button class="modal-btn" data-modal="gold-modal">View Benefits</button>
+                <button class="view-benefits" data-modal="gold-modal">View Benefits</button>
             </div>
         </section>
 
-        <!-- Modals -->
-        <dialog id="np-modal">
-            <h3>NP Membership Benefits</h3>
-            <p>Non-profit organizations enjoy free membership with access to networking events, partnerships, and
-                advocacy support.</p>
-            <button class="close-modal">Close</button>
-        </dialog>
+        <section class="join-form">
+            <form method="get" action="thankyou.html">
+                <input type="hidden" name="timestamp" id="timestamp">
 
-        <dialog id="bronze-modal">
-            <h3>Bronze Membership Benefits</h3>
-            <p>Basic support, event access, and small business visibility.</p>
-            <button class="close-modal">Close</button>
-        </dialog>
+                <label for="first">First Name</label>
+                <input type="text" id="first" name="first" autocomplete="given-name" title="Enter your first name"
+                    required>
 
-        <dialog id="silver-modal">
-            <h3>Silver Membership Benefits</h3>
-            <p>Expanded marketing opportunities, events, and networking support.</p>
-            <button class="close-modal">Close</button>
-        </dialog>
+                <label for="last">Last Name</label>
+                <input type="text" id="last" name="last" autocomplete="family-name" title="Enter your last name"
+                    required>
 
-        <dialog id="gold-modal">
-            <h3>Gold Membership Benefits</h3>
-            <p>Premium exposure, sponsorships, advanced networking, and priority support.</p>
-            <button class="close-modal">Close</button>
-        </dialog>
+                <label for="title">Organization Title</label>
+                <input type="text" id="title" name="title" autocomplete="organization-title"
+                    title="Your title in the organization" required>
 
-        <form method="get" action="thankyou.html">
-            <label for="first">First Name</label>
-            <input type="text" id="first" name="first" required>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" autocomplete="email" title="Your email address"
+                    placeholder="name@example.com" required>
 
-            <label for="last">Last Name</label>
-            <input type="text" id="last" name="last" required>
+                <label for="phone">Mobile Phone</label>
+                <input type="tel" id="phone" name="phone" autocomplete="tel-national" title="Your phone number"
+                    required>
 
-            <label for="title">Organization Title</label>
-            <input type="text" id="title" name="title" pattern="[A-Za-z\s\-]{7,}"
-                title="At least 7 letters, spaces or hyphens" required>
+                <label for="org">Organization Name</label>
+                <input type="text" id="org" name="org" autocomplete="organization" title="Organization name" required>
 
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="name@example.com" required>
+                <label for="membership">Membership Level</label>
+                <select id="membership" name="membership" required>
+                    <option value="NP">NP</option>
+                    <option value="Bronze">Bronze</option>
+                    <option value="Silver">Silver</option>
+                    <option value="Gold">Gold</option>
+                </select>
 
-            <label for="phone">Mobile Phone</label>
-            <input type="tel" id="phone" name="phone" required>
+                <label for="desc">Organization Description</label>
+                <textarea id="desc" name="desc" title="Describe your organization" required></textarea>
 
-            <label for="org">Organization Name</label>
-            <input type="text" id="org" name="org" required>
-
-            <label for="membership">Membership Level</label>
-            <select id="membership" name="membership" required>
-                <option value="NP">NP</option>
-                <option value="Bronze">Bronze</option>
-                <option value="Silver">Silver</option>
-                <option value="Gold">Gold</option>
-            </select>
-
-            <label for="desc">Organization Description</label>
-            <textarea id="desc" name="desc" title="Describe your organization" required></textarea>
-
-            <button type="submit">Join the Chamber</button>
-        </form>
+                <button type="submit">Join the Chamber</button>
+            </form>
+        </section>
     </main>
 
     <footer>
-        <p>© 2026 Akwa Ibom Chamber of Commerce</p>
+        © 2026 Akwa Ibom Chamber of Commerce
     </footer>
+
+    <!-- Membership Modals -->
+    <dialog id="np-modal">
+        <p>NP: No fee for non-profits</p><button class="close-modal">Close</button>
+    </dialog>
+    <dialog id="bronze-modal">
+        <p>Bronze: Basic benefits for small businesses</p><button class="close-modal">Close</button>
+    </dialog>
+    <dialog id="silver-modal">
+        <p>Silver: Expanded exposure and events</p><button class="close-modal">Close</button>
+    </dialog>
+    <dialog id="gold-modal">
+        <p>Gold: Premium visibility and perks</p><button class="close-modal">Close</button>
+    </dialog>
+
+    <!-- JS -->
+    <script src="scripts/join.js" defer></script>
 </body>
 
 </html>

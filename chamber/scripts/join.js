@@ -1,24 +1,45 @@
 // Hamburger menu toggle
-const menuToggle = document.getElementById('menu-toggle');
+const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('nav-links');
-menuToggle.addEventListener('click', () => navLinks.classList.toggle('show'));
-
-// Modals
-document.querySelectorAll('.modal-btn').forEach(btn => {
-    const modalId = btn.dataset.modal;
-    const modal = document.getElementById(modalId);
-    btn.addEventListener('click', () => modal.showModal());
+hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
 });
 
-document.querySelectorAll('.close-modal').forEach(btn => {
-    const modal = btn.closest('dialog');
-    btn.addEventListener('click', () => modal.close());
+// Highlight current page
+document.querySelectorAll('.nav-link').forEach(link => {
+    if (link.href === window.location.href) {
+        link.classList.add('active');
+    }
 });
 
-// Animate cards on page load (refresh)
+// Populate hidden timestamp
+document.getElementById('timestamp').value = new Date().toISOString();
+
+// Membership modals
+const modalButtons = document.querySelectorAll('.view-benefits');
+modalButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+        const modal = document.getElementById(btn.dataset.modal);
+        modal.showModal();
+    });
+});
+
+// Close modals
+const closeButtons = document.querySelectorAll('.close-modal');
+closeButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+        btn.closest('dialog').close();
+    });
+});
+
+// Page refresh animation
 document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.card').forEach(card => {
         card.style.opacity = 0;
-        setTimeout(() => card.style.opacity = 1, 100);
+        setTimeout(() => {
+            card.style.transition = 'opacity 0.8s ease-in-out, transform 0.8s ease-in-out';
+            card.style.opacity = 1;
+            card.style.transform = 'translateY(0)';
+        }, 100);
     });
 });

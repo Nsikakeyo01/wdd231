@@ -1,74 +1,25 @@
-/* join.css */
-
-/* Form page main container */
-main {
-    max-width: 800px;
-    margin: 0 auto;
-    /* padding removed to avoid duplicate with chamber.css */
-}
-
-/* Headings */
-h1 {
-    color: #0a4d2e;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-/* Labels */
 label {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 0.5rem;
     font-weight: bold;
-    color: #000000;
 }
 
-/* Input fields */
-input[type="text"],
-input[type="email"],
-input[type="tel"],
-select,
-textarea {
+input,
+textarea,
+select {
     width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
     border: 1px solid #0a4d2e;
     border-radius: 4px;
 }
 
-/* Textarea adjustments */
-textarea {
-    resize: vertical;
-}
-
-/* Submit button */
-button[type="submit"] {
-    background-color: #0a4d2e;
-    color: #ffffff;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    border-radius: 4px;
-}
-
-button[type="submit"]:hover {
-    background-color: #0c6338;
-}
-
-/* Fieldset styling */
 fieldset {
     border: 1px solid #0a4d2e;
-    padding: 15px;
-    border-radius: 8px;
-    margin-bottom: 20px;
+    padding: 1rem;
+    margin-bottom: 1rem;
 }
 
-/* Legend styling */
-legend {
-    font-weight: bold;
-    color: #0a4d2e;
-}
-
-/* Membership cards layout */
 .membership-cards {
     margin-bottom: 2rem;
 }
@@ -79,19 +30,15 @@ legend {
     gap: 1rem;
 }
 
-/* Card styling */
 .card {
-    background-color: #ffffff;
+    background: #ffffff;
     border: 1px solid #0a4d2e;
-    border-radius: 8px;
     padding: 1rem;
+    border-radius: 8px;
     text-align: center;
-
-    /* Animation (NOT hover-based) */
     animation: fadeUp 0.8s ease-in-out both;
 }
 
-/* Stagger animation */
 .card:nth-child(2) {
     animation-delay: 0.2s;
 }
@@ -104,7 +51,6 @@ legend {
     animation-delay: 0.6s;
 }
 
-/* Animation keyframes */
 @keyframes fadeUp {
     from {
         opacity: 0;
@@ -117,14 +63,8 @@ legend {
     }
 }
 
-/* Modal styling */
 dialog {
     border: none;
     border-radius: 8px;
-    padding: 1.5rem;
-    max-width: 400px;
-}
-
-dialog::backdrop {
-    background: rgba(0, 0, 0, 0.4);
+    padding: 1rem;
 }

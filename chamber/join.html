@@ -12,22 +12,14 @@
 
     <link rel="icon" href="images/favicon.ico">
 
-    <!-- Google Fonts (REQUIRED) -->
+    <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 
-    <!-- CSS Files -->
+    <!-- CSS -->
     <link rel="stylesheet" href="styles/chamber.css">
-    <link rel="stylesheet" href="styles/join.css"> <!-- Added second CSS file -->
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="Join the Akwa Ibom Chamber of Commerce Today">
-    <meta property="og:description"
-        content="Become a member of the Akwa Ibom Chamber of Commerce and connect with businesses, leaders, and opportunities across the region.">
-    <meta property="og:image" content="https://nsikakeyo01.github.io/wdd231/chamber/images/og-image.jpg">
-    <meta property="og:url" content="https://nsikakeyo01.github.io/wdd231/chamber/join.html">
-    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="styles/join.css">
 
     <!-- JS -->
     <script src="scripts/join.js" defer></script>
@@ -35,77 +27,113 @@
 
 <body>
     <header>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="join.html">Join</a>
+        <nav class="nav">
+            <button id="menuButton" aria-label="Open navigation menu">☰</button>
+            <ul id="navList">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="join.html" aria-current="page">Join</a></li>
+            </ul>
         </nav>
     </header>
 
     <main>
         <h1>Join the Akwa Ibom Chamber of Commerce</h1>
 
+        <!-- MEMBERSHIP CARDS -->
+        <section class="membership-cards">
+            <div class="cards">
+
+                <div class="card">
+                    <h3>NP Membership</h3>
+                    <p>No fee for non-profit organizations.</p>
+                    <button type="button" onclick="document.getElementById('npModal').showModal()">View
+                        Benefits</button>
+                    <dialog id="npModal">
+                        <h2>NP Membership</h2>
+                        <p>Free membership for registered non-profit organizations.</p>
+                        <button type="button" onclick="this.closest('dialog').close()">Close</button>
+                    </dialog>
+                </div>
+
+                <div class="card">
+                    <h3>Bronze Membership</h3>
+                    <p>Basic benefits for small businesses.</p>
+                    <button type="button" onclick="document.getElementById('bronzeModal').showModal()">View
+                        Benefits</button>
+                    <dialog id="bronzeModal">
+                        <h2>Bronze Membership</h2>
+                        <p>Basic networking and promotional benefits.</p>
+                        <button type="button" onclick="this.closest('dialog').close()">Close</button>
+                    </dialog>
+                </div>
+
+                <div class="card">
+                    <h3>Silver Membership</h3>
+                    <p>Expanded exposure and events.</p>
+                    <button type="button" onclick="document.getElementById('silverModal').showModal()">View
+                        Benefits</button>
+                    <dialog id="silverModal">
+                        <h2>Silver Membership</h2>
+                        <p>Event discounts and featured listings.</p>
+                        <button type="button" onclick="this.closest('dialog').close()">Close</button>
+                    </dialog>
+                </div>
+
+                <div class="card">
+                    <h3>Gold Membership</h3>
+                    <p>Premium visibility and perks.</p>
+                    <button type="button" onclick="document.getElementById('goldModal').showModal()">View
+                        Benefits</button>
+                    <dialog id="goldModal">
+                        <h2>Gold Membership</h2>
+                        <p>Top-tier promotion and spotlight placement.</p>
+                        <button type="button" onclick="this.closest('dialog').close()">Close</button>
+                    </dialog>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- FORM -->
         <form method="get" action="thankyou.html">
             <input type="hidden" id="timestamp" name="timestamp">
 
-            <label for="fname">First Name
-                <input type="text" id="fname" name="fname" required autocomplete="given-name"
-                    title="Enter your first name">
+            <label>First Name
+                <input type="text" name="fname" required autocomplete="given-name" title="Enter your first name">
             </label>
 
-            <label for="lname">Last Name
-                <input type="text" id="lname" name="lname" required autocomplete="family-name"
-                    title="Enter your last name">
+            <label>Last Name
+                <input type="text" name="lname" required autocomplete="family-name" title="Enter your last name">
             </label>
 
-
-            <label for="orgtitle">Organization Title
-                <input type="text" id="orgtitle" name="orgtitle" autocomplete="organization-title"
-                    pattern="[A-Za-z\s-]{7,50}"
-                    title="Enter your position or title (letters, hyphens, spaces, min 7 chars)" required>
+            <label>Organization Title
+                <input type="text" name="orgtitle" required autocomplete="organization-title"
+                    pattern="[A-Za-z\s-]{7,50}" title="Letters, spaces, and hyphens only (min 7 characters)">
             </label>
 
-
-            <label for="email">Email Address
-                <input type="email" id="email" name="email" required autocomplete="email"
-                    title="Enter a valid email address" placeholder="name@example.com">
+            <label>Email
+                <input type="email" name="email" required autocomplete="email" placeholder="name@example.com"
+                    title="Enter a valid email address">
             </label>
 
-            <label for="phone">Mobile Phone
-                <input type="tel" id="phone" name="phone" required autocomplete="tel"
-                    title="Enter your mobile phone number">
+            <label>Phone
+                <input type="tel" name="phone" required autocomplete="tel" title="Enter phone number">
             </label>
 
-            <label for="orgname">Organization Name
-                <input type="text" id="orgname" name="orgname" required autocomplete="organization"
-                    title="Enter your organization name">
+            <label>Organization Name
+                <input type="text" name="orgname" required autocomplete="organization" title="Enter organization name">
             </label>
 
             <fieldset>
                 <legend>Membership Level</legend>
-
-                <label>
-                    <input type="radio" name="membership" value="NP" required>
-                    NP Membership
-                </label>
-
-                <label>
-                    <input type="radio" name="membership" value="Bronze">
-                    Bronze Membership
-                </label>
-
-                <label>
-                    <input type="radio" name="membership" value="Silver">
-                    Silver Membership
-                </label>
-
-                <label>
-                    <input type="radio" name="membership" value="Gold">
-                    Gold Membership
-                </label>
+                <label><input type="radio" name="membership" value="NP" required> NP</label>
+                <label><input type="radio" name="membership" value="Bronze"> Bronze</label>
+                <label><input type="radio" name="membership" value="Silver"> Silver</label>
+                <label><input type="radio" name="membership" value="Gold"> Gold</label>
             </fieldset>
 
-            <label for="description">Organization Description
-                <textarea id="description" name="description" title="Describe your organization"></textarea>
+            <label>Description
+                <textarea name="description"></textarea>
             </label>
 
             <button type="submit">Join the Chamber</button>

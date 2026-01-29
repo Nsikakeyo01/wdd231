@@ -1,30 +1,24 @@
-// Timestamp
-const timestamp = document.querySelector("#timestamp");
-if (timestamp) {
-    timestamp.value = new Date().toISOString();
-}
+// Hamburger menu toggle
+const menuToggle = document.getElementById('menu-toggle');
+const navLinks = document.getElementById('nav-links');
+menuToggle.addEventListener('click', () => navLinks.classList.toggle('show'));
 
-// Footer year
-const yearSpan = document.querySelector("#year");
-if (yearSpan) {
-    yearSpan.textContent = new Date().getFullYear();
-}
-
-// Mobile menu
-const menuButton = document.querySelector("#menuButton");
-const navList = document.querySelector("#navList");
-menuButton.addEventListener("click", () => navList.classList.toggle("open"));
-
-// Modals (NO inline onclick)
-document.querySelectorAll(".open-modal").forEach(button => {
-    button.addEventListener("click", () => {
-        const modalId = button.closest(".card").dataset.modal;
-        document.getElementById(modalId).showModal();
-    });
+// Modals
+document.querySelectorAll('.modal-btn').forEach(btn => {
+    const modalId = btn.dataset.modal;
+    const modal = document.getElementById(modalId);
+    btn.addEventListener('click', () => modal.showModal());
 });
 
-document.querySelectorAll(".close-modal").forEach(button => {
-    button.addEventListener("click", () => {
-        button.closest("dialog").close();
+document.querySelectorAll('.close-modal').forEach(btn => {
+    const modal = btn.closest('dialog');
+    btn.addEventListener('click', () => modal.close());
+});
+
+// Animate cards on page load (refresh)
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.card').forEach(card => {
+        card.style.opacity = 0;
+        setTimeout(() => card.style.opacity = 1, 100);
     });
 });

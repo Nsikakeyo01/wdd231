@@ -6,11 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Join the Akwa Ibom Chamber of Commerce</title>
+
     <meta name="description"
-        content="Apply to join the Akwa Ibom Chamber of Commerce and grow your business through networking, advocacy, and local partnerships.">
+        content="Apply to join the Akwa Ibom Chamber of Commerce and grow your business through networking, advocacy, and partnerships.">
     <meta name="author" content="Nsikak Eyo">
 
     <link rel="icon" href="images/favicon.ico">
+
+    <!-- Open Graph (REQUIRED FIX) -->
+    <meta property="og:title" content="Join the Akwa Ibom Chamber of Commerce">
+    <meta property="og:description"
+        content="Become a member of the Akwa Ibom Chamber of Commerce and connect with local business opportunities.">
+    <meta property="og:image" content="https://nsikakeyo01.github.io/wdd231/chamber/images/og-image.jpg">
+    <meta property="og:url" content="https://nsikakeyo01.github.io/wdd231/chamber/join.html">
+    <meta property="og:type" content="website">
 
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -43,56 +52,46 @@
         <section class="membership-cards">
             <div class="cards">
 
-                <div class="card">
+                <div class="card" data-modal="npModal">
                     <h3>NP Membership</h3>
                     <p>No fee for non-profit organizations.</p>
-                    <button type="button" onclick="document.getElementById('npModal').showModal()">View
-                        Benefits</button>
-                    <dialog id="npModal">
-                        <h2>NP Membership</h2>
-                        <p>Free membership for registered non-profit organizations.</p>
-                        <button type="button" onclick="this.closest('dialog').close()">Close</button>
-                    </dialog>
+                    <button type="button" class="open-modal">View Benefits</button>
                 </div>
 
-                <div class="card">
+                <div class="card" data-modal="bronzeModal">
                     <h3>Bronze Membership</h3>
                     <p>Basic benefits for small businesses.</p>
-                    <button type="button" onclick="document.getElementById('bronzeModal').showModal()">View
-                        Benefits</button>
-                    <dialog id="bronzeModal">
-                        <h2>Bronze Membership</h2>
-                        <p>Basic networking and promotional benefits.</p>
-                        <button type="button" onclick="this.closest('dialog').close()">Close</button>
-                    </dialog>
+                    <button type="button" class="open-modal">View Benefits</button>
                 </div>
 
-                <div class="card">
+                <div class="card" data-modal="silverModal">
                     <h3>Silver Membership</h3>
                     <p>Expanded exposure and events.</p>
-                    <button type="button" onclick="document.getElementById('silverModal').showModal()">View
-                        Benefits</button>
-                    <dialog id="silverModal">
-                        <h2>Silver Membership</h2>
-                        <p>Event discounts and featured listings.</p>
-                        <button type="button" onclick="this.closest('dialog').close()">Close</button>
-                    </dialog>
+                    <button type="button" class="open-modal">View Benefits</button>
                 </div>
 
-                <div class="card">
+                <div class="card" data-modal="goldModal">
                     <h3>Gold Membership</h3>
                     <p>Premium visibility and perks.</p>
-                    <button type="button" onclick="document.getElementById('goldModal').showModal()">View
-                        Benefits</button>
-                    <dialog id="goldModal">
-                        <h2>Gold Membership</h2>
-                        <p>Top-tier promotion and spotlight placement.</p>
-                        <button type="button" onclick="this.closest('dialog').close()">Close</button>
-                    </dialog>
+                    <button type="button" class="open-modal">View Benefits</button>
                 </div>
 
             </div>
         </section>
+
+        <!-- MODALS -->
+        <dialog id="npModal">
+            <p>Free membership for registered non-profits.</p><button class="close-modal">Close</button>
+        </dialog>
+        <dialog id="bronzeModal">
+            <p>Basic networking and promotion.</p><button class="close-modal">Close</button>
+        </dialog>
+        <dialog id="silverModal">
+            <p>Event discounts and featured listings.</p><button class="close-modal">Close</button>
+        </dialog>
+        <dialog id="goldModal">
+            <p>Premium promotion and spotlight placement.</p><button class="close-modal">Close</button>
+        </dialog>
 
         <!-- FORM -->
         <form method="get" action="thankyou.html">
@@ -116,12 +115,13 @@
                     title="Enter a valid email address">
             </label>
 
-            <label>Phone
-                <input type="tel" name="phone" required autocomplete="tel" title="Enter phone number">
+            <label>Mobile Phone
+                <input type="tel" name="phone" required autocomplete="tel" title="Enter your phone number">
             </label>
 
             <label>Organization Name
-                <input type="text" name="orgname" required autocomplete="organization" title="Enter organization name">
+                <input type="text" name="orgname" required autocomplete="organization"
+                    title="Enter your organization name">
             </label>
 
             <fieldset>
@@ -132,8 +132,8 @@
                 <label><input type="radio" name="membership" value="Gold"> Gold</label>
             </fieldset>
 
-            <label>Description
-                <textarea name="description"></textarea>
+            <label>Organization Description
+                <textarea name="description" title="Describe your organization"></textarea>
             </label>
 
             <button type="submit">Join the Chamber</button>

@@ -1,59 +1,61 @@
+/* chamber.css */
+
+/* General body styles */
 body {
     font-family: 'Roboto', sans-serif;
     background-color: #f5f5f5;
     margin: 0;
+    padding: 0;
     color: #000000;
 }
 
+/* Header styles */
 header {
     background-color: #0a4d2e;
-    padding: 1rem;
+    color: #ffffff;
+    /* Fixed color contrast */
+    padding: 20px;
+    text-align: center;
 }
 
-.nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+/* Navigation links */
+header nav a {
+    color: #ffffff;
+    /* Fixed color contrast */
+    text-decoration: none;
 }
 
+header nav a:hover {
+    color: #f5f5f5;
+}
+
+/* Active page indicator */
+a[aria-current="page"] {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+/* Hamburger menu */
 #menuButton {
     display: none;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     background: none;
     border: none;
-    color: #ffffff;
+    color: #fff;
+    cursor: pointer;
 }
 
 #navList {
     list-style: none;
     display: flex;
     gap: 1rem;
-    padding: 0;
-    margin: 0;
 }
 
-#navList a {
-    color: #ffffff;
-    text-decoration: none;
+#navList.open {
+    display: block;
 }
 
-#navList a[aria-current="page"] {
-    text-decoration: underline;
-    font-weight: bold;
-}
-
-main {
-    padding: 1rem;
-}
-
-footer {
-    background-color: #0c6338;
-    color: #ffffff;
-    text-align: center;
-    padding: 1rem;
-}
-
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     #menuButton {
         display: block;
     }
@@ -61,11 +63,51 @@ footer {
     #navList {
         display: none;
         flex-direction: column;
-        background-color: #0a4d2e;
-        padding: 1rem;
+        margin-top: 1rem;
     }
+}
 
-    #navList.open {
-        display: flex;
-    }
+/* Main content styles */
+main {
+    padding: 20px;
+}
+
+/* Footer styles */
+footer {
+    background-color: #0c6338;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Form styles */
+form {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+form input,
+form textarea,
+form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #0a4d2e;
+    border-radius: 4px;
+}
+
+form button {
+    background-color: #0a4d2e;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+form button:hover {
+    background-color: #0c6338;
 }

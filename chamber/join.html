@@ -52,25 +52,25 @@
             <div class="card">
                 <h3>NP Membership</h3>
                 <p>No fee for non-profit organizations.</p>
-                <button data-modal="np">View Benefits</button>
+                <button onclick="document.getElementById('np').showModal()">View Benefits</button>
             </div>
 
             <div class="card">
                 <h3>Bronze Membership</h3>
                 <p>Basic benefits for small businesses.</p>
-                <button data-modal="bronze">View Benefits</button>
+                <button onclick="document.getElementById('bronze').showModal()">View Benefits</button>
             </div>
 
             <div class="card">
                 <h3>Silver Membership</h3>
                 <p>Expanded exposure and events.</p>
-                <button data-modal="silver">View Benefits</button>
+                <button onclick="document.getElementById('silver').showModal()">View Benefits</button>
             </div>
 
             <div class="card">
                 <h3>Gold Membership</h3>
                 <p>Premium visibility and perks.</p>
-                <button data-modal="gold">View Benefits</button>
+                <button onclick="document.getElementById('gold').showModal()">View Benefits</button>
             </div>
         </section>
 
@@ -127,22 +127,22 @@
     <!-- Modals -->
     <dialog id="np">
         <p>NP members receive basic access and community recognition.</p>
-        <button>Close</button>
+        <button onclick="document.getElementById('np').close()">Close</button>
     </dialog>
 
     <dialog id="bronze">
         <p>Bronze members get event access and directory listings.</p>
-        <button>Close</button>
+        <button onclick="document.getElementById('bronze').close()">Close</button>
     </dialog>
 
     <dialog id="silver">
         <p>Silver members enjoy marketing exposure and networking.</p>
-        <button>Close</button>
+        <button onclick="document.getElementById('silver').close()">Close</button>
     </dialog>
 
     <dialog id="gold">
         <p>Gold members receive premium advertising and sponsorships.</p>
-        <button>Close</button>
+        <button onclick="document.getElementById('gold').close()">Close</button>
     </dialog>
 
 </body>

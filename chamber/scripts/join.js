@@ -33,3 +33,10 @@ window.addEventListener('load', () => {
     document.body.style.transition = 'opacity 1s ease-in';
     document.body.style.opacity = 1;
 });
+// Responsive navigation toggle
+const menuButton = document.getElementById("menu-button");
+const navLinks = document.getElementById("nav-links");
+
+menuButton.addEventListener("click", () => {
+    navLinks.classList.toggle("open");
+});

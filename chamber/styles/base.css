@@ -1,21 +1,51 @@
+/* --------------------------
+   Base Styles
+-------------------------- */
 :root {
     --primary: #0b3c5d;
     --secondary: #f4f4f4;
     --text-color: #000;
+    --card-bg: #fff;
+    --card-shadow: rgba(0, 0, 0, 0.1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
     background-color: var(--secondary);
     color: var(--text-color);
+    line-height: 1.6;
 }
 
-header,
-footer {
+a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* --------------------------
+   Header & Nav
+-------------------------- */
+header {
     background-color: var(--primary);
     color: #fff;
     padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .site-title {
+    font-size: 1.5rem;
+    font-weight: 700;
 }
 
 nav ul {
@@ -24,40 +54,129 @@ nav ul {
     gap: 1rem;
 }
 
-nav a {
+nav ul li a {
     color: #fff;
-    text-decoration: none;
+    font-weight: 500;
 }
 
+/* --------------------------
+   Main
+-------------------------- */
+main {
+    padding: 2rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+main h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+#last-visit {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-style: italic;
+}
+
+/* --------------------------
+   Cards Container
+-------------------------- */
 .cards-container {
     display: grid;
+    gap: 2rem;
     grid-template-columns: 1fr;
-    gap: 1rem;
-    padding: 1rem;
 }
 
+/* --------------------------
+   Card Styles
+-------------------------- */
 .card {
-    background-color: #fff;
-    border-radius: 10px;
+    background-color: var(--card-bg);
+    border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px var(--card-shadow);
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .card img {
     width: 100%;
     display: block;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s;
 }
 
 .card-content {
-    padding: 0.5rem 1rem;
+    padding: 1rem;
 }
 
-.button {
+.card-content h2 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.card-content .address {
+    font-size: 0.9rem;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+.card-content p {
+    margin-bottom: 1rem;
+}
+
+.card-content .learn-more {
     display: inline-block;
-    margin-top: 0.5rem;
-    padding: 0.5rem 1rem;
     background-color: var(--primary);
     color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.card-content .learn-more:hover {
+    background-color: #095083;
+}
+
+/* --------------------------
+   Hover effect for larger screens
+-------------------------- */
+@media (hover: hover) and (min-width: 768px) {
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px var(--card-shadow);
+    }
+
+    .card img:hover {
+        transform: scale(1.05);
+    }
+}
+
+/* --------------------------
+   Responsive Grid
+-------------------------- */
+@media (min-width: 600px) {
+    .cards-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 900px) {
+    .cards-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* --------------------------
+   Footer
+-------------------------- */
+footer {
+    background-color: var(--primary);
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
 }

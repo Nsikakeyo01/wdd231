@@ -1,52 +1,41 @@
-// scripts/discover.js
-document.addEventListener("DOMContentLoaded", () => {
-    const cardsContainer = document.getElementById("cards-container");
-    const lastVisitEl = document.getElementById("last-visit");
+// discover.js
+const cardsContainer = document.getElementById('cards-container');
+const lastVisit = document.getElementById('last-visit');
 
-    // -----------------------------
-    // 1. Local Storage: Last Visit
-    // -----------------------------
-    const now = new Date();
-    const lastVisit = localStorage.getItem("lastVisit");
+// Show last visit using localStorage
+const now = new Date();
+const last = localStorage.getItem('lastVisit');
+if (last) {
+    lastVisit.textContent = `Your last visit was on ${last}`;
+} else {
+    lastVisit.textContent = `Welcome to our Chamber Discover page!`;
+}
+localStorage.setItem('lastVisit', now.toLocaleString());
 
-    if (lastVisit) {
-        const lastDate = new Date(lastVisit);
-        lastVisitEl.textContent = `Welcome back! Your last visit was on ${lastDate.toDateString()}.`;
-    } else {
-        lastVisitEl.textContent = "Welcome! This is your first visit.";
-    }
+// Fetch JSON data and create cards
+async function loadPlaces() {
+    try {
+        const response = await fetch('data/places.json');
+        const places = await response.json();
 
-    localStorage.setItem("lastVisit", now.toISOString());
-
-    // -----------------------------
-    // 2. Fetch JSON Data
-    // -----------------------------
-    fetch("data/places.json")
-        .then((response) => response.json())
-        .then((places) => {
-            places.forEach((place) => {
-                // Create card element
-                const card = document.createElement("div");
-                card.className = "card";
-                card.id = place.id;
-
-                // Card inner HTML
-                card.innerHTML = `
-                    <img src="${place.image}" alt="${place.title}" loading="lazy">
-                    <div class="card-content">
-                        <h3>${place.title}</h3>
-                        <p class="address">${place.address}</p>
-                        <p class="description">${place.description}</p>
-                        <a href="${place.link}" class="learn-more">Learn More</a>
-                    </div>
-                `;
-
-                // Append card to container
-                cardsContainer.appendChild(card);
-            });
-        })
-        .catch((error) => {
-            console.error("Error loading places:", error);
-            cardsContainer.textContent = "Sorry, we couldn't load the community places.";
+        places.forEach(place => {
+            const card = document.createElement('div');
+            card.classList.add('card');
+            card.innerHTML = `
+                <img src="${place.image}" alt="${place.title}" loading="lazy">
+                <div class="card-content">
+                    <h2>${place.title}</h2>
+                    <p class="address">${place.address}</p>
+                    <p>${place.description}</p>
+                    <a href="${place.link}" class="learn-more">Learn More</a>
+                </div>
+            `;
+            cardsContainer.appendChild(card);
         });
-});
+    } catch (error) {
+        console.error('Error loading places:', error);
+        cardsContainer.innerHTML = `<p>Unable to load places at this time.</p>`;
+    }
+}
+
+loadPlaces();

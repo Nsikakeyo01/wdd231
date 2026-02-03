@@ -1,0 +1,72 @@
+:root {
+    --primary: #0b3c5d;
+    --secondary: #f4f4f4;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.skip-link {
+    position: absolute;
+    left: -999px;
+}
+
+.skip-link:focus {
+    left: 10px;
+    background: #000;
+    color: #fff;
+    padding: 0.5rem;
+}
+
+header,
+footer {
+    background: var(--primary);
+    color: white;
+    padding: 1rem;
+}
+
+.nav {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+}
+
+.nav a.active {
+    text-decoration: underline;
+}
+
+main {
+    padding: 1rem;
+}
+
+.cards-grid {
+    display: grid;
+    gap: 1rem;
+}
+
+.card {
+    background: var(--secondary);
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 6px;
+    transition: transform 0.3s ease;
+}
+
+.card button {
+    margin-top: 0.5rem;
+}

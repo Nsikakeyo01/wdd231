@@ -1,0 +1,24 @@
+@media (min-width: 640px) {
+    .cards-grid {
+        grid-template-areas:
+            "one two"
+            "three four"
+            "five six"
+            "seven eight";
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (min-width: 1024px) {
+    .cards-grid {
+        grid-template-areas:
+            "one two three"
+            "four five six"
+            "seven eight eight";
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .card img:hover {
+        transform: scale(1.05);
+    }
+}

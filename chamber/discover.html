@@ -4,81 +4,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Discover | Your Town Chamber of Commerce</title>
-    <meta name="description"
-        content="Discover Your Town and learn about local history, attractions, and upcoming community events.">
-    <meta name="author" content="Nsikak Eyo">
+    <meta name="description" content="Discover local attractions and businesses in our chamber area.">
+    <title>Discover | Chamber of Commerce</title>
 
-    <!-- Favicon -->
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="Discover Your Town Chamber of Commerce">
-    <meta property="og:description"
-        content="Explore Your Town’s history, attractions, and upcoming events with the Chamber of Commerce.">
-    <meta property="og:image" content="https://nsikakeyo01.github.io/wdd231/chamber/images/og-image.png">
-    <meta property="og:url" content="https://nsikakeyo01.github.io/wdd231/chamber/discover.html">
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-
-    <!-- External CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/medium.css">
 </head>
 
 <body>
+
+    <a class="skip-link" href="#main">Skip to Content</a>
+
     <header>
-        <h1>Your Town Chamber of Commerce</h1>
         <nav>
-            <a href="index.html">Home</a>
-            <a href="discover.html">Discover</a>
-            <a href="directory.html">Directory</a>
-            <a href="join.html">Join</a>
+            <ul class="nav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="discover.html" class="active">Discover</a></li>
+            </ul>
         </nav>
     </header>
 
-    <main>
-        <!-- About Section -->
-        <section>
-            <h2>About Our Town</h2>
-            <p>Welcome to <strong>Your Town</strong>! Our town is rich in history, culture, and local business
-                opportunities. From small boutiques to large enterprises, we foster a thriving business community that
-                welcomes visitors and residents alike.</p>
-            <p>Population: 50,000 | Founded: 1850 | Known for: Local festivals and community events</p>
-        </section>
+    <main id="main">
+        <h1>Discover Our Community</h1>
 
-        <!-- Attractions Section -->
-        <section>
-            <h2>Local Attractions & Landmarks</h2>
-            <div class="images-grid">
-                <div>
-                    <img src="images/town-center.jpg" alt="Town Center">
-                    <p>The historic town center is home to shops, cafes, and public art displays.</p>
-                </div>
-                <div>
-                    <img src="images/local-museum.jpg" alt="Local Museum">
-                    <p>Our museum showcases the town’s heritage and history through interactive exhibits.</p>
-                </div>
-            </div>
-        </section>
+        <p id="visit-message"></p>
 
-        <!-- Events Section -->
-        <section>
-            <h2>Upcoming Events</h2>
-            <ul>
-                <li>Chamber Networking Event – Jan 31</li>
-                <li>Local Market Festival – Feb 15</li>
-                <li>Business Workshop – Mar 5</li>
-                <li>Annual Town Parade – Apr 10</li>
-            </ul>
-        </section>
+        <section id="cards" class="cards-grid"></section>
     </main>
 
     <footer>
-        <p>&copy; 2026 Your Town Chamber of Commerce</p>
+        <p>&copy; 2026 Chamber of Commerce</p>
     </footer>
+
+    <script type="module" src="scripts/discover.js"></script>
 </body>
 
 </html>

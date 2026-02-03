@@ -1,0 +1,66 @@
+[
+    {
+        "id": "place1",
+        "title": "Town Center",
+        "address": "123 Main St",
+        "description": "The heart of our community with shops, restaurants, and events.",
+        "image": "images/place1.webp",
+        "link": "place1.html"
+    },
+    {
+        "id": "place2",
+        "title": "Local Museum",
+        "address": "45 Museum Ave",
+        "description": "Explore the rich history and culture of our town.",
+        "image": "images/place2.webp",
+        "link": "place2.html"
+    },
+    {
+        "id": "place3",
+        "title": "Community Park",
+        "address": "78 Park Lane",
+        "description": "Open green space with walking paths and playgrounds.",
+        "image": "images/place3.webp",
+        "link": "place3.html"
+    },
+    {
+        "id": "place4",
+        "title": "City Library",
+        "address": "101 Library Rd",
+        "description": "A quiet place to read, study, and attend events.",
+        "image": "images/place4.webp",
+        "link": "place4.html"
+    },
+    {
+        "id": "place5",
+        "title": "Historic Theater",
+        "address": "202 Theater St",
+        "description": "Enjoy live performances and film screenings.",
+        "image": "images/place5.webp",
+        "link": "place5.html"
+    },
+    {
+        "id": "place6",
+        "title": "Riverwalk",
+        "address": "River St",
+        "description": "Scenic walking paths along the river with cafes.",
+        "image": "images/place6.webp",
+        "link": "place6.html"
+    },
+    {
+        "id": "place7",
+        "title": "Local Market",
+        "address": "Market Blvd",
+        "description": "Fresh produce, local crafts, and community gatherings.",
+        "image": "images/place7.webp",
+        "link": "place7.html"
+    },
+    {
+        "id": "place8",
+        "title": "Art Gallery",
+        "address": "55 Art Ave",
+        "description": "Contemporary art exhibitions from local artists.",
+        "image": "images/place8.webp",
+        "link": "place8.html"
+    }
+]

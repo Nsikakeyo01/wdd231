@@ -1,37 +1,69 @@
-import { places } from "../data/discover.mjs";
+// scripts/discover.js
+const cardsContainer = document.getElementById('cards-container');
 
-const cards = document.querySelector("#cards");
-const message = document.querySelector("#visit-message");
+// Display last visit using localStorage
+const lastVisitElement = document.getElementById('last-visit');
+const now = new Date();
+const lastVisit = localStorage.getItem('lastVisit');
 
-// LOCAL STORAGE MESSAGE
-const lastVisit = localStorage.getItem("lastVisit");
-const now = Date.now();
-
-if (!lastVisit) {
-    message.textContent = "Welcome! This is your first visit.";
+if (lastVisit) {
+    lastVisitElement.textContent = `Welcome back! Your last visit was on ${lastVisit}.`;
 } else {
-    const days = Math.floor((now - lastVisit) / (1000 * 60 * 60 * 24));
-    message.textContent = `Welcome back! You last visited ${days} day(s) ago.`;
+    lastVisitElement.textContent = 'Welcome to our Chamber of Commerce!';
 }
 
-localStorage.setItem("lastVisit", now);
+// Save current visit
+localStorage.setItem('lastVisit', now.toDateString());
 
-// BUILD CARDS
-places.forEach((place, index) => {
-    const card = document.createElement("section");
-    card.classList.add("card");
-    card.style.gridArea = [
-        "one", "two", "three", "four",
-        "five", "six", "seven", "eight"
-    ][index];
+// Fetch JSON data and create cards
+fetch('data/places.json')
+    .then(response => response.json())
+    .then(data => {
+        data.forEach(place => {
+            // Create card element
+            const card = document.createElement('div');
+            card.className = 'card';
+            card.id = place.id;
 
-    card.innerHTML = `
-    <h2>${place.name}</h2>
-    <p>${place.address}</p>
-    <p>${place.description}</p>
-    <img src="${place.image}" alt="${place.name}" loading="lazy">
-    <button>Learn More</button>
-  `;
+            // Image with lazy loading
+            const img = document.createElement('img');
+            img.src = place.image;
+            img.alt = place.title;
+            img.loading = 'lazy';
 
-    cards.appendChild(card);
-});
+            // Card content container
+            const cardContent = document.createElement('div');
+            cardContent.className = 'card-content';
+
+            const title = document.createElement('h2');
+            title.textContent = place.title;
+
+            const address = document.createElement('p');
+            address.className = 'address';
+            address.textContent = place.address;
+
+            const description = document.createElement('p');
+            description.className = 'description';
+            description.textContent = place.description;
+
+            const link = document.createElement('a');
+            link.href = place.link;
+            link.textContent = 'Learn More';
+            link.className = 'learn-more';
+
+            // Append elements to card
+            cardContent.appendChild(title);
+            cardContent.appendChild(address);
+            cardContent.appendChild(description);
+            cardContent.appendChild(link);
+
+            card.appendChild(img);
+            card.appendChild(cardContent);
+
+            cardsContainer.appendChild(card);
+        });
+    })
+    .catch(error => {
+        console.error('Error loading JSON data:', error);
+        cardsContainer.textContent = 'Failed to load places. Please try again later.';
+    });

@@ -2,22 +2,17 @@
 <html lang="en">
 
 <head>
-    <!-- Required Meta Tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Page Title -->
     <title>Discover | Chamber of Commerce</title>
-
-    <!-- Meta Description & Author -->
     <meta name="description"
         content="Discover local attractions, landmarks, and businesses in our Chamber of Commerce community.">
     <meta name="author" content="Nsikak Eyo">
 
     <!-- Favicon -->
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="images/favicon.ico">
 
-    <!-- Open Graph Meta Tags -->
+    <!-- Open Graph for social media -->
     <meta property="og:title" content="Discover Our Community | Chamber of Commerce">
     <meta property="og:description"
         content="Explore local attractions, landmarks, and businesses that make our Chamber community unique.">
@@ -29,16 +24,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
-    <!-- CSS Files -->
+    <!-- CSS Stylesheets -->
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/medium.css">
+    <link rel="stylesheet" href="styles/large.css">
 </head>
 
 <body>
-
-    <!-- HEADER -->
     <header>
-        <h1>Discover Our Community</h1>
+        <h1>Chamber of Commerce</h1>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -49,25 +43,20 @@
         </nav>
     </header>
 
-    <!-- MAIN CONTENT -->
     <main>
-        <!-- Custom message via localStorage -->
-        <section id="visitor-message"></section>
+        <h1>Discover Our Community</h1>
+        <p id="last-visit"></p>
 
-        <!-- Cards container -->
-        <section class="cards-container" id="cards-container">
-            <!-- Cards will be injected via discover.js -->
-        </section>
+        <div class="cards-container" id="cards-container">
+            <!-- Cards dynamically loaded from JSON -->
+        </div>
     </main>
 
-    <!-- FOOTER -->
     <footer>
-        <p>&copy; 2026 Chamber of Commerce. All rights reserved.</p>
+        <p>&copy; 2026 Chamber of Commerce</p>
     </footer>
 
-    <!-- JavaScript -->
-    <script src="scripts/discover.js" type="module"></script>
-
+    <script type="module" src="scripts/discover.js"></script>
 </body>
 
 </html>

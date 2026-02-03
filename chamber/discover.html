@@ -2,41 +2,72 @@
 <html lang="en">
 
 <head>
+    <!-- Required Meta Tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Discover local attractions and businesses in our chamber area.">
+
+    <!-- Page Title -->
     <title>Discover | Chamber of Commerce</title>
 
+    <!-- Meta Description & Author -->
+    <meta name="description"
+        content="Discover local attractions, landmarks, and businesses in our Chamber of Commerce community.">
+    <meta name="author" content="Nsikak Eyo">
+
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Discover Our Community | Chamber of Commerce">
+    <meta property="og:description"
+        content="Explore local attractions, landmarks, and businesses that make our Chamber community unique.">
+    <meta property="og:image" content="https://nsikakeyo01.github.io/wdd231/chamber/images/og-image.png">
+    <meta property="og:url" content="https://nsikakeyo01.github.io/wdd231/chamber/discover.html">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- CSS Files -->
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/medium.css">
 </head>
 
 <body>
 
-    <a class="skip-link" href="#main">Skip to Content</a>
-
+    <!-- HEADER -->
     <header>
+        <h1>Discover Our Community</h1>
         <nav>
-            <ul class="nav">
+            <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="discover.html" class="active">Discover</a></li>
+                <li><a href="discover.html">Discover</a></li>
+                <li><a href="directory.html">Directory</a></li>
+                <li><a href="join.html">Join</a></li>
             </ul>
         </nav>
     </header>
 
-    <main id="main">
-        <h1>Discover Our Community</h1>
+    <!-- MAIN CONTENT -->
+    <main>
+        <!-- Custom message via localStorage -->
+        <section id="visitor-message"></section>
 
-        <p id="visit-message"></p>
-
-        <section id="cards" class="cards-grid"></section>
+        <!-- Cards container -->
+        <section class="cards-container" id="cards-container">
+            <!-- Cards will be injected via discover.js -->
+        </section>
     </main>
 
+    <!-- FOOTER -->
     <footer>
-        <p>&copy; 2026 Chamber of Commerce</p>
+        <p>&copy; 2026 Chamber of Commerce. All rights reserved.</p>
     </footer>
 
-    <script type="module" src="scripts/discover.js"></script>
+    <!-- JavaScript -->
+    <script src="scripts/discover.js" type="module"></script>
+
 </body>
 
 </html>

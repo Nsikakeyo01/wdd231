@@ -1,0 +1,38 @@
+.navigation {
+    display: flex;
+    gap: 1rem;
+}
+
+.active {
+    font-weight: bold;
+}
+
+#menu {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .navigation {
+        display: none;
+        flex-direction: column;
+    }
+
+    #menu {
+        display: block;
+    }
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .6);
+}
+
+.modal-content {
+    background: #fff;
+    margin: 10% auto;
+    padding: 1rem;
+    width: 90%;
+    max-width: 400px;
+}

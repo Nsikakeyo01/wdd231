@@ -60,7 +60,10 @@
         <p>&copy; 2026 | Nsikak Eyo | WDD 231</p>
     </footer>
 
-    <script type="module" src="scripts/main.js"></script>
+    <!-- Move script to head with defer for proper audit reference -->
+    <!-- If you want it here instead, type="module" is fine and functional -->
+    <script type="module" src="scripts/main.js" defer></script>
+
 </body>
 
 </html>

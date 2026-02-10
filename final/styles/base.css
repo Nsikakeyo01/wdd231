@@ -1,36 +1,39 @@
-/* ------------------------------
+/* =========================
    BASE CSS
-   Variables, Resets, Typography
------------------------------- */
+   File: base.css
+========================= */
 
-/* CSS Variables for consistent color palette */
+/* ===== Variables ===== */
 :root {
     --primary-color: #1f2933;
-    /* dark text / main theme */
+    /* Dark slate */
     --secondary-color: #f9fafb;
-    /* light background */
+    /* Light background */
     --accent-color: #4f46e5;
-    /* buttons / highlights */
+    /* Indigo accent */
     --font-family: 'Poppins', sans-serif;
 }
 
-/* Reset and box-sizing */
+/* ===== Global Reset ===== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Body and basic typography */
-body {
-    font-family: var(--font-family);
+html {
     font-size: 16px;
-    line-height: 1.5;
-    color: var(--primary-color);
-    background-color: var(--secondary-color);
+    scroll-behavior: smooth;
 }
 
-/* Headings */
+body {
+    font-family: var(--font-family);
+    color: var(--primary-color);
+    background-color: var(--secondary-color);
+    line-height: 1.6;
+}
+
+/* ===== Headings ===== */
 h1,
 h2,
 h3,
@@ -39,37 +42,54 @@ h5,
 h6 {
     font-weight: 600;
     color: var(--primary-color);
-    line-height: 1.2;
 }
 
-/* Paragraphs */
-p {
+h1 {
+    font-size: 2.5rem;
     margin-bottom: 1rem;
 }
 
-/* Lists */
-ul {
-    list-style: none;
+h2 {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
 }
 
+/* ===== Paragraphs ===== */
+p {
+    margin-bottom: 1rem;
+    font-weight: 400;
+}
+
+/* ===== Links ===== */
 a {
+    color: var(--accent-color);
     text-decoration: none;
-    color: var(--primary-color);
 }
 
-/* Buttons */
-button {
-    font-family: var(--font-family);
-    cursor: pointer;
-    background-color: var(--accent-color);
-    color: white;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    transition: background-color 0.3s;
+a:hover,
+a:focus {
+    text-decoration: underline;
 }
 
-button:hover {
-    background-color: #3730a3;
-    /* slightly darker accent */
+/* ===== Lists ===== */
+ul,
+ol {
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+/* ===== Images ===== */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ===== Main & Sections ===== */
+main {
+    padding: 2rem;
+}
+
+section {
+    margin-bottom: 2rem;
 }

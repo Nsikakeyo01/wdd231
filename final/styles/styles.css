@@ -1,102 +1,89 @@
-/* ------------------------------
-   LAYOUT & COMPONENT STYLES
------------------------------- */
+/* =========================
+   STYLES CSS
+   File: styles.css
+========================= */
 
-/* Header */
+/* ===== Header ===== */
 header {
     background-color: var(--primary-color);
     color: white;
-    /* FIXED contrast */
     padding: 1rem 2rem;
+    text-align: center;
+}
+
+header nav ul {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    list-style: none;
 }
 
-header nav a {
+header nav ul li a {
     color: white;
-    /* header links visible */
-    margin-left: 1.5rem;
-    font-weight: 500;
+    font-weight: 600;
 }
 
-header nav a:hover {
+header nav ul li a:hover,
+header nav ul li a:focus {
     color: var(--accent-color);
 }
 
-/* Main section */
-main {
-    padding: 2rem;
-}
-
-/* Sections */
-section {
-    margin-bottom: 3rem;
-}
-
-/* Footer */
+/* ===== Footer ===== */
 footer {
     background-color: var(--primary-color);
     color: white;
     text-align: center;
-    padding: 1rem;
+    padding: 1.5rem 1rem;
 }
 
-/* Responsive Grid for Services / Cards */
-.cards-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
+/* ===== Buttons ===== */
+button {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease;
 }
 
-/* Modal Dialog (hidden by default) */
-.modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(31, 41, 51, 0.85);
-    /* semi-transparent */
-    display: none;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
+button:hover {
+    background-color: #3730a3;
+    /* darker indigo */
 }
 
-.modal-content {
-    background-color: white;
-    padding: 2rem;
-    border-radius: 8px;
-    max-width: 500px;
-    width: 90%;
+/* ===== Media Queries ===== */
+@media (max-width: 768px) {
+    header nav ul {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    main {
+        padding: 1rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
 }
 
-/* ------------------------------
-   RESPONSIVE DESIGN
------------------------------- */
-
-/* Mobile-first default styles are already set above */
-
-/* Tablets and larger screens */
-@media (min-width: 768px) {
+@media (max-width: 480px) {
     header {
-        padding: 1rem 3rem;
+        padding: 1rem;
     }
 
-    header nav a {
-        margin-left: 2rem;
+    footer {
+        padding: 1rem;
     }
 
-    main {
-        padding: 3rem;
-    }
-}
-
-/* Desktop / wide screens */
-@media (min-width: 1024px) {
-    main {
-        max-width: 1200px;
-        margin: 0 auto;
+    button {
+        width: 100%;
+        padding: 0.75rem 0;
     }
 }

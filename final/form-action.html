@@ -1,19 +1,54 @@
-<!doctype html>
-<html lang="en-US">
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <title>Form Submitted</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Submission | My Website</title>
+    <meta name="description" content="View your submitted contact form data.">
+    <meta name="author" content="Nsikak Eyo">
+    <link rel="icon" href="images/favicon.ico">
+    <meta property="og:title" content="Form Submission | My Website">
+    <meta property="og:description" content="View your submitted contact form data.">
+    <meta property="og:image" content="images/logo.png">
+    <meta property="og:url" content="https://nsikakeyo01.github.io/wdd231/final/form-action.html">
+    <link rel="stylesheet" href="styles/style.css">
 </head>
 
 <body>
-    <h1>Submission Received</h1>
-    <p id="output"></p>
+    <header>
+        <nav>
+            <a href="index.html"><img src="images/logo.png" alt="Logo" class="logo"></a>
+            <button class="hamburger" aria-label="Menu">&#9776;</button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="service.html">Services</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Form Submission Details</h1>
+        <section class="form-results">
+            <p><strong>Name:</strong> <span id="name"></span></p>
+            <p><strong>Email:</strong> <span id="email"></span></p>
+            <p><strong>Message:</strong> <span id="message"></span></p>
+        </section>
+        <a href="contact.html" class="back-link">Go Back to Contact Form</a>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Nsikak Eyo | <a href="https://youtu.be/yourvideolink" target="_blank">Video Demo</a></p>
+    </footer>
 
     <script>
+        // Read the URL parameters and display them
         const params = new URLSearchParams(window.location.search);
-        document.getElementById("output").textContent =
-            `Name: ${params.get("name")} | Email: ${params.get("email")} | Service: ${params.get("service")}`;
+        document.getElementById('name').textContent = params.get('name') || 'N/A';
+        document.getElementById('email').textContent = params.get('email') || 'N/A';
+        document.getElementById('message').textContent = params.get('message') || 'N/A';
     </script>
 </body>
 

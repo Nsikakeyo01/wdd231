@@ -1,90 +1,58 @@
 // main.js
-// ES Module for Creative Hustle Hub project
+const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.nav-links');
+hamburger?.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+});
 
-// Local JSON file path (place your JSON in the final folder: data/hustles.json)
-const DATA_URL = './data/hustles.json';
+// Dynamic Services
+const servicesContainer = document.getElementById('services-container');
 
-// DOM elements
-const hustleContainer = document.querySelector('#hustle-container');
-const modal = document.querySelector('#hustle-modal');
-const modalContent = document.querySelector('#modal-content');
-const modalClose = document.querySelector('#modal-close');
-
-// Check localStorage for saved favorites
-const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
-
-// Fetch JSON data and display items
-async function loadHustles() {
+async function loadServices() {
     try {
-        const response = await fetch(DATA_URL);
-        if (!response.ok) throw new Error('Failed to fetch data');
-        const hustles = await response.json();
+        const res = await fetch('data/services.json');
+        const services = await res.json();
 
-        // Display first 15 hustles
-        hustles.slice(0, 15).forEach(hustle => {
-            const item = document.createElement('div');
-            item.classList.add('hustle-item');
+        services.forEach(service => {
+            const card = document.createElement('div');
+            card.classList.add('card');
+            card.innerHTML = `
+                <h2>${service.name}</h2>
+                <p>${service.description}</p>
+                <p>Price: ${service.price}</p>
+                <button class="details-btn">Details</button>
+            `;
+            servicesContainer?.appendChild(card);
 
-            // Template literal with 4 properties: title, type, price, description
-            item.innerHTML = `
-        <h3>${hustle.title}</h3>
-        <p><strong>Type:</strong> ${hustle.type}</p>
-        <p><strong>Price:</strong> ${hustle.price}</p>
-        <button class="details-btn">View Details</button>
-        <button class="fav-btn">${favorites.includes(hustle.id) ? '❤️' : '♡'}</button>
-      `;
+            // Modal functionality
+            const modal = document.getElementById('modal');
+            const modalDetails = document.getElementById('modal-details');
+            const closeBtn = document.querySelector('.close-btn');
 
-            // Add event listener for modal
-            item.querySelector('.details-btn').addEventListener('click', () => {
-                openModal(hustle);
+            card.querySelector('.details-btn').addEventListener('click', () => {
+                modalDetails.innerHTML = `
+                    <h2>${service.name}</h2>
+                    <p>${service.description}</p>
+                    <p>Features: ${service.features.join(', ')}</p>
+                    <p>Price: ${service.price}</p>
+                `;
+                modal.style.display = 'flex';
+                localStorage.setItem('lastViewedService', service.name);
             });
 
-            // Add event listener for favorites
-            item.querySelector('.fav-btn').addEventListener('click', () => {
-                toggleFavorite(hustle.id, item.querySelector('.fav-btn'));
+            closeBtn.addEventListener('click', () => {
+                modal.style.display = 'none';
             });
 
-            hustleContainer.appendChild(item);
+            window.addEventListener('click', (e) => {
+                if (e.target == modal) modal.style.display = 'none';
+            });
         });
-    } catch (error) {
-        console.error('Error loading hustles:', error);
-        hustleContainer.innerHTML = '<p>Failed to load hustles. Please try again later.</p>';
+
+    } catch (err) {
+        console.error('Failed to load services:', err);
     }
 }
 
-// Open modal dialog
-function openModal(hustle) {
-    modalContent.innerHTML = `
-    <h2>${hustle.title}</h2>
-    <p><strong>Type:</strong> ${hustle.type}</p>
-    <p><strong>Price:</strong> ${hustle.price}</p>
-    <p><strong>Description:</strong> ${hustle.description}</p>
-  `;
-    modal.classList.add('open');
-}
-
-// Close modal dialog
-modalClose.addEventListener('click', () => {
-    modal.classList.remove('open');
-});
-
-// Close modal on outside click
-modal.addEventListener('click', e => {
-    if (e.target === modal) modal.classList.remove('open');
-});
-
-// Toggle favorites in localStorage
-function toggleFavorite(id, btn) {
-    if (favorites.includes(id)) {
-        const index = favorites.indexOf(id);
-        favorites.splice(index, 1);
-        btn.textContent = '♡';
-    } else {
-        favorites.push(id);
-        btn.textContent = '❤️';
-    }
-    localStorage.setItem('favorites', JSON.stringify(favorites));
-}
-
-// Initialize
-loadHustles();
+// Only run if services container exists (service.html)
+if (servicesContainer) loadServices();

@@ -1,107 +1,154 @@
 [
     {
-        "id": 1,
-        "title": "Logo Design",
-        "type": "Graphic Design",
-        "price": "$50",
-        "description": "Create a unique logo for your brand."
+        "name": "Web Design",
+        "description": "Modern responsive website design",
+        "price": "$500",
+        "features": [
+            "HTML",
+            "CSS",
+            "JS",
+            "Responsive"
+        ]
     },
     {
-        "id": 2,
-        "title": "Social Media Post",
-        "type": "Marketing",
-        "price": "$30",
-        "description": "Custom social media posts for engagement."
+        "name": "Web Development",
+        "description": "Dynamic web applications",
+        "price": "$1000",
+        "features": [
+            "HTML",
+            "CSS",
+            "JS",
+            "APIs"
+        ]
     },
     {
-        "id": 3,
-        "title": "Website Setup",
-        "type": "Web Development",
+        "name": "SEO Optimization",
+        "description": "Improve website visibility",
+        "price": "$300",
+        "features": [
+            "Keyword Research",
+            "Analytics",
+            "On-Page SEO"
+        ]
+    },
+    {
+        "name": "Consulting",
+        "description": "Professional advice & guidance",
         "price": "$200",
-        "description": "Basic website setup for small businesses."
+        "features": [
+            "Strategy",
+            "UX Review",
+            "Performance"
+        ]
     },
     {
-        "id": 4,
-        "title": "SEO Audit",
-        "type": "Marketing",
-        "price": "$100",
-        "description": "Analyze and improve your website SEO."
+        "name": "Support",
+        "description": "24/7 website support",
+        "price": "$150",
+        "features": [
+            "Maintenance",
+            "Bug Fixes",
+            "Updates"
+        ]
     },
     {
-        "id": 5,
-        "title": "Video Editing",
-        "type": "Media",
-        "price": "$75",
-        "description": "Edit your videos professionally."
+        "name": "E-commerce",
+        "description": "Build your online store",
+        "price": "$1200",
+        "features": [
+            "Shopping Cart",
+            "Payment Gateway",
+            "Inventory"
+        ]
     },
     {
-        "id": 6,
-        "title": "Blog Writing",
-        "type": "Content",
-        "price": "$25",
-        "description": "Create SEO-friendly blog content."
-    },
-    {
-        "id": 7,
-        "title": "Illustrations",
-        "type": "Graphic Design",
-        "price": "$60",
-        "description": "Custom illustrations for your projects."
-    },
-    {
-        "id": 8,
-        "title": "Voiceover",
-        "type": "Media",
-        "price": "$40",
-        "description": "Professional voiceover for videos or ads."
-    },
-    {
-        "id": 9,
-        "title": "E-commerce Setup",
-        "type": "Web Development",
+        "name": "Content Writing",
+        "description": "Engaging content for your site",
         "price": "$250",
-        "description": "Setup Shopify or WooCommerce store."
+        "features": [
+            "SEO Friendly",
+            "Copywriting",
+            "Blog Posts"
+        ]
     },
     {
-        "id": 10,
-        "title": "Email Campaign",
-        "type": "Marketing",
-        "price": "$50",
-        "description": "Create a targeted email campaign."
+        "name": "Graphic Design",
+        "description": "Visual branding and graphics",
+        "price": "$400",
+        "features": [
+            "Logos",
+            "Banners",
+            "Social Media"
+        ]
     },
     {
-        "id": 11,
-        "title": "Resume Design",
-        "type": "Career",
-        "price": "$20",
-        "description": "Professional resume redesign."
+        "name": "App Development",
+        "description": "Mobile application development",
+        "price": "$1500",
+        "features": [
+            "iOS",
+            "Android",
+            "Cross-Platform"
+        ]
     },
     {
-        "id": 12,
-        "title": "Business Card",
-        "type": "Graphic Design",
-        "price": "$15",
-        "description": "Custom business card designs."
+        "name": "UX/UI Design",
+        "description": "User experience and interface design",
+        "price": "$600",
+        "features": [
+            "Wireframes",
+            "Prototypes",
+            "User Testing"
+        ]
     },
     {
-        "id": 13,
-        "title": "App Mockup",
-        "type": "UI/UX",
-        "price": "$80",
-        "description": "Design app interfaces and mockups."
+        "name": "Email Marketing",
+        "description": "Targeted email campaigns",
+        "price": "$200",
+        "features": [
+            "Newsletters",
+            "Automation",
+            "Analytics"
+        ]
     },
     {
-        "id": 14,
-        "title": "Podcast Editing",
-        "type": "Media",
-        "price": "$60",
-        "description": "Edit your podcast episodes professionally."
+        "name": "Analytics",
+        "description": "Website performance tracking",
+        "price": "$150",
+        "features": [
+            "Google Analytics",
+            "Reports",
+            "Insights"
+        ]
     },
     {
-        "id": 15,
-        "title": "Infographics",
-        "type": "Graphic Design",
-        "price": "$40",
-        "description": "Design engaging infographics."
+        "name": "Brand Strategy",
+        "description": "Define your brand identity",
+        "price": "$350",
+        "features": [
+            "Vision",
+            "Mission",
+            "Identity"
+        ]
+    },
+    {
+        "name": "Social Media",
+        "description": "Manage social platforms",
+        "price": "$300",
+        "features": [
+            "Posts",
+            "Engagement",
+            "Ads"
+        ]
+    },
+    {
+        "name": "Video Production",
+        "description": "Professional videos for marketing",
+        "price": "$700",
+        "features": [
+            "Editing",
+            "Shooting",
+            "Animation"
+        ]
     }
 ]

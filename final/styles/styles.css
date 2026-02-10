@@ -1,66 +1,124 @@
-/* General Styles */
+/* Base Styles */
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #ffffff;
-    color: #000000;
     line-height: 1.6;
+    color: #000;
+    background-color: #fff;
 }
 
-/* Header & Navigation */
-header {
-    background-color: #222;
-    padding: 1rem;
-    text-align: center;
-}
-
-nav a {
-    color: #fff;
-    margin: 0 1rem;
+a {
     text-decoration: none;
+    color: #333;
+}
+
+header {
+    background: #f4f4f4;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+nav ul li a.active {
     font-weight: bold;
+    color: #007BFF;
 }
 
-nav a:hover {
-    text-decoration: underline;
+.hamburger {
+    display: none;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
 }
 
-/* Main Content */
+.logo {
+    height: 50px;
+}
+
+/* Main Section */
 main {
     padding: 2rem;
-    max-width: 1000px;
-    margin: auto;
 }
 
-main h1 {
-    text-align: center;
-    margin-bottom: 2rem;
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
 }
 
-section {
-    margin-bottom: 2rem;
+.card {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    border-radius: 8px;
+    background: #fafafa;
 }
 
-section img {
-    display: block;
-    max-width: 100%;
-    height: auto;
-    margin-top: 1rem;
+button {
+    cursor: pointer;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    max-width: 500px;
+}
+
+.close-btn {
+    float: right;
+    font-size: 1.5rem;
+    cursor: pointer;
 }
 
 /* Footer */
 footer {
-    background-color: #222;
-    color: #fff;
+    background: #f4f4f4;
     text-align: center;
     padding: 1rem;
+    margin-top: 2rem;
 }
 
 /* Responsive */
-@media (max-width: 768px) {
-    nav a {
+@media screen and (max-width:768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        gap: 1rem;
+        background: #f4f4f4;
+        position: absolute;
+        right: 2rem;
+        top: 70px;
+        padding: 1rem;
+        border-radius: 8px;
+    }
+
+    .hamburger {
         display: block;
-        margin: 0.5rem 0;
+    }
+
+    .nav-links.show {
+        display: flex;
     }
 }

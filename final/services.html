@@ -1,47 +1,69 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en-US">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Services | Creative Hustle Hub</title>
-    <meta name="description" content="Browse creative services available on Creative Hustle Hub.">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Creative Hustle Hub – Services</title>
+    <meta name="description"
+        content="Explore the digital services and freelance offerings available at Creative Hustle Hub.">
     <meta name="author" content="Nsikak Eyo">
+
+    <!-- Favicon -->
     <link rel="icon" href="images/favicon.ico">
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Creative Hustle Hub – Services">
+    <meta property="og:description"
+        content="Discover our digital services, freelance offerings, and online hustle ideas.">
+    <meta property="og:image" content="https://nsikakeyo01.github.io/wdd231/final/images/og-image.jpg">
+    <meta property="og:url" content="https://nsikakeyo01.github.io/wdd231/final/services.html">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/styles.css">
 </head>
 
 <body>
     <header>
-        <h1>Services</h1>
         <nav>
-            <button id="menu"></button>
-            <ul class="navigation">
+            <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a class="active" href="services.html">Services</a></li>
+                <li><a href="services.html">Services</a></li>
                 <li><a href="contact.html">Contact</a></li>
+                <li><a href="attributions.html">Attributions</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section id="services-container"></section>
+        <h1>Our Services</h1>
+        <section>
+            <p>At Creative Hustle Hub, we provide digital services designed to help your online business thrive. Explore
+                our offerings below:</p>
+
+            <ul>
+                <li>Web Design & Development</li>
+                <li>Social Media Marketing</li>
+                <li>Freelance Writing & Content Creation</li>
+                <li>Graphic Design & Branding</li>
+            </ul>
+
+            <img src="images/og-image.jpg" alt="Illustration showing digital service icons" width="600" loading="lazy">
+        </section>
     </main>
 
-    <div id="modal" class="modal">
-        <div class="modal-content">
-            <button id="closeModal">X</button>
-            <div id="modal-body"></div>
-        </div>
-    </div>
-
     <footer>
-        <p>© 2026 Nsikak Eyo</p>
-        <a href="https://youtube.com" target="_blank">Video Demo</a>
+        <p>&copy; 2026 | Nsikak Eyo | WDD 231</p>
     </footer>
 
-    <script type="module" src="js/services.js"></script>
+    <script src="scripts/main.js" type="module"></script>
 </body>
 
 </html>

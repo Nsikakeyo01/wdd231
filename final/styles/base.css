@@ -1,7 +1,10 @@
 :root {
     --primary-color: #1f2933;
+    /* dark blue-gray */
     --secondary-color: #f9fafb;
+    /* light gray background */
     --accent-color: #2563eb;
+    /* blue accent */
     --font-main: 'Poppins', sans-serif;
 }
 
@@ -16,4 +19,8 @@ body {
     background-color: var(--secondary-color);
     color: var(--primary-color);
     line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
 }

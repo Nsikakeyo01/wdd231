@@ -1,21 +1,27 @@
+/* Header & Navigation */
 header {
     background-color: var(--primary-color);
-    padding: 1rem;
+    padding: 1rem 0;
 }
 
 nav ul {
     display: flex;
-    gap: 1rem;
-    list-style: none;
     justify-content: center;
+    gap: 2rem;
+    list-style: none;
 }
 
 nav a {
     color: white;
-    text-decoration: none;
+    /* ensures WCAG contrast */
     font-weight: 600;
 }
 
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Main content */
 main {
     max-width: 900px;
     margin: 2rem auto;
@@ -23,16 +29,51 @@ main {
     text-align: center;
 }
 
+h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+/* Section content */
+section p {
+    margin: 1rem 0;
+    font-size: 1.1rem;
+}
+
 img {
     max-width: 100%;
     height: auto;
     margin-top: 1rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
+/* Footer */
 footer {
     background-color: var(--primary-color);
     color: white;
     text-align: center;
     padding: 1rem;
     margin-top: 2rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    main {
+        padding: 0.5rem;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    section p {
+        font-size: 1rem;
+    }
 }

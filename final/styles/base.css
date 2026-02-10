@@ -1,26 +1,75 @@
+/* ------------------------------
+   BASE CSS
+   Variables, Resets, Typography
+------------------------------ */
+
+/* CSS Variables for consistent color palette */
 :root {
     --primary-color: #1f2933;
-    /* dark blue-gray */
+    /* dark text / main theme */
     --secondary-color: #f9fafb;
-    /* light gray background */
-    --accent-color: #2563eb;
-    /* blue accent */
-    --font-main: 'Poppins', sans-serif;
+    /* light background */
+    --accent-color: #4f46e5;
+    /* buttons / highlights */
+    --font-family: 'Poppins', sans-serif;
 }
 
+/* Reset and box-sizing */
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
+/* Body and basic typography */
 body {
-    font-family: var(--font-main);
-    background-color: var(--secondary-color);
+    font-family: var(--font-family);
+    font-size: 16px;
+    line-height: 1.5;
     color: var(--primary-color);
-    line-height: 1.6;
+    background-color: var(--secondary-color);
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 600;
+    color: var(--primary-color);
+    line-height: 1.2;
+}
+
+/* Paragraphs */
+p {
+    margin-bottom: 1rem;
+}
+
+/* Lists */
+ul {
+    list-style: none;
 }
 
 a {
     text-decoration: none;
+    color: var(--primary-color);
+}
+
+/* Buttons */
+button {
+    font-family: var(--font-family);
+    cursor: pointer;
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #3730a3;
+    /* slightly darker accent */
 }

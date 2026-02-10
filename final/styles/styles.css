@@ -1,52 +1,37 @@
-/* Header & Navigation */
+/* ------------------------------
+   LAYOUT & COMPONENT STYLES
+------------------------------ */
+
+/* Header */
 header {
     background-color: var(--primary-color);
-    padding: 1rem 0;
-}
-
-nav ul {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    list-style: none;
-}
-
-nav a {
     color: white;
-    /* ensures WCAG contrast */
-    font-weight: 600;
+    /* FIXED contrast */
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-nav a:hover {
-    text-decoration: underline;
+header nav a {
+    color: white;
+    /* header links visible */
+    margin-left: 1.5rem;
+    font-weight: 500;
 }
 
-/* Main content */
+header nav a:hover {
+    color: var(--accent-color);
+}
+
+/* Main section */
 main {
-    max-width: 900px;
-    margin: 2rem auto;
-    padding: 1rem;
-    text-align: center;
+    padding: 2rem;
 }
 
-h1 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-}
-
-/* Section content */
-section p {
-    margin: 1rem 0;
-    font-size: 1.1rem;
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-    margin-top: 1rem;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+/* Sections */
+section {
+    margin-bottom: 3rem;
 }
 
 /* Footer */
@@ -55,25 +40,63 @@ footer {
     color: white;
     text-align: center;
     padding: 1rem;
-    margin-top: 2rem;
 }
 
-/* Responsive adjustments */
-@media (max-width: 600px) {
-    nav ul {
-        flex-direction: column;
-        align-items: center;
+/* Responsive Grid for Services / Cards */
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Modal Dialog (hidden by default) */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(31, 41, 51, 0.85);
+    /* semi-transparent */
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    max-width: 500px;
+    width: 90%;
+}
+
+/* ------------------------------
+   RESPONSIVE DESIGN
+------------------------------ */
+
+/* Mobile-first default styles are already set above */
+
+/* Tablets and larger screens */
+@media (min-width: 768px) {
+    header {
+        padding: 1rem 3rem;
+    }
+
+    header nav a {
+        margin-left: 2rem;
     }
 
     main {
-        padding: 0.5rem;
+        padding: 3rem;
     }
+}
 
-    h1 {
-        font-size: 1.5rem;
-    }
-
-    section p {
-        font-size: 1rem;
+/* Desktop / wide screens */
+@media (min-width: 1024px) {
+    main {
+        max-width: 1200px;
+        margin: 0 auto;
     }
 }

@@ -1,107 +1,107 @@
 [
     {
-        "title": "Music Production",
-        "category": "Audio",
-        "price": "$150",
-        "description": "Studio-quality beats",
-        "rating": 4.8
-    },
-    {
-        "title": "Mixing & Mastering",
-        "category": "Audio",
-        "price": "$120",
-        "description": "Clean professional sound",
-        "rating": 4.7
-    },
-    {
-        "title": "Cover Art Design",
-        "category": "Design",
-        "price": "$80",
-        "description": "High-impact visuals",
-        "rating": 4.6
-    },
-    {
+        "id": 1,
         "title": "Logo Design",
-        "category": "Design",
-        "price": "$100",
-        "description": "Brand identity",
-        "rating": 4.9
-    },
-    {
-        "title": "Video Editing",
-        "category": "Video",
-        "price": "$200",
-        "description": "YouTube-ready edits",
-        "rating": 4.8
-    },
-    {
-        "title": "Social Media Ads",
-        "category": "Marketing",
-        "price": "$90",
-        "description": "High conversion ads",
-        "rating": 4.5
-    },
-    {
-        "title": "Website Setup",
-        "category": "Tech",
-        "price": "$250",
-        "description": "Responsive website",
-        "rating": 4.9
-    },
-    {
-        "title": "Landing Pages",
-        "category": "Tech",
-        "price": "$180",
-        "description": "SEO optimized pages",
-        "rating": 4.7
-    },
-    {
-        "title": "Email Campaigns",
-        "category": "Marketing",
-        "price": "$70",
-        "description": "Email strategy",
-        "rating": 4.4
-    },
-    {
-        "title": "Beat Licensing",
-        "category": "Audio",
+        "type": "Graphic Design",
         "price": "$50",
-        "description": "Commercial beats",
-        "rating": 4.6
+        "description": "Create a unique logo for your brand."
     },
     {
-        "title": "Podcast Editing",
-        "category": "Audio",
-        "price": "$110",
-        "description": "Clear podcast audio",
-        "rating": 4.5
+        "id": 2,
+        "title": "Social Media Post",
+        "type": "Marketing",
+        "price": "$30",
+        "description": "Custom social media posts for engagement."
     },
     {
-        "title": "Brand Consulting",
-        "category": "Business",
-        "price": "$300",
-        "description": "Growth strategy",
-        "rating": 4.8
+        "id": 3,
+        "title": "Website Setup",
+        "type": "Web Development",
+        "price": "$200",
+        "description": "Basic website setup for small businesses."
     },
     {
-        "title": "Content Writing",
-        "category": "Writing",
+        "id": 4,
+        "title": "SEO Audit",
+        "type": "Marketing",
+        "price": "$100",
+        "description": "Analyze and improve your website SEO."
+    },
+    {
+        "id": 5,
+        "title": "Video Editing",
+        "type": "Media",
+        "price": "$75",
+        "description": "Edit your videos professionally."
+    },
+    {
+        "id": 6,
+        "title": "Blog Writing",
+        "type": "Content",
+        "price": "$25",
+        "description": "Create SEO-friendly blog content."
+    },
+    {
+        "id": 7,
+        "title": "Illustrations",
+        "type": "Graphic Design",
         "price": "$60",
-        "description": "SEO content",
-        "rating": 4.3
+        "description": "Custom illustrations for your projects."
     },
     {
-        "title": "Thumbnail Design",
-        "category": "Design",
+        "id": 8,
+        "title": "Voiceover",
+        "type": "Media",
         "price": "$40",
-        "description": "Click-worthy thumbnails",
-        "rating": 4.7
+        "description": "Professional voiceover for videos or ads."
     },
     {
-        "title": "Analytics Setup",
-        "category": "Tech",
-        "price": "$130",
-        "description": "Track performance",
-        "rating": 4.6
+        "id": 9,
+        "title": "E-commerce Setup",
+        "type": "Web Development",
+        "price": "$250",
+        "description": "Setup Shopify or WooCommerce store."
+    },
+    {
+        "id": 10,
+        "title": "Email Campaign",
+        "type": "Marketing",
+        "price": "$50",
+        "description": "Create a targeted email campaign."
+    },
+    {
+        "id": 11,
+        "title": "Resume Design",
+        "type": "Career",
+        "price": "$20",
+        "description": "Professional resume redesign."
+    },
+    {
+        "id": 12,
+        "title": "Business Card",
+        "type": "Graphic Design",
+        "price": "$15",
+        "description": "Custom business card designs."
+    },
+    {
+        "id": 13,
+        "title": "App Mockup",
+        "type": "UI/UX",
+        "price": "$80",
+        "description": "Design app interfaces and mockups."
+    },
+    {
+        "id": 14,
+        "title": "Podcast Editing",
+        "type": "Media",
+        "price": "$60",
+        "description": "Edit your podcast episodes professionally."
+    },
+    {
+        "id": 15,
+        "title": "Infographics",
+        "type": "Graphic Design",
+        "price": "$40",
+        "description": "Design engaging infographics."
     }
 ]

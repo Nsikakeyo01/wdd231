@@ -7,16 +7,16 @@
 
     <title>Creative Hustle Hub – Contact</title>
     <meta name="description"
-        content="Get in touch with Creative Hustle Hub to discuss digital services, collaborations, or freelance opportunities.">
+        content="Get in touch with Creative Hustle Hub for inquiries, projects, or collaborations.">
     <meta name="author" content="Nsikak Eyo">
 
     <!-- Favicon -->
     <link rel="icon" href="images/favicon.ico">
 
-    <!-- Open Graph -->
+    <!-- Open Graph Meta -->
     <meta property="og:title" content="Creative Hustle Hub – Contact">
     <meta property="og:description"
-        content="Reach out to Creative Hustle Hub for services, partnerships, or inquiries.">
+        content="Get in touch with Creative Hustle Hub for inquiries, projects, or collaborations.">
     <meta property="og:image" content="https://nsikakeyo01.github.io/wdd231/final/images/og-image.jpg">
     <meta property="og:url" content="https://nsikakeyo01.github.io/wdd231/final/contact.html">
 
@@ -28,6 +28,9 @@
     <!-- CSS -->
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/styles.css">
+
+    <!-- JavaScript Module -->
+    <script type="module" src="scripts/main.js"></script>
 </head>
 
 <body>
@@ -44,29 +47,41 @@
 
     <main>
         <h1>Contact Us</h1>
+
         <section>
-            <p>We’d love to hear from you! Fill out the form below or reach us through our social media channels.</p>
+            <h2>Reach Out</h2>
+            <p>
+                Have questions, project ideas, or want to collaborate? Use the form below to get in touch with Creative
+                Hustle Hub.
+            </p>
+        </section>
 
-            <form action="contact-action.html" method="get">
-                <label for="name">Full Name:</label><br>
-                <input type="text" id="name" name="name" required><br><br>
+        <section>
+            <h2>Contact Form</h2>
+            <form action="#" method="post">
+                <label for="name">Name:</label><br>
+                <input type="text" id="name" name="name" placeholder="Your Name" required><br><br>
 
-                <label for="email">Email Address:</label><br>
-                <input type="email" id="email" name="email" required><br><br>
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" placeholder="your@email.com" required><br><br>
 
                 <label for="message">Message:</label><br>
-                <textarea id="message" name="message" rows="5" required></textarea><br><br>
+                <textarea id="message" name="message" placeholder="Your message here..." required></textarea><br><br>
 
                 <button type="submit">Send Message</button>
             </form>
+        </section>
+
+        <section>
+            <h2>Other Ways to Connect</h2>
+            <p>Email: <a href="mailto:info@creativehustlehub.com">info@creativehustlehub.com</a></p>
+            <p>Follow us on social media for updates and insights!</p>
         </section>
     </main>
 
     <footer>
         <p>&copy; 2026 | Nsikak Eyo | WDD 231</p>
     </footer>
-
-    <script src="scripts/main.js" type="module"></script>
 </body>
 
 </html>

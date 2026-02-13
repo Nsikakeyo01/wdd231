@@ -1,0 +1,137 @@
+[
+    {
+        "id": 1,
+        "name": "Uyo Tech Hub",
+        "category": "Technology",
+        "location": "Uyo",
+        "phone": "+2348010000001",
+        "image": "images/techhub.webp",
+        "description": "A fast-growing innovation and startup center in Uyo."
+    },
+    {
+        "id": 2,
+        "name": "Ibom Foods",
+        "category": "Restaurant",
+        "location": "Eket",
+        "phone": "+2348010000002",
+        "image": "images/restaurant.webp",
+        "description": "Serving authentic Akwa Ibom delicacies."
+    },
+    {
+        "id": 3,
+        "name": "Uyo Fashion House",
+        "category": "Retail",
+        "location": "Uyo",
+        "phone": "+2348010000003",
+        "image": "images/fashion.webp",
+        "description": "Modern African fashion and tailoring services."
+    },
+    {
+        "id": 4,
+        "name": "Ibom Digital Solutions",
+        "category": "Technology",
+        "location": "Ikot Ekpene",
+        "phone": "+2348010000004",
+        "image": "images/digital.webp",
+        "description": "Web development and IT consulting services."
+    },
+    {
+        "id": 5,
+        "name": "Royal Spa Uyo",
+        "category": "Services",
+        "location": "Uyo",
+        "phone": "+2348010000005",
+        "image": "images/spa.webp",
+        "description": "Premium spa and wellness services."
+    },
+    {
+        "id": 6,
+        "name": "Ibom Bakery",
+        "category": "Restaurant",
+        "location": "Eket",
+        "phone": "+2348010000006",
+        "image": "images/bakery.webp",
+        "description": "Fresh bread and pastries daily."
+    },
+    {
+        "id": 7,
+        "name": "Akwa Motors",
+        "category": "Retail",
+        "location": "Uyo",
+        "phone": "+2348010000007",
+        "image": "images/motors.webp",
+        "description": "Trusted automobile sales and services."
+    },
+    {
+        "id": 8,
+        "name": "Ibom Farms",
+        "category": "Services",
+        "location": "Oron",
+        "phone": "+2348010000008",
+        "image": "images/farm.webp",
+        "description": "Organic agricultural production and supplies."
+    },
+    {
+        "id": 9,
+        "name": "NextGen Coding Academy",
+        "category": "Technology",
+        "location": "Uyo",
+        "phone": "+2348010000009",
+        "image": "images/coding.webp",
+        "description": "Programming and tech training institute."
+    },
+    {
+        "id": 10,
+        "name": "Ibom Supermarket",
+        "category": "Retail",
+        "location": "Eket",
+        "phone": "+2348010000010",
+        "image": "images/supermarket.webp",
+        "description": "Affordable groceries and household supplies."
+    },
+    {
+        "id": 11,
+        "name": "Palmview Hotel",
+        "category": "Services",
+        "location": "Uyo",
+        "phone": "+2348010000011",
+        "image": "images/hotel.webp",
+        "description": "Comfortable hospitality and accommodation."
+    },
+    {
+        "id": 12,
+        "name": "Ibom Printing Press",
+        "category": "Services",
+        "location": "Ikot Ekpene",
+        "phone": "+2348010000012",
+        "image": "images/printing.webp",
+        "description": "Professional printing and branding services."
+    },
+    {
+        "id": 13,
+        "name": "GreenLife Pharmacy",
+        "category": "Retail",
+        "location": "Uyo",
+        "phone": "+2348010000013",
+        "image": "images/pharmacy.webp",
+        "description": "Reliable pharmaceutical products and consultation."
+    },
+    {
+        "id": 14,
+        "name": "Taste of Ibom",
+        "category": "Restaurant",
+        "location": "Oron",
+        "phone": "+2348010000014",
+        "image": "images/food.webp",
+        "description": "Traditional meals with a modern touch."
+    },
+    {
+        "id": 15,
+        "name": "Skyline Architects",
+        "category": "Services",
+        "location": "Uyo",
+        "phone": "+2348010000015",
+        "image": "images/architecture.webp",
+        "description": "Innovative architectural and design solutions."
+    }
+]

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Nsikak Eyo">
+    <meta name="description" content="Browse and filter businesses in Akwa Ibom State by category.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Directory | Akwa Ibom Business Directory</title>
+
+    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" href="css/styles.css">
+    <script type="module" src="js/directory.js" defer></script>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo-container">
+            <img src="images/logo.png" alt="Akwa Ibom Business Directory Logo" loading="lazy">
+            <h1>Akwa Ibom Business Directory</h1>
+        </div>
+
+        <button id="menu-btn" aria-label="Toggle Navigation" aria-expanded="false">
+            &#9776;
+        </button>
+
+
+        <nav id="nav-menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="directory.html" class="active">Directory</a></li>
+                <li><a href="contact.html">Register Business</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <main>
+
+        <section class="directory-controls">
+            <h2>Browse Businesses</h2>
+
+            <label for="categoryFilter">Filter by Category:</label>
+            <select id="categoryFilter">
+                <option value="all">All</option>
+                <option value="Technology">Technology</option>
+                <option value="Restaurant">Restaurant</option>
+                <option value="Retail">Retail</option>
+                <option value="Services">Services</option>
+            </select>
+        </section>
+
+        <section id="businessContainer" class="business-grid">
+            <!-- Dynamic content goes here -->
+        </section>
+        <!-- Modal -->
+        <div id="businessModal" class="modal" role="dialog" aria-modal="true">
+
+            <div class="modal-content">
+                <span id="closeModal">&times;</span>
+                <div id="modalDetails"></div>
+            </div>
+        </div>
+
+
+    </main>
+
+    <footer>
+        <p>&copy; <span id="year"></span> Nsikak Eyo | Akwa Ibom Business Directory</p>
+        <a href="attributions.html">Attributions</a> |
+        <a href="YOUR_VIDEO_LINK_HERE" target="_blank">Project Demo Video</a>
+    </footer>
+
+</body>
+
+</html>

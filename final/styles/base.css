@@ -1,40 +1,19 @@
-/* =====================
-   CSS Variables
-===================== */
 :root {
-    --primary-color: rgb(31 41 51);
-    --secondary-color: rgb(249 250 251);
-    --accent-color: rgb(79 70 229);
-
-    --font-family: 'Poppins', sans-serif;
+    --primary: #0b6e3c;
+    --secondary: #f4b400;
+    --light: #ffffff;
+    --dark: #1a1a1a;
+    --gray: #f5f5f5;
 }
 
-/* =====================
-   Global Reset
-===================== */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-/* =====================
-   Base Elements
-===================== */
 body {
-    font-family: var(--font-family);
-    line-height: 1.6;
-    color: var(--primary-color);
-    background-color: var(--secondary-color);
-}
-
-a {
-    text-decoration: none;
-    color: var(--accent-color);
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--light);
+    color: var(--dark);
 }

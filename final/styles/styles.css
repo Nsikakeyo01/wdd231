@@ -1,9 +1,6 @@
 /* =====================
    Base Styles (Mobile First)
 ===================== */
-body {
-    font-family: 'Poppins', sans-serif;
-}
 
 :root {
     --primary: #0b6e3c;
@@ -20,7 +17,7 @@ body {
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Poppins', sans-serif;
     line-height: 1.6;
     background-color: var(--gray);
     color: var(--dark);
@@ -54,7 +51,7 @@ h1 {
 #menu-btn {
     background: none;
     border: none;
-    color: white;
+    color: var(--light);
     font-size: 1.8rem;
     cursor: pointer;
     margin-top: 0.5rem;
@@ -97,9 +94,10 @@ nav.open {
 .hero {
     text-align: center;
     padding: 3rem 1rem;
-    background: linear-gradient(rgba(11, 110, 60, 0.8), rgba(11, 110, 60, 0.8)),
+    background: linear-gradient(rgba(11, 110, 60, 0.8),
+            rgba(11, 110, 60, 0.8)),
         url("../images/logo.webp") center/cover no-repeat;
-    color: white;
+    color: var(--light);
 }
 
 .hero h2 {
@@ -147,14 +145,19 @@ footer {
     text-align: center;
     padding: 1rem;
     background: var(--primary);
-    color: white;
+    color: var(--light);
     margin-top: 2rem;
 }
 
 footer a {
-    color: var(--secondary);
+    color: var(--light);
+    /* FIXED contrast issue */
     text-decoration: none;
     margin: 0 0.5rem;
+}
+
+footer a:hover {
+    color: var(--secondary);
 }
 
 /* =====================
@@ -207,7 +210,7 @@ footer a {
 }
 
 .business-card {
-    background: white;
+    background: var(--light);
     padding: 1rem;
     border-radius: 6px;
 }
@@ -230,6 +233,7 @@ footer a {
     cursor: pointer;
 }
 
+/* Desktop grid */
 @media (min-width: 768px) {
     .business-grid {
         grid-template-columns: repeat(3, 1fr);
@@ -250,7 +254,7 @@ footer a {
 }
 
 .modal-content {
-    background: white;
+    background: var(--light);
     padding: 2rem;
     width: 90%;
     max-width: 500px;

@@ -88,15 +88,34 @@ nav.open {
 }
 
 /* =====================
-   Hero Section
+   Hero Section (Corrected)
 ===================== */
 
 .hero {
     text-align: center;
     padding: 3rem 1rem;
-    background: linear-gradient(rgba(11, 110, 60, 0.8),
-            rgba(11, 110, 60, 0.8)),
-        url("../images/logo.webp") center/cover no-repeat;
+
+    /* Corrected audit image reference */
+    background: linear-gradient(rgba(11, 110, 60, 0.8), rgba(11, 110, 60, 0.8)),
+        url("https://nsikakeyo01.github.io/wdd231/final/images/logo.webp") center/cover no-repeat;
+
+    color: var(--light);
+    position: relative;
+    /* needed for overlay */
+}
+
+/* Overlay to fix contrast issue */
+.hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 0;
+}
+
+.hero * {
+    position: relative;
+    z-index: 1;
     color: var(--light);
 }
 
@@ -104,6 +123,10 @@ nav.open {
     font-size: 1.8rem;
     margin-bottom: 1rem;
 }
+
+/* =====================
+   Buttons
+===================== */
 
 .btn {
     display: inline-block;
@@ -151,7 +174,6 @@ footer {
 
 footer a {
     color: var(--light);
-    /* FIXED contrast issue */
     text-decoration: none;
     margin: 0 0.5rem;
 }

@@ -1,6 +1,9 @@
 /* =====================
    Base Styles (Mobile First)
 ===================== */
+body {
+    font-family: 'Poppins', sans-serif;
+}
 
 :root {
     --primary: #0b6e3c;

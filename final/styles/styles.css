@@ -95,13 +95,13 @@ nav.open {
     text-align: center;
     padding: 3rem 1rem;
 
-    /* Corrected audit image reference */
+    /* Absolute URL for audit */
     background: linear-gradient(rgba(11, 110, 60, 0.8), rgba(11, 110, 60, 0.8)),
         url("https://nsikakeyo01.github.io/wdd231/final/images/logo.webp") center/cover no-repeat;
 
     color: var(--light);
     position: relative;
-    /* needed for overlay */
+    /* overlay positioning */
 }
 
 /* Overlay to fix contrast issue */
@@ -109,10 +109,11 @@ nav.open {
     content: '';
     position: absolute;
     inset: 0;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.4);
     z-index: 0;
 }
 
+/* Ensure text is above overlay */
 .hero * {
     position: relative;
     z-index: 1;
@@ -146,6 +147,8 @@ nav.open {
 .features {
     padding: 2rem 1rem;
     text-align: center;
+    color: var(--dark);
+    /* ensure good contrast on light gray */
 }
 
 .feature-grid {
@@ -158,6 +161,8 @@ nav.open {
     background: var(--light);
     padding: 1rem;
     border-radius: 6px;
+    color: var(--dark);
+    /* ensure contrast */
 }
 
 /* =====================
@@ -218,6 +223,8 @@ footer a:hover {
 .directory-controls {
     text-align: center;
     padding: 2rem 1rem;
+    color: var(--dark);
+    /* ensure contrast on gray */
 }
 
 .directory-controls select {
@@ -235,6 +242,8 @@ footer a:hover {
     background: var(--light);
     padding: 1rem;
     border-radius: 6px;
+    color: var(--dark);
+    /* ensure contrast */
 }
 
 .business-card img {
@@ -282,6 +291,8 @@ footer a:hover {
     max-width: 500px;
     border-radius: 6px;
     position: relative;
+    color: var(--dark);
+    /* ensure contrast */
 }
 
 #closeModal {
@@ -304,6 +315,8 @@ footer a:hover {
     padding: 2rem 1rem;
     max-width: 600px;
     margin: auto;
+    color: var(--dark);
+    /* ensure contrast */
 }
 
 form {
@@ -329,4 +342,6 @@ form button {
     border: none;
     cursor: pointer;
     font-weight: bold;
+    color: var(--dark);
+    /* ensure contrast */
 }

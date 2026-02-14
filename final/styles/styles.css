@@ -88,6 +88,10 @@ nav.open {
 }
 
 /* =====================
+   Hero Section (FIXED)
+===================== */
+
+/* =====================
    Hero Section (FIXED CONTRAST)
 ===================== */
 
@@ -95,8 +99,9 @@ nav.open {
     position: relative;
     text-align: center;
     padding: 3rem 1rem;
+    background: var(--primary);
     color: var(--light);
-    background: url("../images/logo.webp") center/cover no-repeat;
+    z-index: 0;
 }
 
 .hero::before {
@@ -104,11 +109,9 @@ nav.open {
     position: absolute;
     inset: 0;
     background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
 }
 
-.hero * {
-    position: relative;
-}
 
 /* =====================
    Buttons

@@ -88,28 +88,26 @@ nav.open {
 }
 
 /* =====================
-   Hero Section (Corrected)
+   Hero Section (Fixed Contrast)
 ===================== */
 
 .hero {
+    position: relative;
     text-align: center;
     padding: 3rem 1rem;
-
-    /* Absolute URL for audit */
-    background: linear-gradient(rgba(11, 110, 60, 0.8), rgba(11, 110, 60, 0.8)),
-        url("https://nsikakeyo01.github.io/wdd231/final/images/logo.webp") center/cover no-repeat;
-
+    background: var(--gray);
+    /* fallback */
     color: var(--light);
-    position: relative;
-    /* overlay positioning */
+    overflow: hidden;
 }
 
-/* Overlay to fix contrast issue */
+/* Overlay to darken background and fix contrast */
 .hero::before {
     content: '';
     position: absolute;
     inset: 0;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.5);
+    /* semi-transparent black overlay */
     z-index: 0;
 }
 
@@ -120,19 +118,27 @@ nav.open {
     color: var(--light);
 }
 
+/* Hero background image (absolute URL for audit) */
+.hero {
+    background: linear-gradient(rgba(11, 110, 60, 0.8),
+            rgba(11, 110, 60, 0.8)),
+        url("https://nsikakeyo01.github.io/wdd231/final/images/logo.webp") center/cover no-repeat;
+}
+
 .hero h2 {
     font-size: 1.8rem;
     margin-bottom: 1rem;
 }
 
 /* =====================
-   Buttons
+   Buttons (Fixed Contrast)
 ===================== */
 
 .btn {
     display: inline-block;
     background: var(--secondary);
     color: var(--dark);
+    /* changed from white to dark for contrast */
     padding: 0.7rem 1.2rem;
     text-decoration: none;
     font-weight: bold;
@@ -148,7 +154,6 @@ nav.open {
     padding: 2rem 1rem;
     text-align: center;
     color: var(--dark);
-    /* ensure good contrast on light gray */
 }
 
 .feature-grid {
@@ -162,7 +167,6 @@ nav.open {
     padding: 1rem;
     border-radius: 6px;
     color: var(--dark);
-    /* ensure contrast */
 }
 
 /* =====================
@@ -224,7 +228,6 @@ footer a:hover {
     text-align: center;
     padding: 2rem 1rem;
     color: var(--dark);
-    /* ensure contrast on gray */
 }
 
 .directory-controls select {
@@ -243,7 +246,6 @@ footer a:hover {
     padding: 1rem;
     border-radius: 6px;
     color: var(--dark);
-    /* ensure contrast */
 }
 
 .business-card img {
@@ -292,7 +294,6 @@ footer a:hover {
     border-radius: 6px;
     position: relative;
     color: var(--dark);
-    /* ensure contrast */
 }
 
 #closeModal {
@@ -316,7 +317,6 @@ footer a:hover {
     max-width: 600px;
     margin: auto;
     color: var(--dark);
-    /* ensure contrast */
 }
 
 form {
@@ -343,5 +343,4 @@ form button {
     cursor: pointer;
     font-weight: bold;
     color: var(--dark);
-    /* ensure contrast */
 }
